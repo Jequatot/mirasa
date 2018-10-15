@@ -29,6 +29,18 @@ h1 {
 	text-shadow: 2px 3px grey;
 }
 
+p {
+	font-size: 1em;
+	color: white;
+	text-align: center;
+	height: 1.5em;
+	border-top: dashed;
+	border-bottom: dashed;
+	border-width: 1px;
+	border-color: #effea9;
+	font-family: Georgia, serif;
+}
+
 #sidebar {
 	background-color: #200020;
 	float: right;
@@ -58,5 +70,4 @@ button {
 
 button:hover {
     background-color: darkslategrey; /* Green */
-	
 }

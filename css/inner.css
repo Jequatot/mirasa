@@ -10,15 +10,56 @@
 
 /*this will be the default for the page*/
 body {
-	color: #effea9;
-	font-family: Georgia, serif;
+	color: white;
 	font-size: 120%;
 	background-color: #020002;
+	font-family: times;
+	line-height: 1.5em;
+	text-indent: -2em;
+}
+
+#texted {
+	margin: 2em;
+	padding-left: 2em;
+}
+
+h1 {
+	font-style: italic;
+	font-family: georgia;
+	color: #effea9;
+}
+
+h2 {
+	font-family: georgia;
+	font-size: 1em;
+	color: #effea9;
+}
+
+p {
+	text-indent: 0em;
+	line-height: 1.1em;
+}
+
+span {
+	font-weight: bold;
+}
+
+td {
+	border: 1px solid #effea9;
+	border-collapse: collapse;
+}
+
+#profile {
+	float: right;
+	margin-left: 2em;
+	max-width: 50%;
+	height: 80vh;
 }
 
 #map {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 98vh;
+	height: 97.5vh;
+	max-width: 100%;
 }
