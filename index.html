@@ -13,52 +13,25 @@
 	<head>
 		<meta charset="UTF-8">
 		<!-- the name of the page -->
-		<title>Assignment #4</title>
+		<title>Diaspora</title>
 		<!-- link rhw css stylesheet -->
 		<link rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
+		<h1 id="pagetitle"> the spinward marches </h1>
 		<div id="inner">
-		<!-- section for assignments -->
 			<section id="sidebar">
-				<!-- smaller header for the assignments list -->
-				<h1>Assignments</h1>
-					<dl>
-					<!-- assignments will go in the seperate div for formatting -->
-					<dt><a href="a2.html">Assignment #2</a></dt>
-						<dd>Original index page</dd>
-					<dt><a href="pacific.html">Assignment #3</a></dt>
-						<dd>Pacific Trails Resort formatting</dd>
-					<dt><a href="index.html">Assignment #4</a></dt>
-						<dd>You're on it, baby!!!</dd>
-					</dl>
-					<br>
-				</section>
-				<section id="main">
-				<!-- a header image -->
-				<!-- Nintendo (June 23, 1996) Super Mario 64. Retrieved July 19, 2018.-->
-				<img src="css/mario_dance.gif" title="Wahoo!!" alt="Mario Dance">
-				<!-- page header -->
-				<h2>GUI Programming I (91.61)</h2>
-				<!-- description paragraph -->
-				<p>
-					My name is Jeffery Quattrociocchi (jeffreyquattro@gmail.com)<br>
-					I like black coffee and dragons.<br>
-					In my free time I make games in Unity and play the piano.<br>
-					I just finished teaching a summer camp at MIT for C++ and Java, ages 10-17. <br>
-				</p>
-				<p>
-    					<a href="http://jigsaw.w3.org/css-validator/check/referer">
-						<img style="border:0;width:88px;height:31px"
-       						src="http://jigsaw.w3.org/css-validator/images/vcss"
-        					alt="Valid CSS!" />
-					</a>
-				</p>
-				<p id="footer">
-					This page was created on 09-11-18.<br>
-					Last updated: 10-09-18.
-				</p>
+				<iframe id="frame" src="races.html"></iframe>
 			</section>
+				<button onclick="gothere('home.html')">Home</button>
+				<button onclick="gothere('maps.html')">The Galaxy</button>
+				<button onclick="gothere('races.html')">Sophonts</button>
+				<script>
+					function gothere(srce) {
+					document.getElementById("frame").src = srce;
+					}
+				</script>
+		<!-- section for assignments -->
 		</div>
 	</body>
 </html>
