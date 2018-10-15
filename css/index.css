@@ -1,0 +1,81 @@
+/*
+	Jeffrey Quattrociocchi
+	jeffreyquattro@gmail.com
+	UMass Lowell
+	91.61 GUI Programming I
+	Created: 09-11-18
+
+	CSS file for index.html
+*/
+
+/*this will be the default for the page*/
+body {
+	background-image: URL("hosizora2.gif");
+	color: black;
+	font-family: Georgia, serif;
+	font-size: 120%;
+}
+/*inner box*/
+#inner {
+	background-color: white;
+	border-style: double;
+	border-color: gold;
+	border-width: .5em;
+	margin: auto;
+	max-width: 40em;
+	height: 30em;
+}
+/*main content*/
+#main {
+	margin-left: 17em;
+}
+/*this will be the main header*/
+h1 {
+	text-align: center;
+	font-size: 1.3em;
+	color: white;
+	text-shadow: 2px 3px grey;
+}
+/*this will be the sidebar header*/
+h2 {
+	padding-top: 2em;
+	font-size: 1.3em;
+	text-shadow: 2px 3px silver;
+}
+/*this will be the formatting any images*/
+img {
+	display: block;
+	float: right;
+	padding-right: 1.2em;
+	height: 10%;
+}
+/*centered text, like the introduction paragraph*/
+p {
+	max-width: 20em;
+}
+
+/*a container for the assignments*/
+#sidebar {
+	background-color: lightgrey;
+	float: left;
+	max-width: 15em;
+	height: inherit;
+	text-align: left;
+	font-family: Times, sans-serif;
+}
+dl {
+	margin-left: 20px;
+}
+
+/*link formatting*/
+a {
+	color: navy;
+}
+a:hover {
+	color: gold;
+}
+#footer {
+	font-family: Times, sans-serif;
+	font-size: .8em;
+	font-style: italic;
+}
