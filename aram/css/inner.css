@@ -54,8 +54,11 @@ span {
 }
 
 td {
-	border: 1px solid #effea9;
-	border-collapse: collapse;
+	border: none;
+}
+
+tr:nth-child(odd) {
+	background-color: lightgrey;
 }
 
 #profile, #planet {
