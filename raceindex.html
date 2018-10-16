@@ -21,17 +21,20 @@
 		<h1 id="pagetitle"> the spinward marches </h1>
 		<div id="inner">
 			<section id="sidebar">
-				<iframe id="frame" src="pcs.html"></iframe>
+				<iframe id="frame" src="races/human.html"></iframe>
 			</section>
 			<section id="leftbar">
-			
-				<p>Home</p>
-				<button onclick="gothere('pcs.html')">Player Characters</button>
-				<button onclick="gothere('skills.html')">Skills</button>
-				<button onclick="window.location.href='raceindex.html'">Races</button>
-				<button onclick="window.location.href='aramindex.html'">Subsector D: Aramis</button>
-				<p>Maps</p>
-				<button onclick="gothere('shipmap.html')">Harrier Class Cargo Vessel</button>
+				<button onclick="window.location.href='index.html'">Back</button>
+				<p>Races</p>
+				<button onclick="gothere('races/diruk.html')">Diruk</button>
+				<button onclick="gothere('races/golgothan.html')">Golgothan</button>
+				<button onclick="gothere('races/human.html')">Human</button>
+				<button onclick="gothere('races/orsian.html')">Orsian</button>
+				<button onclick="gothere('races/shirren.html')">Shirren</button>
+				<button onclick="gothere('races/tlic.html')">Tlic</button>
+				<button onclick="gothere('races/velani.html')">Velani</button>
+				<button onclick="gothere('races/vesk.html')">Vesk</button>
+				<button onclick="gothere('races/zhodani.html')">Zhodani</button>
 				<script>
 					function gothere(srce) {
 					document.getElementById("frame").src = srce;

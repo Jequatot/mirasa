@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Diaspora</title>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<h1 id="pagetitle"> the spinward marches </h1>
+		<div id="inner">
+			<section id="sidebar">
+				<iframe id="frame" src="aram/maps.html"></iframe>
+			</section>
+			<section id="leftbar">
+				<button onclick="window.location.href='index.html'">Back</button>
+				<p>Subsector D: Aramis</p>
+				<button onclick="gothere('aram/maps.html')"><u><strong>Subsector Map</strong></u></button>
+				<button onclick="gothere('aram/aramanx.html')">Aramanx</button>
+				<button onclick="gothere('aram/aramis.html')">Aramis</button>
+				<button onclick="gothere('aram/jesedipere.html')">Jesedipere</button>
+				<button onclick="gothere('aram/junidy.html')">Junidy</button>
+				<button onclick="gothere('aram/lewis.html')">Lewis</button>
+				<button onclick="gothere('aram/natoko.html')">Natoko</button>
+				<button onclick="gothere('aram/patinir.html')">The Patinir Belt</button>
+				<button onclick="gothere('aram/paya.html')">Paya</button>
+				<button onclick="gothere('aram/pysadi.html')">Pysadi</button>
+				<button onclick="gothere('aram/yebab.html')">Yebab</button>
+				<button onclick="gothere('aram/zila.html')">Zila</button>
+				<button onclick="gothere('aram/planets.html')">Other Planets</button>
+				<script>
+					function gothere(srce) {
+					document.getElementById("frame").src = srce;
+					}
+				</script>
+			</section>
+		</div>
+	</body>
+</html>
