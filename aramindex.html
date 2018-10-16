@@ -3,38 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Diaspora</title>
-		<link rel="stylesheet" href="css/index.css">		<script> 
-			function diemenutoggle() {			
-				var x = document.getElementById("diedropdown");
-				if (x.style.display === "none") {
-					x.style.display = "block";
-				} else {
-					x.style.display = "none";
-				}
-			}
-			
-			function gothere(srce) {
-				document.getElementById("frame").src = srce;
-			}
-			
-			function roll() {
-				document.getElementById("dieout1").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieout2").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieout3").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieout4").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieoutf").value =
-					Number(document.getElementById("dieout1").value) +
-					Number(document.getElementById("dieout2").value) +
-					Number(document.getElementById("dieout3").value) +
-					Number(document.getElementById("dieout4").value) +
-					Number(document.getElementById("diemod").value);
-			}
-		</script>
-		
+		<link rel="stylesheet" href="css/index.css">
+		<script src="css/index.js"></script>
 	</head>
 	<body>
 		<button id="diebutton" onclick="diemenutoggle()">Dice</button>

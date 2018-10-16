@@ -23,6 +23,21 @@ body {
 	padding-left: 2em;
 }
 
+table {
+	font-size: .7em;
+	text-align: center;
+}
+
+tr:nth-child(even) {
+	background-color: #2f2f2f;
+}
+
+td {
+	min-width: 1em;
+	line-height: 1.1em;
+	border: none;
+}
+
 h1 {
 	font-style: italic;
 	font-family: georgia;
@@ -45,16 +60,11 @@ span {
 	font-weight: bold;
 }
 
-td {
-	border: 1px solid #effea9;
-	border-collapse: collapse;
-}
-
 #profile {
 	float: right;
 	margin-left: 2em;
 	max-width: 50%;
-	height: 80vh;
+	max-height: 80vh;
 }
 
 #map {
@@ -82,4 +92,19 @@ td {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+#uwpbutton {
+	background-color: #2f2f2f;
+	color: white;
+	font-style: italic;
+	font-family: georgia;
+	font-weight: bold;
+	font-size: 1.1em;
+	
+}
+
+#uwpdropdown {
+    display: none;
+    z-index: 1;
 }

@@ -1,14 +1,3 @@
-<!DOCTYPE html >
-<!--
-	Jeffrey Quattrociocchi
-	jeffreyquattro@gmail.com
-	UMass Lowell
-	91.61 GUI Programming I
-	Created: 10-08-18
-	
-	This page is an index to all assignments yet to come.
--->
-<!-- set the language -->
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -16,44 +5,12 @@
 		<title>Diaspora</title>
 		<!-- link rhw css stylesheet -->
 		<link rel="stylesheet" href="css/index.css">
-		
-		<script> 
-			function diemenutoggle() {			
-				var x = document.getElementById("diedropdown");
-				if (x.style.display === "none") {
-					x.style.display = "block";
-				} else {
-					x.style.display = "none";
-				}
-			}
-			
-			function gothere(srce) {
-				document.getElementById("frame").src = srce;
-			}
-			
-			function roll() {
-				document.getElementById("dieout1").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieout2").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieout3").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieout4").value
-					= Math.floor(Math.random() * 3)-1;
-				document.getElementById("dieoutf").value =
-					Number(document.getElementById("dieout1").value) +
-					Number(document.getElementById("dieout2").value) +
-					Number(document.getElementById("dieout3").value) +
-					Number(document.getElementById("dieout4").value) +
-					Number(document.getElementById("diemod").value);
-			}
-		</script>
-		
+		<script src="css/index.js"></script>
 	</head>
 	<body>
 		<button id="diebutton" onclick="diemenutoggle()">Dice</button>
 		<div id="diedropdown">
-			<button id="roller" onclick="roll()">Roll!</button>
+			<button id="roller" onclick="roll();">Roll!</button>
 			<input type="text" id="dieout1"> +
 			<input type="text" id="dieout2"> +
 			<input type="text" id="dieout3"> +

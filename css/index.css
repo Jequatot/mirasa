@@ -27,6 +27,7 @@ h1 {
 	font-size: 2em;
 	text-transform: uppercase;
 	text-shadow: 2px 3px grey;
+	padding-right: 5em;
 }
 
 p {

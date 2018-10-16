@@ -4,58 +4,225 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Diaspora</title>
-		<link rel="stylesheet" href="css/inner.css">
+		<link rel="stylesheet" href="../css/inner.css">
+		<script> 
+			function uwptoggle() {
+				var x = document.getElementById("uwpdropdown");
+				if (x.style.display == "block") {
+					x.style.display = "none";
+				} else {
+					x.style.display = "block";
+				}
+			}
+		</script> 
 	</head>
 	<body id="texted">
 	<h1>Other Planets of Aramis</h1>
-		<p>
-			<h2>Carsten</h2>
-			<div class="dropdown"><span>UWP:</span> C 4 2 7 4 0 2 – B
-			<div class="dropdown-content">
-			<table>
+	<button id="uwpbutton" onclick="uwptoggle()">
+		Universal World Profile (UWP)
+	</button>
+			<table id="uwpdropdown">
 				<tr>
-					<td>Starport:</td>
-					<td>C</td>
-					<td>(Routine)</td>
+					<th></th>
+					<th>Starport</th>
+					<th>Diameter</th>
+					<th>Atmosphere</th>
+					<th>Hydrographics</th>
+					<th>Population</th>
+					<th>Government</th>
+					<th>Prohibitions</th>
+					<th>Tech Level</th>
 				</tr>
-				<tr>
-					<td>Size:</td>
-					<td>4</td>
-					<td>(6,400km)</td>
-				</tr>
-				<tr>
-					<td>Atmosphere:</td>
-					<td>2</td>
-					<td>(Very thin, respirator required)</td>
-				</tr>
-				<tr>
-					<td>Hydrosphere:</td>
-					<td>7</td>
-					<td>(70%)</td>
-				</tr>
-				<tr>
-					<td>Population:</td>
-					<td>4</td>
-					<td>(tens of thousands)</td>
-				</tr>
-				<tr>
-					<td>Government:</td>
 					<td>0</td>
-					<td>(Anarchical)</td>
+					<td></td>
+					<td>&lt 200mi (Asteroid)</td>
+					<td>Vacuum, EVA suit req'd</td>
+					<td>Desert World</td>
+					<td>Vitually uninhabited</td>
+					<td>No Government</td>
+					<td>No prohibitions</td>
+					<td>Found object tools</td>
 				</tr>
 				<tr>
-					<td>Law Level:</td>
 					<td>1</td>
-					<td>(Portable energy weapons prohibited)</td>
+					<td></td>
+					<td>~1,000mi (Pluto)</td>
+					<td>Trace, EVA suit req'd</td>
+					<td>10%</td>
+					<td>Tens</td>
+					<td>Corporate</td>
+					<td>Body pistols, explosives, poison gas</td>
+					<td>Language</td>
 				</tr>
 				<tr>
-					<td>Tech Level:</td>
+					<td>2</td>
+					<td></td>
+					<td>~2,000mi (Luna)</td>
+					<td>Very thin, polluted, respirator req'd</td>
+					<td>20%</td>
+					<td>Hundreds</td>
+					<td>Participating Democracy</td>
+					<td>Portable energy weapons</td>
+					<td>Calculation</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td></td>
+					<td>~3,000mi (Mercury)</td>
+					<td>Very thin, respirator req'd</td>
+					<td>30%</td>
+					<td>Thousands</td>
+					<td>Self-Perpetuating Oligarchy</td>
+					<td>Machine guns, automatic weapons</td>
+					<td>Made Tools</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td></td>
+					<td>~4,000mi (Mars)</td>
+					<td>Thin, polluted, filter req'd</td>
+					<td>40%</td>
+					<td>Tens of thousands</td>
+					<td>Representative Democracy</td>
+					<td>Light assault weapons</td>
+					<td>Industrial Society</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td></td>
+					<td>~5,000mi</td>
+					<td>Thin, safe</td>
+					<td>50%</td>
+					<td>Hundreds of thousands</td>
+					<td>Feudal Technocracy</td>
+					<td>Personal concealable firearms</td>
+					<td>Planetary Exploration</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td></td>
+					<td>~6,000mi</td>
+					<td>Comfortable</td>
+					<td>60%</td>
+					<td>Millions</td>
+					<td>Colony</td>
+					<td>All firearms except shotguns</td>
+					<td>World Wars</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td></td>
+					<td>~7,000mi</td>
+					<td>Polluted, filter req'd</td>
+					<td>70%</td>
+					<td>Tens of millions</td>
+					<td>Balkanized</td>
+					<td>Shotguns</td>
+					<td>Globalization</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td></td>
+					<td>~8,000mi (Earth)</td>
+					<td>Dense, safe</td>
+					<td>80%</td>
+					<td>Hundreds of millions</td>
+					<td>Civil Service Bureaucracy</td>
+					<td>Blade weapons controlled</td>
+					<td>Space Exploration</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td></td>
+					<td>~9,000mi</td>
+					<td>Dense, polluted, filter req'd</td>
+					<td>90%</td>
+					<td>Billions</td>
+					<td>Impersonal Bureaucracy</td>
+					<td>No weapons outside home</td>
+					<td>Interstellar Colonization</td>
+				</tr>
+				<tr>
+					<td>A</td>
+					<td>Excellent. Sell refined fuel and ships capable of FTL. Can perform ship overhauls.</td>
+					<td>~10,000mi</td>
+					<td>Exotic, O2 required</td>
+					<td>Ocean World</td>
+					<td>Tens of billions</td>
+					<td>Popular Autocracy</td>
+					<td>Weapon possession</td>
+					<td>Fusion</td>
+				</tr>
+				<tr>
 					<td>B</td>
-					<td>(Lower Average Imperial)</td>
+					<td>Good. Sell refined fuel and small spacecraft. Can perform ship overhauls.</td>
+					<td>~11,000mi</td>
+					<td>Corrosive, HEV suit req'd</td>
+					<td></td>
+					<td>Hundreds of billions</td>
+					<td>Unpopular Autocracy</td>
+					<td>Rigid control of civilian movement</td>
+					<td>Gravity Manipulation</td>
+				</tr>
+				<tr>
+					<td>C</td>
+					<td>Routine. Sell refined fuel and land vehicles. Can perform major repairs.</td>
+					<td>~12,000mi</td>
+					<td>Insidious, EVA highly discouraged</td>
+					<td></td>
+					<td>Trillions</td>
+					<td>Popular Oligarchy</td>
+					<td>Unrestricted invasion of privacy</td>
+					<td>Polystellar Governments</td>
+				</tr>
+				<tr>
+					<td>D</td>
+					<td>Poor. Sell refined fuel and land vehicles. Can perform minor repairs.</td>
+					<td>~13,000mi</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>Religious Dictatorship</td>
+					<td>Paramilitary law enforcement</td>
+					<td>Genetic Engineering</td>
+				</tr>
+				<tr>
+					<td>E</td>
+					<td>Frontier. Sells unrefined fuel.</td>
+					<td>~14,000mi</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>Religious Autocracy</td>
+					<td>Full-fledged police state</td>
+					<td>Fabricators</td>
+				</tr>
+				<tr>
+					<td>F</td>
+					<td>Frontier. Sell unrefined fuel.</td>
+					<td>15,000+mi</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>Totalitarian Oligarchy</td>
+					<td>All facets of daily life rigidly controlled</td>
+					<td>Artificial Intelligence</td>
+				</tr>
+				<tr>
+					<td>X</td>
+					<td>System lacks a spaceport</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 			</table>
-<p></div></div>
-			<p>A lawless mining world whose major resource is radioactives. Ore is found in small pockets near the surface; large-scale mining is not economical but a population of individual prospectors can make a good living.
+			<p><span>Carsten</span> (C427402–B) is a lawless mining world whose major resource is radioactives. Ore is found in small pockets near the surface; large-scale mining is not economical but a population of individual prospectors can make a good living.</p>
+
+			<p><span>L’oeul d’Dieu</span> (B98A510–B) is a water world under the aegis of Sharurshid, a megacorporation specialising in rare trade goods. Sharurshid obtains a variety of exotic seafood and other products from this world. There has been much pressure to have the world opened up for settlement but Sharurshid, fearing damage to the local ecosystem, has resisted.</p>
 
 			<!--Corfu is interdicted by the Imperium as a quarantine measure. Approximately 40 years ago, a virulent, crippling disease appeared and has since come to affect 5% of the population. No cure for the disease is yet known, although some treatments have been found to relieve some of its effects. The Imperial Scout Service maintains a surveillance post in the system and is working to find a cure. In the interim, access to the world is prohibited.</p>
 
@@ -64,7 +231,6 @@
 			Feneteman was unpopulated until a few years ago when a survey sponsored by Ling Standard Products discovered deposits of lanthanum. When the concentration was deemed insufficient for commercial mining, LSP released the survey report to the public and offered to rent prospecting equipment in return for an interest in any discoveries. The offer has been sufficient to maintain a small population of fortune-seekers on the world but without visible results.
 Focaline is mostly ice-capped but a few broad open plains provide excellent ranges for groat-raising. The plains are crowded with family-owned ranches; indeed, the small usable surface of Focaline is somewhat overcrowded and strict population control is practised. A trading station for commerce with the Vargr is maintained on Focaline.
 Heguz is a dangerously mysterious world in the Scatters. Two colonies have been established on this planet and each has failed for unexplained reasons. The first had 20,000 citizens in 649 but when a supply ship arrived in 650, no trace of the colony remained. Within a few years the colony was re-established, only to disappear in the early 900s with nearly 70,000 inhabitants. Both were formed around large, floating bases of the type often established on water worlds. Large areas of the ocean floor have been searched but so far no trace of either colony has been found. An investigative team representing another group of prospective colonists, numbering about 500 and based in orbit, is currently studying the world in an attempt to solve its mystery. 
-L’oeul d’Dieu is a water world under the aegis of Sharurshid, a megacorporation specialising in rare trade goods. Sharurshid obtains a variety of exotic seafood and other products from this world. There has been much pressure to have the world opened up for settlement but Sharurshid, fearing damage to the local ecosystem, has resisted.
 Lablon is an agricultural world at the very edge of the subsector; its economy is supported mostly by the sale of agricultural produce to the Vargr through the local trading station. Most of the population of 500,000 lives in small farming towns scattered around the most fertile areas of the four continents. The government is called the Lablon Planetary Cartel; its main duty is ensuring that no community exports goods for anything other than the legally set prices; since the prices are high, there is little resistance. 
 Lewis is an interdicted world holding an estate of the Tukera family and is described in the chapter entitled Inselberg.
 Nasemin is a water world. A large, close moon, a high axial tilt and an energetic sun combine to produce giant tides and extreme weather effects. The world’s stormy seas are the home of a very large and nasty predator that is the source of an anti-inflammation drug, which has so far defied economical synthesis. Nasemin’s population is primarily occupied with chasing down these predators (called byssals) and excising the gland in which the drug is concentrated. Each yields about five kilograms of raw drug. The byssal (a 40,000 kilogram swimming carnivore/killer) regenerates the gland in about a year and can be harvested many times.
