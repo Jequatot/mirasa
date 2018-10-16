@@ -88,3 +88,44 @@ button:hover {
     50%   {background-color: #050005;}
     100%  {background-color: darkslategrey;}
 }
+
+#diebutton {
+	width: 10em;
+	float: left;
+    position: relative;
+    display: inline-block;
+	background-color: #2f2f2f;
+}
+
+#roller {
+	width: 6em;
+}
+
+input {
+	width: 2em;
+}
+
+#diedropdown {
+    display: none;
+    position: absolute;
+	margin-left: 8em;
+	color: black;
+    background-color: #f9f9f9;
+    min-width: 23em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+#roller:hover {
+	animation-name: rainbow;
+}
+
+@keyframes rainbow {
+    0%  {background-color: red;}
+    20%  {background-color: gold;}
+    40%   {background-color: green;}
+    60%  {background-color: blue;}
+    80%  {background-color: purple;}
+    100%  {background-color: red;}
+}

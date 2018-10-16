@@ -3,9 +3,51 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Diaspora</title>
-		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/index.css">		<script> 
+			function diemenutoggle() {			
+				var x = document.getElementById("diedropdown");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+			
+			function gothere(srce) {
+				document.getElementById("frame").src = srce;
+			}
+			
+			function roll() {
+				document.getElementById("dieout1").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieout2").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieout3").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieout4").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieoutf").value =
+					Number(document.getElementById("dieout1").value) +
+					Number(document.getElementById("dieout2").value) +
+					Number(document.getElementById("dieout3").value) +
+					Number(document.getElementById("dieout4").value) +
+					Number(document.getElementById("diemod").value);
+			}
+		</script>
+		
 	</head>
 	<body>
+		<button id="diebutton" onclick="diemenutoggle()">Dice</button>
+		<div id="diedropdown">
+			<button id="roller" onclick="roll()">Roll!</button>
+			<input type="text" id="dieout1">+
+			<input type="text" id="dieout2">+
+			<input type="text" id="dieout3">+
+			<input type="text" id="dieout4">+
+			Modifier:
+			<input type="text" id="diemod">=
+			<input type="text" id="dieoutf">
+		</div>
 		<h1 id="pagetitle"> the spinward marches </h1>
 		<div id="inner">
 			<section id="sidebar">
@@ -27,11 +69,6 @@
 				<button onclick="gothere('aram/yebab.html')">Yebab</button>
 				<button onclick="gothere('aram/zila.html')">Zila</button>-->
 				<button onclick="gothere('aram/planets.html')">Other Planets</button>
-				<script>
-					function gothere(srce) {
-					document.getElementById("frame").src = srce;
-					}
-				</script>
 			</section>
 		</div>
 	</body>

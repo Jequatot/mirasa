@@ -16,15 +16,58 @@
 		<title>Diaspora</title>
 		<!-- link rhw css stylesheet -->
 		<link rel="stylesheet" href="css/index.css">
+		
+		<script> 
+			function diemenutoggle() {			
+				var x = document.getElementById("diedropdown");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+			
+			function gothere(srce) {
+				document.getElementById("frame").src = srce;
+			}
+			
+			function roll() {
+				document.getElementById("dieout1").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieout2").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieout3").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieout4").value
+					= Math.floor(Math.random() * 3)-1;
+				document.getElementById("dieoutf").value =
+					Number(document.getElementById("dieout1").value) +
+					Number(document.getElementById("dieout2").value) +
+					Number(document.getElementById("dieout3").value) +
+					Number(document.getElementById("dieout4").value) +
+					Number(document.getElementById("diemod").value);
+			}
+		</script>
+		
 	</head>
 	<body>
+		<button id="diebutton" onclick="diemenutoggle()">Dice</button>
+		<div id="diedropdown">
+			<button id="roller" onclick="roll()">Roll!</button>
+			<input type="text" id="dieout1">+
+			<input type="text" id="dieout2">+
+			<input type="text" id="dieout3">+
+			<input type="text" id="dieout4">+
+			Modifier:
+			<input type="text" id="diemod">=
+			<input type="text" id="dieoutf">
+		</div>
 		<h1 id="pagetitle"> the spinward marches </h1>
 		<div id="inner">
 			<section id="sidebar">
 				<iframe id="frame" src="pcs.html"></iframe>
 			</section>
 			<section id="leftbar">
-			
 				<p>Home</p>
 				<button onclick="gothere('pcs.html')">Player Characters</button>
 				<button onclick="gothere('skills.html')">Skills</button>
@@ -32,11 +75,6 @@
 				<button onclick="window.location.href='aramindex.html'">Subsector D: Aramis</button>
 				<p>Maps</p>
 				<button onclick="gothere('shipmap.html')">Harrier Class Cargo Vessel</button>
-				<script>
-					function gothere(srce) {
-					document.getElementById("frame").src = srce;
-					}
-				</script>
 			</section>
 		<!-- section for assignments -->
 		</div>
