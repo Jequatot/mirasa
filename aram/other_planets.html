@@ -7,11 +7,13 @@
 		<link rel="stylesheet" href="../css/inner.css">
 		<script> 
 			function uwptoggle() {
-				var x = document.getElementById("uwpdropdown");
-				if (x.style.display == "block") {
-					x.style.display = "none";
-				} else {
-					x.style.display = "block";
+				var x = document.getElementsByClassName("uwpdropdown");
+				for(var i = 0; i < x.length; i++) {
+					if (x[i].style.display == "block") {
+						x[i].style.display = "none";
+					} else {
+						x[i].style.display = "block";
+					}
 				}
 			}
 		</script> 
@@ -21,27 +23,19 @@
 	<button id="uwpbutton" onclick="uwptoggle()">
 		Universal World Profile (UWP)
 	</button>
-			<table id="uwpdropdown">
+			<table class="uwpdropdown">
 				<tr>
 					<th></th>
 					<th>Starport</th>
 					<th>Diameter</th>
 					<th>Atmosphere</th>
 					<th>Hydrographics</th>
-					<th>Population</th>
-					<th>Government</th>
-					<th>Prohibitions</th>
-					<th>Tech Level</th>
 				</tr>
 					<td>0</td>
 					<td></td>
 					<td>&lt 200mi (Asteroid)</td>
 					<td>Vacuum, EVA suit req'd</td>
 					<td>Desert World</td>
-					<td>Vitually uninhabited</td>
-					<td>No Government</td>
-					<td>No prohibitions</td>
-					<td>Found object tools</td>
 				</tr>
 				<tr>
 					<td>1</td>
@@ -49,10 +43,6 @@
 					<td>~1,000mi (Pluto)</td>
 					<td>Trace, EVA suit req'd</td>
 					<td>10%</td>
-					<td>Tens</td>
-					<td>Corporate</td>
-					<td>Body pistols, explosives, poison gas</td>
-					<td>Language</td>
 				</tr>
 				<tr>
 					<td>2</td>
@@ -60,10 +50,6 @@
 					<td>~2,000mi (Luna)</td>
 					<td>Very thin, polluted, respirator req'd</td>
 					<td>20%</td>
-					<td>Hundreds</td>
-					<td>Participating Democracy</td>
-					<td>Portable energy weapons</td>
-					<td>Calculation</td>
 				</tr>
 				<tr>
 					<td>3</td>
@@ -71,10 +57,6 @@
 					<td>~3,000mi (Mercury)</td>
 					<td>Very thin, respirator req'd</td>
 					<td>30%</td>
-					<td>Thousands</td>
-					<td>Self-Perpetuating Oligarchy</td>
-					<td>Machine guns, automatic weapons</td>
-					<td>Made Tools</td>
 				</tr>
 				<tr>
 					<td>4</td>
@@ -82,10 +64,6 @@
 					<td>~4,000mi (Mars)</td>
 					<td>Thin, polluted, filter req'd</td>
 					<td>40%</td>
-					<td>Tens of thousands</td>
-					<td>Representative Democracy</td>
-					<td>Light assault weapons</td>
-					<td>Industrial Society</td>
 				</tr>
 				<tr>
 					<td>5</td>
@@ -93,10 +71,6 @@
 					<td>~5,000mi</td>
 					<td>Thin, safe</td>
 					<td>50%</td>
-					<td>Hundreds of thousands</td>
-					<td>Feudal Technocracy</td>
-					<td>Personal concealable firearms</td>
-					<td>Planetary Exploration</td>
 				</tr>
 				<tr>
 					<td>6</td>
@@ -104,10 +78,6 @@
 					<td>~6,000mi</td>
 					<td>Comfortable</td>
 					<td>60%</td>
-					<td>Millions</td>
-					<td>Colony</td>
-					<td>All firearms except shotguns</td>
-					<td>World Wars</td>
 				</tr>
 				<tr>
 					<td>7</td>
@@ -115,10 +85,6 @@
 					<td>~7,000mi</td>
 					<td>Polluted, filter req'd</td>
 					<td>70%</td>
-					<td>Tens of millions</td>
-					<td>Balkanized</td>
-					<td>Shotguns</td>
-					<td>Globalization</td>
 				</tr>
 				<tr>
 					<td>8</td>
@@ -126,10 +92,6 @@
 					<td>~8,000mi (Earth)</td>
 					<td>Dense, safe</td>
 					<td>80%</td>
-					<td>Hundreds of millions</td>
-					<td>Civil Service Bureaucracy</td>
-					<td>Blade weapons controlled</td>
-					<td>Space Exploration</td>
 				</tr>
 				<tr>
 					<td>9</td>
@@ -137,10 +99,6 @@
 					<td>~9,000mi</td>
 					<td>Dense, polluted, filter req'd</td>
 					<td>90%</td>
-					<td>Billions</td>
-					<td>Impersonal Bureaucracy</td>
-					<td>No weapons outside home</td>
-					<td>Interstellar Colonization</td>
 				</tr>
 				<tr>
 					<td>A</td>
@@ -148,10 +106,6 @@
 					<td>~10,000mi</td>
 					<td>Exotic, O2 required</td>
 					<td>Ocean World</td>
-					<td>Tens of billions</td>
-					<td>Popular Autocracy</td>
-					<td>Weapon possession</td>
-					<td>Fusion</td>
 				</tr>
 				<tr>
 					<td>B</td>
@@ -159,10 +113,6 @@
 					<td>~11,000mi</td>
 					<td>Corrosive, HEV suit req'd</td>
 					<td></td>
-					<td>Hundreds of billions</td>
-					<td>Unpopular Autocracy</td>
-					<td>Rigid control of civilian movement</td>
-					<td>Gravity Manipulation</td>
 				</tr>
 				<tr>
 					<td>C</td>
@@ -170,10 +120,6 @@
 					<td>~12,000mi</td>
 					<td>Insidious, EVA highly discouraged</td>
 					<td></td>
-					<td>Trillions</td>
-					<td>Popular Oligarchy</td>
-					<td>Unrestricted invasion of privacy</td>
-					<td>Polystellar Governments</td>
 				</tr>
 				<tr>
 					<td>D</td>
@@ -181,10 +127,6 @@
 					<td>~13,000mi</td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td>Religious Dictatorship</td>
-					<td>Paramilitary law enforcement</td>
-					<td>Genetic Engineering</td>
 				</tr>
 				<tr>
 					<td>E</td>
@@ -192,10 +134,6 @@
 					<td>~14,000mi</td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td>Religious Autocracy</td>
-					<td>Full-fledged police state</td>
-					<td>Fabricators</td>
 				</tr>
 				<tr>
 					<td>F</td>
@@ -203,10 +141,6 @@
 					<td>15,000+mi</td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td>Totalitarian Oligarchy</td>
-					<td>All facets of daily life rigidly controlled</td>
-					<td>Artificial Intelligence</td>
 				</tr>
 				<tr>
 					<td>X</td>
@@ -214,17 +148,140 @@
 					<td></td>
 					<td></td>
 					<td></td>
+				</tr>
+			</table>
+			<table class="uwpdropdown">
+				<tr>
+					<th></th>
+					<th>Population</th>
+					<th>Government</th>
+					<th>Prohibitions</th>
+					<th>Tech Level</th>
+				</tr>
+					<td>0</td>
+					<td>Vitually uninhabited</td>
+					<td>No Government</td>
+					<td>No prohibitions</td>
+					<td>Stone Age</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Tens</td>
+					<td>Corporate</td>
+					<td>Body pistols, explosives, poison gas</td>
+					<td>Bronze Age</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Hundreds</td>
+					<td>Participating Democracy</td>
+					<td>Portable energy weapons</td>
+					<td>Age of Sail</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Thousands</td>
+					<td>Self-Perpetuating Oligarchy</td>
+					<td>Machine guns, automatic weapons</td>
+					<td>Steam Engine</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Tens of thousands</td>
+					<td>Representative Democracy</td>
+					<td>Light assault weapons</td>
+					<td>Factories</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Hundreds of thousands</td>
+					<td>Feudal Technocracy</td>
+					<td>Personal concealable firearms</td>
+					<td>Globalization</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Millions</td>
+					<td>Colony</td>
+					<td>All firearms except shotguns</td>
+					<td>Nuclear Power</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Tens of millions</td>
+					<td>Balkanized</td>
+					<td>Shotguns</td>
+					<td>Miniaturized Electronics</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Hundreds of millions</td>
+					<td>Civil Service Bureaucracy</td>
+					<td>Blade weapons controlled</td>
+					<td>Quality Computers</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Billions</td>
+					<td>Impersonal Bureaucracy</td>
+					<td>No weapons outside home</td>
+					<td>Fusion</td>
+				</tr>
+				<tr>
+					<td>A</td>
+					<td>Tens of billions</td>
+					<td>Popular Autocracy</td>
+					<td>Weapon possession</td>
+					<td>Anti-Gravity</td>
+				</tr>
+				<tr>
+					<td>B</td>
+					<td>Hundreds of billions</td>
+					<td>Unpopular Autocracy</td>
+					<td>Rigid control of civilian movement</td>
+					<td>Lower Average Imperial</td>
+				</tr>
+				<tr>
+					<td>C</td>
+					<td>Trillions</td>
+					<td>Popular Oligarchy</td>
+					<td>Unrestricted invasion of privacy</td>
+					<td>Average Imperial</td>
+				</tr>
+				<tr>
+					<td>D</td>
 					<td></td>
+					<td>Religious Dictatorship</td>
+					<td>Paramilitary law enforcement</td>
+					<td>Genetic Engineering</td>
+				</tr>
+				<tr>
+					<td>E</td>
 					<td></td>
+					<td>Religious Autocracy</td>
+					<td>Full-fledged police state</td>
+					<td>Fabricators</td>
+				</tr>
+				<tr>
+					<td>F</td>
 					<td></td>
-					<td></td>
+					<td>Totalitarian Oligarchy</td>
+					<td>All facets of daily life rigidly controlled</td>
+					<td>Artificial Intelligence</td>
 				</tr>
 			</table>
 			<p><span>Carsten</span> (C427402–B) is a lawless mining world whose major resource is radioactives. Ore is found in small pockets near the surface; large-scale mining is not economical but a population of individual prospectors can make a good living.</p>
 
 			<p><span>L’oeul d’Dieu</span> (B98A510–B) is a water world under the aegis of Sharurshid, a megacorporation specialising in rare trade goods. Sharurshid obtains a variety of exotic seafood and other products from this world. There has been much pressure to have the world opened up for settlement but Sharurshid, fearing damage to the local ecosystem, has resisted.</p>
 
-			<!--Corfu is interdicted by the Imperium as a quarantine measure. Approximately 40 years ago, a virulent, crippling disease appeared and has since come to affect 5% of the population. No cure for the disease is yet known, although some treatments have been found to relieve some of its effects. The Imperial Scout Service maintains a surveillance post in the system and is working to find a cure. In the interim, access to the world is prohibited.</p>
+			<p><span>Reacher</span> (C9A8542–8) supports its economy by exporting simple organic compounds, 
+			produced naturally in its exotic atmosphere and gathered more cheaply than they can be synthesised 
+			elsewhere. The recent introduction of better synthesis technology into the subsector has reduced 
+			Reacher’s market (Aramis and Patinir, once importers, now produce their own organics) and recent 
+			incidents of violence against offworlders have led the <span class="dropdown">TAS<span class="dropdown-content">Travellers' Aid Society</span></span> to declare Reacher an amber zone. 
+			
+			<!--Rugbird is a world with an extremely insidious atmosphere. The system’s population lives in orbital habitats and the world’s considerable resources are exploited by remotely operated machines (heavily coated with resistant materials). Only repair crews, who receive hazard pay, venture down to the surface. Towers was once the seat of government for the Towers Cluster for the few years before the area was absorbed into the Imperium. Towers is an amber zone; its customs include a definite sense of honour and a strict duelling code to right slights and insults. Offworlders are warned to be cautious in their interaction with locals. Even visitors are expected to abide by the local code duello.<p>
+			Corfu is interdicted by the Imperium as a quarantine measure. Approximately 40 years ago, a virulent, crippling disease appeared and has since come to affect 5% of the population. No cure for the disease is yet known, although some treatments have been found to relieve some of its effects. The Imperial Scout Service maintains a surveillance post in the system and is working to find a cure. In the interim, access to the world is prohibited.</p>
 
 			Dhian is cursed with a very repressive government which maintains itself in power by virtue of its monopoly on the production of oxygen (as well as most food). All plants are grown hydroponically in government-owned farm complexes and the secrets of successful farming are jealously guarded. The government restricts technology to very low levels in order to safeguard its monopoly.
 
@@ -235,13 +292,11 @@ Lablon is an agricultural world at the very edge of the subsector; its economy i
 Lewis is an interdicted world holding an estate of the Tukera family and is described in the chapter entitled Inselberg.
 Nasemin is a water world. A large, close moon, a high axial tilt and an energetic sun combine to produce giant tides and extreme weather effects. The world’s stormy seas are the home of a very large and nasty predator that is the source of an anti-inflammation drug, which has so far defied economical synthesis. Nasemin’s population is primarily occupied with chasing down these predators (called byssals) and excising the gland in which the drug is concentrated. Each yields about five kilograms of raw drug. The byssal (a 40,000 kilogram swimming carnivore/killer) regenerates the gland in about a year and can be harvested many times.
 The byssal hunters operate in small crews aboard specially constructed submersibles. Much skill is involved in searching for the predator in the ocean depths; the actual capture process is short but dangerous.
-Natoko is an undeveloped world owned by Tukera Lines and described in the chapter In Search of Longer Legs.
-Patinir is an asteroid belt being mined for its resources; it is described in the chapter entitled Patinir Belt.
 Pavanne is an empty world with no population or current development. At one time, a mining company conducted extensive prospecting on the world but found no economically exploitable deposits. A landing beacon is still maintained by the mining company; it marks the main landing location on the world. Other than the beacon, all that remains are a few abandoned mining camps scattered about the world.
 Paya is a small, nearly unpopulated world that is the subsector headquarters for Oberlindes Lines. It is described in the chapter entitled Exotic Encounters.
 Pysadi is a religious dictatorship described in the chapter entitled Pysadian Escapade.
 12
-Reacher supports its economy by exporting simple organic compounds, produced naturally in its exotic atmosphere and gathered more cheaply than they can be synthesised elsewhere. The recent introduction of better synthesis technology into the subsector has reduced Reacher’s market (Aramis and Patinir, once importers, now produce their own organics) and recent incidents of violence against offworlders have led the Travellers’ Aid Society to declare Reacher an amber zone. Rugbird is a world with an extremely insidious atmosphere. The system’s population lives in orbital habitats and the world’s considerable resources are exploited by remotely operated machines (heavily coated with resistant materials). Only repair crews, who receive hazard pay, venture down to the surface. Towers was once the seat of government for the Towers Cluster for the few years before the area was absorbed into the Imperium. Towers is an amber zone; its customs include a definite sense of honour and a strict duelling code to right slights and insults. Offworlders are warned to be cautious in their interaction with locals. Even visitors are expected to abide by the local code duello.
+
 Violante is owned by a consortium of wealthy nobles from Deneb sector, whose ancestors, foreseeing a time when the spinward regions of the Imperium would be heavily populated, decided to invest in an unspoiled paradise. The world was parcelled into estates with strict controls on population and land use. The world population consists of landowners and their families (about 30% of whom live elsewhere for part of the year), supervisory staff, technicians and servants.
 Yebab is the homeworld of a minor race known as Ebokin and is described in the chapter entitled Exotic Encounters.
 Zila, an agricultural world famous for its wines, is described in the chapters entitled First Call at Zila and Zilan Wine.

@@ -9,6 +9,66 @@ function diemenutoggle() {
 	}
 }
 
+function changemenu(kind) {
+	var bar = document.getElementById("leftbar");
+	var names;
+	while(bar.hasChildNodes()) {
+		bar.removeChild(bar.lastChild);
+	}
+	
+	if(kind == "home") {
+		var np = document.createElement("p");
+		var node = document.createTextNode("Home");
+		np.appendChild(node);
+		bar.appendChild(np);
+			
+		makebutton("Player Characters", "gothere('pcs.html')");
+		makebutton("Skills", "gothere('skills.html')");
+		makebutton("Races", "changemenu('race');");
+		makebutton("Subsector D: Aramis", "changemenu('planet')");
+		
+		var np = document.createElement("p");
+		var node = document.createTextNode("Maps");
+		np.appendChild(node);
+		bar.appendChild(np);
+		
+		makebutton("Harrier Class Cargo Vessel", "gothere('ship_map.html')");
+	} else {
+		makebutton("Back", "changemenu('home')");
+		
+		if(kind == "planet") {
+			var np = document.createElement("p");
+			var node = document.createTextNode("Subsector D: Aramis");
+			np.appendChild(node);
+			bar.appendChild(np);
+			
+			names = ["aram", "subsector_map", "aramanx", "aramis", "jesedipere", "natoko", "the_patinir_belt", "other_planets"];
+		}
+		
+		if(kind == "race") {
+			var np = document.createElement("p");
+			var node = document.createTextNode("Races");
+			np.appendChild(node);
+			bar.appendChild(np);
+			
+			names = ["races", "diruk", "golgothan", "human", "orsian", "shirren", "velani", "vesk", "zhodani"];
+		}
+	}
+	
+	for(var i = 1; i < names.length; i++) {
+		makebutton(names[i].replace(/_/g, " "), "gothere('" + names[0] + "/" + names[i] + ".html')");
+	}
+}
+
+function makebutton(name, action) {
+	var bar = document.getElementById("leftbar");
+	var nb = document.createElement("button");
+	var node = document.createTextNode(name);
+	nb.appendChild(node);
+	nb.setAttribute( "onClick", "javascript: " + action + ";");
+	bar.appendChild(nb);
+}
+
 function gothere(srce) {
 	document.getElementById("frame").src = srce;
 }
