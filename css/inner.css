@@ -70,7 +70,7 @@ span {
 	font-weight: bold;
 }
 
-#profile, #planet {
+#profile, #planet, #surface {
 	float: right;
 	margin-left: 2em;
 	max-width: 50%;

@@ -32,7 +32,7 @@ function changemenu(kind) {
 		np.appendChild(node);
 		bar.appendChild(np);
 		
-		makebutton("Harrier Class Cargo Vessel", "gothere('ship_map.html')");
+		makebutton("Harrier Class Cargo Vessel", "gothere('css/maps/ship_diagram.png')");
 	} else {
 		makebutton("Back", "changemenu('home')");
 		
