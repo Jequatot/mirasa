@@ -32,7 +32,7 @@ function changemenu(kind) {
 		np.appendChild(node);
 		bar.appendChild(np);
 		
-		makebutton("Harrier Class Cargo Vessel", "gothere('css/maps/ship_diagram.png')");
+		makebutton("Harrier Class Cargo Vessel", "gothere('ship_map.html')");
 	} else {
 		makebutton("Back", "changemenu('home')");
 		
@@ -42,9 +42,7 @@ function changemenu(kind) {
 			np.appendChild(node);
 			bar.appendChild(np);
 			
-			names = ["aram", "aramanx", "aramis", "jesedipere", "natoko", "the_patinir_belt", "other_planets"];
-			
-			makebutton("subsector map", "gothere('css/maps/subsector_map.png')");
+			names = ["aram", "subsector_map", "aramanx", "aramis", "jesedipere", "natoko", "the_patinir_belt", "other_planets"];
 		}
 		
 		if(kind == "race") {
