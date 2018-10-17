@@ -42,7 +42,7 @@ function changemenu(kind) {
 			np.appendChild(node);
 			bar.appendChild(np);
 			
-			names = ["aram", "subsector_map", "aramanx", "aramis", "jesedipere", "natoko", "the_patinir_belt", "other_planets"];
+			names = ["aram", "subsector_map", "aramanx", "aramis", "jesedipere", "natoko", "the_patinir_belt", "pysadi", "other_planets"];
 		}
 		
 		if(kind == "race") {
