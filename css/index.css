@@ -50,7 +50,7 @@ p {
 }
 
 #leftbar {
-	overflow-y: hidden;
+	overflow-y: scroll;
 	height: inherit;
 	width: inherit;
 	margin: auto;
