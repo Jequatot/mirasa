@@ -51,7 +51,7 @@ function changemenu(kind) {
 			np.appendChild(node);
 			bar.appendChild(np);
 			
-			names = ["races", "diruk", "golgothan", "human", "orsian", "shirren", "velani", "vesk", "zhodani"];
+			names = ["races", "diruk", "golgothan", "human", "orsian", "shirren", "velani", "vesk", "zhodani", "wildlife"];
 		}
 	}
 	
