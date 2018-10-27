@@ -1,6 +1,6 @@
 body {
 	background-color: black;
-	font-size: 3vh;
+	font-size: 2vw;
 	color: white
 }
 
@@ -28,6 +28,10 @@ p {
 #text {
 	height: 88vh;
 	overflow-y: scroll;
+}
+
+.usr {
+	color: green;
 }
 
 input {

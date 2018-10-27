@@ -1,5 +1,6 @@
 const DIRID = 8;
-const ITEMID = 14;
+const ROOMID = 16;
+const ITEMID = 20;
 
 const SYNONYMS = [
 	//commands
@@ -13,16 +14,26 @@ const SYNONYMS = [
 	["go", "move", "walk"],
 	
 	//directions
-	["north"],
-	["south"],
-	["east"],
-	["west"],
-	["up"],
-	["down"],
+	["north", "n"],
+	["south", "s"],
+	["east", "e"],
+	["west", "w"],
+	["up", "u"],
+	["down", "d"],
+	["out", "outside"],
+	["in", "inside"],
+	
+	//rooms
+	["cottage"],
+	["garden path"],
+	["fishing pond"],
+	["winding path"],
 	
 	//items
-	["lamp", "lantern"],
-	["rod", "fishing rod", "frod"]
+	["metal lantern", "lantern", "lamp"],
+	["worn fishing rod", "fishing rod", "rod", "frod", "pole", "fishing pole"],
+	["rosebush", "red rose", "rose", "flower"],
+	["fish", "trout"]
 ];
 
 const COMMDEFS = [
@@ -31,31 +42,35 @@ const COMMDEFS = [
 	"examine surroundings",
 	"add an item to your inventory",
 	"look at the items you've obtained", 
-	"leave an item behind", 
+	"leave an item behind",
 	"make use of an item. how this is done is based on context"
 	];
 
-var ITEMDEFS = [
-	"an old, metal lantern",
-	"a worn fishing rod"
+//[description, exits. item
+var ROOMDEFS = [
+	["dusty and dilapidated, but nonetheless you call it home", [6], 1, [1]],
+	["a lush garden path outside your cottage", [0, 1, 7], 2, [3, 2, 0]],
+	["the edge of a small pond", [0], 3, [1]],
+	["a tall tree looms over you", [1, 2, 4], "#", [1, 5, 4]]
 	];
 	
-const IGNORABLES = ["the", "a", "to"];
+//[description, success message. failure message
+var ITEMDEFS = [
+	["an old, metal lantern", "let there be light!", "there is no need; the area is already lit"],
+	["a worn fishing rod. works best when catching fish", "you catch a fish!", "there are no fish to catch"],
+	["a single beautiful rose puts to shame all the rest", "you eat it i guess", "there is nobody to accept you gift"],
+	["a bright red trout", "you eat it i guess", "you choke"]
+	];
+	
+const IGNORABLES = ["the", "a", "to", "fucking", "on", "with", "for"];
 var inventory = [ 0 ];
 var parsed = [];
-
-class ROOM {
-	constructor(name, desc) {
-		this.name = name;
-		this.desc = desc;
-	}
-}
 
 var loc = "intro";
 var name;
 var state = 0;
 
-var here = new ROOM("YOUR COTTAGE", 1);
+var here = 0;
 
 function enter() {
 	var val = document.getElementById("box").value;
@@ -64,8 +79,9 @@ function enter() {
 	if(val == "") return;
 	
 	print("> " + val);
-	parse(val.split(" "));
-	parse2();
+	if(parse(val.split(" ")) == 1)
+		parse2();
+	print(" ");
 }
 
 function parse(inp) {
@@ -100,7 +116,7 @@ function parse(inp) {
 				}
 				if(j <= IGNORABLES.length) {
 					print("I don't know \"" + inp[i] + "\".");
-					return;
+					return 0;
 				}
 			}
 			count++;
@@ -108,33 +124,57 @@ function parse(inp) {
 	}
 	parsed.push("#");
 	//print(inp + "|" + parsed);
+	return 1;
 }
 
 function parse2() {
 	switch(parsed[0]) {
 		case 0:
+			state = 0;
 			help(parsed[1]);
 			break;
 		case 1:
+			state = 0;
 			clear();
 			break;
 		case 2:
+			state = 0;
 			look(parsed[1]);
 			break;
 		case 3:
+			state = 0;
 			take(parsed[1]);
 			break;
 		case 4:
+			state = 0;
 			print("you have:");
 			for(var i = 0; i < inventory.length; i++) {
-				print(SYNONYMS[ITEMID + inventory[i]][1]);
+				print(SYNONYMS[ITEMID + inventory[i]][1].toUpperCase());
 			}
+			break;
+		case 5:
+			state = 0;
+			drop(parsed[1]);
+			break;
+		case 6:
+			state = 0;
+			use(parsed[1]);
+			break;
+		case 7:
+			state = 0;
+			go(parsed[1]);
 			break;
 		default:
 			if(state == 1)
 				take(parsed[0]);
+			else if(state == 2)
+				drop(parsed[0]);
+			else if(state == 3)
+				use(parsed[0]);
+			else if(state == 4)
+				go(parsed[0]);
 			else
-				print("something went wrong");
+				print("i don't understand");
 	}
 	
 	/*else
@@ -156,6 +196,8 @@ function print(val) {
 	var np = document.createElement("p");
 	var scrn = document.getElementById("text");
 	var node = document.createTextNode(val);
+	if(val[0] == '>')
+		np.appendChild(document.createElement("br"));
 	np.appendChild(node);
 	scrn.appendChild(np);
 	scrn.scrollTo(0, scrn.scrollHeight);
@@ -185,26 +227,85 @@ function clear() {
 
 function look(val) {
 	if(val != "#") {
-		if(val >= ITEMID) {
-			print(ITEMDEFS[val - ITEMID]);
-		} else print("you can't look at that");
+		if(val >= ITEMID && (inventory.includes(val - ITEMID) || val == ITEMID + ROOMDEFS[here][2])) {
+			print(ITEMDEFS[val - ITEMID][0]);
+		} else print("you can't see that right now");
 	} else {
-		print("you are in " + here.name);
-		if(here.desc != "#")
-			print("there is a " + SYNONYMS[ITEMID + here.desc][1]);
+		print("you are in the " + SYNONYMS[ROOMID + here][0].toUpperCase());
+		print(ROOMDEFS[here][0]);
+		print("exits are: ");
+		for(var i = 0; i < ROOMDEFS[here][1].length; i++)
+			print(SYNONYMS[DIRID + ROOMDEFS[here][1][i]][0].toUpperCase());
+		if(ROOMDEFS[here][2] != "#")
+			print("there is a " + SYNONYMS[ITEMID + ROOMDEFS[here][2]][0].toUpperCase());
 	}
 }
 
 function take(val) {
 	if(val != "#") {
-		if(val == ITEMID + here.desc) {
-			print("you got " + SYNONYMS[val][1] + "!");
-			inventory.push(here.desc);
-			here.desc = "#";
-		} else print("there is no " + SYNONYMS[val][1] + " here");
+		if(val == ITEMID + ROOMDEFS[here][2]) {
+			print("you got the " + SYNONYMS[val][1].toUpperCase() + "!");
+			inventory.push(ROOMDEFS[here][2]);
+			ROOMDEFS[here][2] = "#";
+		} else if(val >= ITEMID)
+			print("there is no " + SYNONYMS[val][1].toUpperCase() + " here");
+		else
+			print("please don't take that");
 		state = 0;
 	} else {
 		print("what would you like to take?");
 		state = 1;
+	}
+}
+
+function drop(val) {
+	if(val != "#") {
+		if(inventory.includes(val - ITEMID) && ROOMDEFS[here][2] == "#") {
+			print("you lost the " + SYNONYMS[val][1].toUpperCase() + "!");
+			inventory.splice(inventory.indexOf(val - ITEMID), 1);
+			ROOMDEFS[here][2] = val - ITEMID;
+		} else if(!inventory.includes(val - ITEMID))
+			print("you don't have a " + SYNONYMS[val][1].toUpperCase());
+		else if(ROOMDEFS[here][2] != "#")
+			print("there is a " + SYNONYMS[ROOMDEFS[here][2] + ITEMID][1].toUpperCase() + " in the way");
+		else
+			print("please don't lose that");
+		state = 0;
+	} else {
+		print("what would you like to drop?");
+		state = 2;
+	}
+}
+
+function use(val) {
+	if(val != "#") {
+		if(inventory.includes(val - ITEMID)) {
+			print(ITEMDEFS[val - ITEMID][2]);
+		} else if(!inventory.includes(val - ITEMID) && val >= ITEMID)
+			print("you don't have a " + SYNONYMS[val][1].toUpperCase());
+		else
+			print("you don't know how to use that");
+		state = 0;
+	} else {
+		print("what will you use?");
+		state = 3;
+	}
+}
+
+function go(val) {
+	if(val != "#") {
+		var temp = ROOMDEFS[here][1].indexOf(val - DIRID);
+		if(temp != -1) {
+			print("you go " + SYNONYMS[val][0].toUpperCase());
+			here = ROOMDEFS[here][3][temp];
+			look("#");
+		} else if(!ROOMDEFS.includes(val - DIRID) && val >= DIRID && val < ROOMID)
+			print("there is no exit " + SYNONYMS[val][0].toUpperCase());
+		else
+			print("you can't go that way");
+		state = 0;
+	} else {
+		print("where will you go?");
+		state = 4;
 	}
 }
