@@ -2,6 +2,7 @@ body {
 	background-color: #203020;
 	font-size: 2em;
 	color: white;
+	font-family: lucida console;
 }
 
 p::-webkit-scrollbar {
@@ -28,8 +29,11 @@ p {
 
 #head, #scr, #loc {
 	float: top;
-	background-color: rgb(15,15,15);
+	background-color: #f1f1f1;
+	color: #0e0e0e;
 	border-width: 0px;
+	padding-left: .4em;
+	padding-right: .4em;
 }
 
 #loc {
