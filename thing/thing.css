@@ -1,7 +1,7 @@
 body {
-	background-color: black;
-	font-size: 2vw;
-	color: white
+	background-color: #203020;
+	font-size: 2em;
+	color: white;
 }
 
 p::-webkit-scrollbar {
@@ -18,15 +18,26 @@ p::-webkit-scrollbar-thumb {
 }
 
 p {
+	background-color: black;
 	border-top-style: solid;
-	border-color: green;
+	border-color: #203020;
 	border-width: 1px;
 	padding: 0;
 	margin: 0;
 }
 
+#head, #scr, #loc {
+	float: top;
+	background-color: rgb(15,15,15);
+	border-width: 0px;
+}
+
+#loc {
+	float: right;
+}
+
 #text {
-	height: 88vh;
+	height: 83vh;
 	overflow-y: scroll;
 }
 
@@ -35,12 +46,10 @@ p {
 }
 
 input {
-	float: bottom;
-	height: 10vh;
-	width: 99vw;
+	background-color: black;
+	width: 100%;
 	top: 90vh;
 	font-size: 5vh;
-	position: fixed;
 	background-color: darkslategrey;
 	color: white;
 }

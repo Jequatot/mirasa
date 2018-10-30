@@ -1,6 +1,11 @@
-const DIRID = 8;
-const ROOMID = 16;
-const ITEMID = 20;
+//save, load, score
+
+const DIRID = 10;
+const ROOMID = 18;
+const ITEMID = 23;
+
+const NEWROOMSCORE = 2;
+const NEWITEMSCORE = 5;
 
 const SYNONYMS = [
 	//commands
@@ -12,6 +17,8 @@ const SYNONYMS = [
 	["drop", "put", "place"],
 	["use"],
 	["go", "move", "walk"],
+	["save"],
+	["load"],
 	
 	//directions
 	["north", "n"],
@@ -26,14 +33,16 @@ const SYNONYMS = [
 	//rooms
 	["cottage"],
 	["garden path"],
-	["fishing pond"],
+	["fishing pond", "pond"],
 	["winding path"],
+	["treetop"],
 	
 	//items
 	["metal lantern", "lantern", "lamp"],
-	["worn fishing rod", "fishing rod", "rod", "frod", "pole", "fishing pole"],
+	["worn fishing pole", "fishing rod", "rod", "frod", "pole", "fishing pole"],
 	["rosebush", "red rose", "rose", "flower"],
-	["fish", "trout"]
+	["salmon", "fish"],
+	["branch", "stick"]
 ];
 
 const COMMDEFS = [
@@ -43,26 +52,29 @@ const COMMDEFS = [
 	"add an item to your inventory",
 	"look at the items you've obtained", 
 	"leave an item behind",
-	"make use of an item. how this is done is based on context"
+	"make use of an item. how this is done is based on context",
+	"leave your location and see the world"
 	];
 
-//[description, exits. item
+//[description, exits. item, exit locations, has been entered
 var ROOMDEFS = [
-	["dusty and dilapidated, but nonetheless you call it home", [6], 1, [1]],
-	["a lush garden path outside your cottage", [0, 1, 7], 2, [3, 2, 0]],
-	["the edge of a small pond", [0], 3, [1]],
-	["a tall tree looms over you", [1, 2, 4], "#", [1, 5, 4]]
+	["dusty and dilapidated, but nonetheless you call it home", [6], 1, [1], true],
+	["a lush garden path outside your cottage", [0, 1, 7], 2, [3, 2, 0], false],
+	["the edge of a small pond", [0], "#", [1], false],
+	["a tall tree looms over you", [1, 2, 4], "#", [1, 5, 4], false],
+	["the top of the tall tree", [5], 4, [3], false],
 	];
 	
-//[description, success message. failure message
+//[description, success message. failure message, has been picked up
 var ITEMDEFS = [
-	["an old, metal lantern", "let there be light!", "there is no need; the area is already lit"],
-	["a worn fishing rod. works best when catching fish", "you catch a fish!", "there are no fish to catch"],
-	["a single beautiful rose puts to shame all the rest", "you eat it i guess", "there is nobody to accept you gift"],
-	["a bright red trout", "you eat it i guess", "you choke"]
+	["an old, metal lantern", "let there be light!", "there is no need; the area is already lit", true],
+	["a worn fishing rod. works best when catching fish", "you catch a FISH!", "there are no fish to catch", false],
+	["a single beautiful rose puts to shame all the rest. a perfect gift", "you eat it i guess", "there is nobody to accept your gift", false],
+	["a big red salmon. you personally wouldn't eat it raw, but somebody less discerning might", "you eat it i guess", "you choke", false],
+	["a heavy old withered stick. looks like it could snap under its own weight", "you whack the troll; it is mad", "this isnt implemented yet", false]
 	];
 	
-const IGNORABLES = ["the", "a", "to", "fucking", "on", "with", "for"];
+const IGNORABLES = ["the", "a", "to", "fucking", "on", "with", "for", "small"];
 var inventory = [ 0 ];
 var parsed = [];
 
@@ -71,6 +83,8 @@ var name;
 var state = 0;
 
 var here = 0;
+
+var score = 0;
 
 function enter() {
 	var val = document.getElementById("box").value;
@@ -164,6 +178,9 @@ function parse2() {
 			state = 0;
 			go(parsed[1]);
 			break;
+		case 8:
+		case 9:
+			print("YET TO BE IMPLEMENTED");
 		default:
 			if(state == 1)
 				take(parsed[0]);
@@ -171,11 +188,14 @@ function parse2() {
 				drop(parsed[0]);
 			else if(state == 3)
 				use(parsed[0]);
-			else if(state == 4)
+			else if(state == 4 || (parsed[0] >= DIRID && parsed[0] < ROOMID))
 				go(parsed[0]);
-			else
+			else {
 				print("i don't understand");
+			}
 	}
+	
+	document.getElementById("scr").innerHTML = "SCORE: " + score;
 	
 	/*else
 		if(loc == "intro") {
@@ -247,6 +267,10 @@ function take(val) {
 			print("you got the " + SYNONYMS[val][1].toUpperCase() + "!");
 			inventory.push(ROOMDEFS[here][2]);
 			ROOMDEFS[here][2] = "#";
+			if(!ITEMDEFS[val - ITEMID][3]) {
+				score += NEWITEMSCORE;
+				ITEMDEFS[val - ITEMID][3] = true;
+			}
 		} else if(val >= ITEMID)
 			print("there is no " + SYNONYMS[val][1].toUpperCase() + " here");
 		else
@@ -280,7 +304,16 @@ function drop(val) {
 function use(val) {
 	if(val != "#") {
 		if(inventory.includes(val - ITEMID)) {
-			print(ITEMDEFS[val - ITEMID][2]);
+			if(here == 2 && val == ITEMID + 1) {
+				print(ITEMDEFS[val - ITEMID][1]);
+				inventory.push(3);
+				score += NEWITEMSCORE;
+				ITEMDEFS[val - ITEMID][3] = true;
+				print("but your fishing rod snapped");
+				inventory.splice(inventory.indexOf(1), 1);
+			}
+			else
+				print(ITEMDEFS[val - ITEMID][2]);
 		} else if(!inventory.includes(val - ITEMID) && val >= ITEMID)
 			print("you don't have a " + SYNONYMS[val][1].toUpperCase());
 		else
@@ -298,7 +331,12 @@ function go(val) {
 		if(temp != -1) {
 			print("you go " + SYNONYMS[val][0].toUpperCase());
 			here = ROOMDEFS[here][3][temp];
-			look("#");
+			document.getElementById("loc").innerHTML = SYNONYMS[ROOMID + here][0].toUpperCase();
+			if(!ROOMDEFS[here][4]) {
+				look("#");
+				score += NEWROOMSCORE;
+				ROOMDEFS[here][4] = true;
+			} else print("you are at the " + SYNONYMS[ROOMID + here][0].toUpperCase());
 		} else if(!ROOMDEFS.includes(val - DIRID) && val >= DIRID && val < ROOMID)
 			print("there is no exit " + SYNONYMS[val][0].toUpperCase());
 		else
