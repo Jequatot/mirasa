@@ -95,11 +95,11 @@ var ROOMDEFS = [
 	
 //[description, success message. failure message, has been picked up, can be picked up
 var ITEMDEFS = [
-	["an old, metal lantern", "let there be light!", "there is no need; the area is already lit", true, true],
+	["an old, metal lantern", "let there be light!", "there is no need - the area is already lit", true, true],
 	["a worn fishing rod. works best when catching fish", "you catch a FISH!", "there are no fish to catch", false, true],
 	["a single beautiful rose puts to shame all the rest. a perfect gift", "she eats it i guess", "there is nobody to accept your gift", false, true],
 	["a big red salmon. you personally wouldn't eat it raw, but somebody less discerning might", "the TROLL ravenously takes your gift, and chews on it hungrily", "you better not be trying to eat it", false, true],
-	["a heavy old withered stick. looks like it could snap under its own weight", "you whack the guard unconscious", "please be more careful; you could hurt yourself", false, true],
+	["a heavy old withered stick. looks like it could snap under its own weight", "you whack the guard unconscious", "please be more careful - you could hurt yourself", false, true],
 	["a mean troll. or maybe he's just hungry?", "", "", false, false],
 	["it seems he was just hungry after all", "", "", false, false],
 	["an imposing guard stands ready", "", "", false, false],													//7
@@ -126,12 +126,35 @@ var here = 0;
 var score = 0;
 
 var crowned = false;
+var name = "";
+
+window.onload = init;
+
+function init() {
+	print("enter your NAME to start a new save");
+	print("or type LOAD to bring up a previous save");
+	state = 17;
+}
 
 function enter() {
 	var val = document.getElementById("box").value;
 	document.getElementById("box").value = "";
 	
 	if(val == "") return;
+	
+	if(state == 17 && !val.toLowerCase().includes("help")) {
+		if(val.toLowerCase() == "load") {
+			if(!load())
+				return;
+			print("welcome back " + name);
+		} else {
+			name = val;
+			print("hello " + name);
+		}
+		look("#");
+		state = 0;
+		return;
+	}
 	
 	print("> " + val);
 	if(parse(val.split(" ")) == 1)
@@ -203,9 +226,7 @@ function parse2() {
 		case 4:
 			state = 0;
 			print("you have:");
-			print(inventory);
 			for(var i = 0; i < inventory.length; i++) {
-				print("|" + inventory[i] + "|");
 				print(SYNONYMS[ITEMID + inventory[i]][1].toUpperCase());
 			}
 			break;
@@ -222,10 +243,10 @@ function parse2() {
 			go(parsed[1]);
 			break;
 		case 8:
-			document.cookie = inventory;
+			save();
 			break;
 		case 9:
-			inventory = decodeURIComponent(document.cookie).split(",");
+			load();
 			break;
 		case 10:
 			if(here == 12)
@@ -451,4 +472,35 @@ function go(val) {
 		print("where will you go?");
 		state = 4;
 	}
+}
+
+function save() {
+	deleteAllCookies();
+	document.cookie =  here + '##' + JSON.stringify(inventory) + '##' + /*JSON.stringify(ITEMDEFS)*/"" + '##' + JSON.stringify(ROOMDEFS) + '##' + SYNONYMS[ROOMID + here][0] + '##' + name;
+	print("Saved!");
+}
+
+function load() {
+	if(document.cookie.length < 2) {
+		print("no save found");
+		return false;
+	}
+	inventory = (document.cookie).split('##');
+	here = parseInt(inventory[0]);
+	//ITEMDEFS = JSON.parse(inventory[2]);
+	ROOMDEFS = JSON.parse(inventory[3]);
+	name = inventory[5];
+	inventory =  JSON.parse(inventory[1]);
+	return true;
+}
+
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
 }

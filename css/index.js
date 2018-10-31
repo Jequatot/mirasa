@@ -24,8 +24,8 @@ function changemenu(kind) {
 			
 		makebutton("Player Characters", "gothere('pcs.html')");
 		makebutton("Skills", "gothere('skills.html')");
-		makebutton("Races", "changemenu('race');");
 		makebutton("Subsector D: Aramis", "changemenu('planet')");
+		makebutton("Races", "changemenu('race');");
 		
 		var np = document.createElement("p");
 		var node = document.createTextNode("Maps");
