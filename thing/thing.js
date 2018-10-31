@@ -14,11 +14,11 @@ const SYNONYMS = [
 	["look", "l", "examine", "consider"],
 	["take", "grab", "get", "acquire", "pick up"],
 	["inventory", "i", "items"],
-	["drop", "put", "place"],
+	["drop", "place", "put down", "put"],
 	["use", "give"],
 	["go", "move", "walk"],
-	["save"],
-	["load"],
+	["save", "sav"],
+	["load", "lod"],
 	["sit", "sit down"],
 	
 	//directions
@@ -49,7 +49,7 @@ const SYNONYMS = [
 	//items
 	["metal lantern", "lantern", "lamp", "light"],										//0
 	["worn fishing pole", "fishing rod", "rod", "frod", "pole", "fishing pole"],//1
-	["rosebush", "red rose", "rose", "flower"],									//2
+	["rosebush", "red rose", "rose", "flower", "bush"],									//2
 	["salmon", "fish"],															//3
 	["branch", "stick"],														//4
 	["mean troll blocking the gate", "mean troll", "troll"],					//5
@@ -97,7 +97,7 @@ var ROOMDEFS = [
 var ITEMDEFS = [
 	["an old, metal lantern", "let there be light!", "there is no need - the area is already lit", true, true],
 	["a worn fishing rod. works best when catching fish", "you catch a FISH!", "there are no fish to catch", false, true],
-	["a single beautiful rose puts to shame all the rest. a perfect gift", "she eats it i guess", "there is nobody to accept your gift", false, true],
+	["a single beautiful ROSE puts to shame all the rest. a perfect gift", "she eats it i guess", "there is nobody to accept your gift", false, true],
 	["a big red salmon. you personally wouldn't eat it raw, but somebody less discerning might", "the TROLL ravenously takes your gift, and chews on it hungrily", "you better not be trying to eat it", false, true],
 	["a heavy old withered stick. looks like it could snap under its own weight", "you whack the guard unconscious", "please be more careful - you could hurt yourself", false, true],
 	["a mean troll. or maybe he's just hungry?", "", "", false, false],
@@ -142,6 +142,8 @@ function enter() {
 	
 	if(val == "") return;
 	
+	print("> " + val);
+	
 	if(state == 17 && !val.toLowerCase().includes("help")) {
 		if(val.toLowerCase() == "load") {
 			if(!load())
@@ -156,7 +158,6 @@ function enter() {
 		return;
 	}
 	
-	print("> " + val);
 	if(parse(val.split(" ")) == 1)
 		parse2();
 	print(" ");
@@ -476,7 +477,7 @@ function go(val) {
 
 function save() {
 	deleteAllCookies();
-	document.cookie =  here + '##' + JSON.stringify(inventory) + '##' + /*JSON.stringify(ITEMDEFS)*/"" + '##' + JSON.stringify(ROOMDEFS) + '##' + SYNONYMS[ROOMID + here][0] + '##' + name;
+	document.cookie =  here + '##' + JSON.stringify(inventory) + '##' + JSON.stringify(ITEMDEFS) + '##' + JSON.stringify(ROOMDEFS) + '##' + SYNONYMS[ROOMID + here][0] + '##' + name + '##' + score;
 	print("Saved!");
 }
 
@@ -487,9 +488,10 @@ function load() {
 	}
 	inventory = (document.cookie).split('##');
 	here = parseInt(inventory[0]);
-	//ITEMDEFS = JSON.parse(inventory[2]);
+	ITEMDEFS = JSON.parse(inventory[2]);
 	ROOMDEFS = JSON.parse(inventory[3]);
 	name = inventory[5];
+	score = parseInt(inventory[6]);
 	inventory =  JSON.parse(inventory[1]);
 	return true;
 }
@@ -504,3 +506,24 @@ function deleteAllCookies() {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 }
+/*
+function encode(val) {
+	val = val.toLowerCase();
+	var result = "";
+	for(var i = 0; i < val.length; i++) {
+		if(val[i].charCodeAt(0) > 96 && val[i].charCodeAt(0) < 123)
+			result += ((val[i].charCodeAt(0) + i - 97)%26).toString(26);
+		else result += val[i];
+	}
+	return result;
+}
+
+function decode(val) {
+	var result = "";
+	for(var i = 0; i < val.length; i++) {
+		if(val[i].charCodeAt(0) > 96 && val[i].charCodeAt(0) < 123)
+			result += ((val[i].charCodeAt(0) + i - 97)%26).toString(26);
+		else result += val[i];
+	}
+	return result;
+} 
