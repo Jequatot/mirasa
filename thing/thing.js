@@ -526,4 +526,4 @@ function decode(val) {
 		else result += val[i];
 	}
 	return result;
-} 
+} */
