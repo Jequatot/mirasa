@@ -1,6 +1,10 @@
-//save, load, score
+//look after load
+//containers
+//room object queues
+//use on
+//talk
 
-const DIRID = 11;
+const DIRID = 12;
 const ROOMID = DIRID + 8;
 const ITEMID = ROOMID + 13;
 
@@ -20,6 +24,7 @@ const SYNONYMS = [
 	["save", "sav"],
 	["load", "lod"],
 	["sit", "sit down"],
+	["talk"],
 	
 	//directions
 	["north", "n"],
@@ -58,7 +63,7 @@ const SYNONYMS = [
 	["rusted key", "key", "rusty key"],											//8
 	["darkness blocking your way down", "darkness", "dark"],					//9
 	["golden crown", "crown"],													//10
-	["princess"],																//11
+	["princess", "her highness"],																//11
 	["strange candle", "candle"],												//12
 	["golden throne", "throne"],												//13
 	["ghost", "phantom"],
@@ -73,7 +78,8 @@ const COMMDEFS = [
 	"look at the items you've obtained", 
 	"leave an item behind",
 	"make use of an item. how this is done is based on context",
-	"leave your location and see the world"
+	"leave your location and see the world. you can also move by just typing " + 
+	"the direction you wish to go (> SOUTH), or sometimes even just the first letter (> S)"
 	];
 
 //[description, exits. item, exit locations, has been entered
@@ -106,14 +112,14 @@ var ITEMDEFS = [
 	["a key which looks like it hasn't seen use in a while", "the door opened", "there is no door to unlock", false, true],
 	["you can't go down the stairs like this", "", "", false, false],					//9
 	["fit for a king", "you are crowned", "to place the crown upon your own head would be pretty conceited, wouldn't it?", false, true],
-	["princess", "", "", false, false],																//11
+	["princess", "", "*SLAP* I am not that kind of woman!", false, false],																//11
 	["strange, acrid-smelling", "the ghost flees", "an odd odor is emitted", false, true],
 	["ornate", "", "", false, false],												//13
 	["ghost with bony fingers and a golden crown", "", "", false, false],
 	["locked door", "", "", false, false]
 	];
 	
-const IGNORABLES = ["the", "a", "to", "fucking", "on", "with", "for", "small"];
+const IGNORABLES = ["the", "a", "to", "fucking", "on", "with", "for", "small", "about"];
 var inventory = [ 0 ];
 var parsed = [];
 
@@ -160,7 +166,6 @@ function enter() {
 	
 	if(parse(val.split(" ")) == 1)
 		parse2();
-	print(" ");
 }
 
 function parse(inp) {
@@ -247,7 +252,8 @@ function parse2() {
 			save();
 			break;
 		case 9:
-			load();
+			if(load())
+				look('#');
 			break;
 		case 10:
 			if(here == 12)
@@ -256,6 +262,11 @@ function parse2() {
 					score += 5;
 				} else print("only the crowned may sit here");
 			else print("nothing here looks made-for-sitting...");
+			break;
+		case 11:
+			if(parsed[1] == '#')
+				talk('#', '#');
+			else talk(parsed[1], parsed[2]);
 			break;
 		default:
 			if(state == 1)
@@ -266,6 +277,9 @@ function parse2() {
 				use(parsed[0]);
 			else if(state == 4 || (parsed[0] >= DIRID && parsed[0] < ROOMID))
 				go(parsed[0]);
+			else if(state == 5) {
+				talk(parsed[0], parsed[1]);
+			}
 			else {
 				print("i don't understand");
 			}
@@ -291,10 +305,8 @@ function parse2() {
 function print(val) {
 	var np = document.createElement("p");
 	var scrn = document.getElementById("text");
-	var node = document.createTextNode(val);
-	if(val[0] == '>')
-		np.appendChild(document.createElement("br"));
-	np.appendChild(node);
+	if(val[0] == '>') np.innerHTML = '<br>';
+	np.innerHTML += val;
 	scrn.appendChild(np);
 	scrn.scrollTo(0, scrn.scrollHeight);
 }
@@ -347,9 +359,12 @@ function take(val) {
 				score += NEWITEMSCORE;
 				ITEMDEFS[val - ITEMID][3] = true;
 			}
-		} else if(val == ITEMID + ROOMDEFS[here][2] && !ITEMDEFS[ROOMDEFS[here][2]][4])
-			print("the " + SYNONYMS[val][1].toUpperCase() + " is too big to take");
-		else if(val >= ITEMID)
+		} else if(val == ITEMID + ROOMDEFS[here][2] && !ITEMDEFS[ROOMDEFS[here][2]][4]) {
+			if(val - ITEMID == 11)
+				print(ITEMDEFS[val - ITEMID][2]);
+			else
+				print("the " + SYNONYMS[val][1].toUpperCase() + " is too big to take");
+		} else if(val >= ITEMID)
 			print("there is no " + SYNONYMS[val][1].toUpperCase() + " here");
 		else
 			print("please don't take that");
@@ -441,9 +456,12 @@ function use(val) {
 			}
 			else
 				print(ITEMDEFS[val - ITEMID][2]);
-		} else if(!inventory.includes(val - ITEMID) && val >= ITEMID)
-			print("you don't have a " + SYNONYMS[val][1].toUpperCase());
-		else
+		} else if(!inventory.includes(val - ITEMID) && val >= ITEMID) {
+			if(here == 10 && val - ITEMID == 11)
+				print(ITEMDEFS[val - ITEMID][2]);
+			else
+				print("you don't have a " + SYNONYMS[val][1].toUpperCase());
+		} else
 			print("you don't know how to use that");
 		state = 0;
 	} else {
@@ -496,6 +514,22 @@ function load() {
 	return true;
 }
 
+function talk(to, about) {
+	if(to != '#') {
+		if(to == ITEMID + ROOMDEFS[here][2]){
+			if(to == 5 + ITEMID) print('he only glares at you hungrily');
+			else if(to == 6 + ITEMID) print('best not disturb him');
+			else if(to == 7 + ITEMID) print('"show me your skill with a weapon!"');
+			else if(to == 11 + ITEMID) print('"only the CROWNED may sit on the throne"');
+			else if(to == 14 + ITEMID) print('he moans ghostily');
+			else print("they dont seem up for conversation");
+		} else print("they can't hear you right now");
+	} else {
+		print("who are you talking to?");
+		state = 5;
+	}
+}
+
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
@@ -503,7 +537,6 @@ function deleteAllCookies() {
         var cookie = cookies[i];
         var eqPos = cookie.indexOf("=");
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 }
 /*

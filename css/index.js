@@ -1,3 +1,6 @@
+//containers
+//room object arrays
+
 var h;
 
 function diemenutoggle() {
