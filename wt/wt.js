@@ -26,6 +26,20 @@ const ITEMID = ROOMID + 13;
 const NEWROOMSCORE = 2;
 const NEWITEMSCORE = 5;
 
+const COMMAND = [
+	[	'help',		// 00
+		['h', 'info', 'hint', 'about'],
+		'gives a list of basic commands. learn more about a command by typing "HELP &ltCOMMAND&gt"'
+	]
+	[	'clear',	//01
+		['c', 'cl', 'clear screen', 'wipe' 'wipe screen'],
+		"remove all previous commands. affects nothing within the game, it's just nice to clear your head sometimes"
+	]
+	[	'look',
+		['l', 'examine', 'consider', '']
+	]
+]
+
 const SYNONYMS = [
 	//commands
 	["help", "h"],
