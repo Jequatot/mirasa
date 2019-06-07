@@ -94,24 +94,28 @@ const COMMDEFS = [
 	"leave an item behind",
 	"make use of an item. how this is done is based on context",
 	"leave your location and see the world. you can also move by just typing " + 
-	"the direction you wish to go (> SOUTH), or sometimes even just the first letter (> S)"
+	"the direction you wish to go (> SOUTH), or sometimes even just the first letter (> S)",
+	"save your progress using cookies. when you reload the page, it will remember your name",
+	"load a previous save, only possible if you have saved",
+	"sit down on some sittable object",
+	"make conversation. use with another object, ie 'talk princess'"
 	];
 
 //[description, exits. item, exit locations, has been entered
 var ROOMDEFS = [
 	["dusty and dilapidated, but nonetheless you call it home", [6], 1, [1], true],	//0
 	["a lush garden path outside your cottage", [0, 1, 7], 2, [3, 2, 0], false],	//1
-	["the edge of a small pond", [0], "#", [1], false],								//2
-	["a tall tree looms over you", [1, 2, 4], "#", [1, 5, 4], false],				//3
-	["the top of the tall tree", [5], 4, [3], false],								//4
+	["the edge of a small pond; there are plenty of fish jumping about", [0], "#", [1], false],								//2
+	["a tall tree looms over you - looks climbable", [1, 2, 4], "#", [1, 5, 4], false],				//3
+	["the top of the tall tree - you can see your home from here!", [5], 4, [3], false],								//4
 	["a drawbridge leading to the castle", [3], 5, [3, 6], false],					//5
-	["castle courtyard", [3, 4, 5], 7, [5, 9, 7, 11], false],							//6
+	["plenty of flowers line the grounds", [3, 4, 5], 7, [5, 9, 7, 11], false],							//6
 	["dark stairs leading down to the dungeon", [4], 9, [6, 8], false],				//7
-	["dungeon", [4], 14, [7], false],							//8
-	["tower stairs", [5], 15, [6, 10], false],							//9
-	["tower", [5], 11, [9], false],
-	["great feasting hall", [2, 3], 12, [12, 6], false],
-	["throne room", [3], 13, [11]]
+	["dark and eerie, metal and dank", [4], 14, [7], false],							//8
+	["what might be past this door?", [5], 15, [6, 10], false],							//9
+	["sunlight pours over the princess' bed as she stands before you", [5], 11, [9], false],
+	["spoiled food lays across the table. nobody has been here in a while", [2, 3], 12, [12, 6], false],
+	["a crimson carpet leads a path to the golden throne", [3], 13, [11]]
 	];
 	
 //[description, success message. failure message, has been picked up, can be picked up
@@ -126,12 +130,12 @@ var ITEMDEFS = [
 	["an imposing guard stands ready", "", "", false, false],													//7
 	["a key which looks like it hasn't seen use in a while", "the door opened", "there is no door to unlock", false, true],
 	["you can't go down the stairs like this", "", "", false, false],					//9
-	["fit for a king", "you are crowned", "to place the crown upon your own head would be pretty conceited, wouldn't it?", false, true],
-	["princess", "", "*SLAP* I am not that kind of woman!", false, false],																//11
+	["fit for a monarch", "\"you are crowned. go take thy throne, monarch\"", "to place the crown upon your own head would be pretty conceited, wouldn't it?", false, true],
+	["\"Were someone to find the crown, they could be our new monarch\"", "", "\"*SLAP* I am not that kind of woman!\"", false, false],																//11
 	["strange, acrid-smelling", "the ghost flees", "an odd odor is emitted", false, true],
-	["ornate", "", "", false, false],												//13
+	["fit for a monarch", "", "", false, false],												//13
 	["ghost with bony fingers and a golden crown", "", "", false, false],
-	["locked door", "", "", false, false]
+	["a key would be sure to do the trick", "", "", false, false]
 	];
 	
 const IGNORABLES = ["the", "a", "to", "fucking", "on", "with", "for", "small", "about"];
@@ -196,10 +200,15 @@ function parse(inp) {
 						}
 					} else if(inp.length > i){
 						temp = SYNONYMS[j][k].split(" ");
-						if(inp[i].toLowerCase() == temp[0] &&
-						inp[i + 1].toLowerCase() == temp[1]) {
-							parsed.push(j);
-							i++;
+						try{
+							if(inp[i].toLowerCase() == temp[0] &&
+							inp[i + 1].toLowerCase() == temp[1]) {
+								parsed.push(j);
+								i++;
+							}
+						}
+						catch(e){
+							
 						}
 					}
 					if(parsed.length > count) break;
@@ -227,6 +236,7 @@ function parse(inp) {
 }
 
 function parse2() {
+	console.log(parsed)
 	switch(parsed[0]) {
 		case 0:
 			state = 0;
@@ -535,7 +545,20 @@ function talk(to, about) {
 			if(to == 5 + ITEMID) print('he only glares at you hungrily');
 			else if(to == 6 + ITEMID) print('best not disturb him');
 			else if(to == 7 + ITEMID) print('"show me your skill with a weapon!"');
-			else if(to == 11 + ITEMID) print('"only the CROWNED may sit on the throne"');
+			else if(to == 11 + ITEMID) {
+				if(Math.floor(Math.random()*3) == 0)
+					print('"only the CROWNED may sit on the throne"');
+				else if(Math.floor(Math.random()*3) == 0)
+					print('"my father always feared that old candle"');
+				else if(Math.floor(Math.random()*3) == 0)
+					print('"ghosts are weak to strange smells"');
+				else if(Math.floor(Math.random()*3) == 0)
+					print('"have you met my father?"');
+				else if(Math.floor(Math.random()*3) == 0)
+					print('"do you watch Game of Thrones?"');
+				else
+					print('"hrm"');
+			}
 			else if(to == 14 + ITEMID) print('he moans ghostily');
 			else print("they dont seem up for conversation");
 		} else print("they can't hear you right now");

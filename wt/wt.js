@@ -29,14 +29,51 @@ const NEWITEMSCORE = 5;
 const COMMAND = [
 	[	'help',		// 00
 		['h', 'info', 'hint', 'about'],
-		'gives a list of basic commands. learn more about a command by typing "HELP &ltCOMMAND&gt"'
+		'gives a list of basic commands. learn more about a particular command by typing "HELP &ltCOMMAND&gt"'
 	]
 	[	'clear',	//01
 		['c', 'cl', 'clear screen', 'wipe' 'wipe screen'],
 		"remove all previous commands. affects nothing within the game, it's just nice to clear your head sometimes"
 	]
-	[	'look',
-		['l', 'examine', 'consider', '']
+	[	'look',		//02
+		['l', 'examine', 'consider'],
+		'examine surroundings, or examine a specific thing by typing "LOOK &ltTHING&gt"'
+	]
+	[	'take',		//03
+		['grab', 'get', 'acquire', 'pick up'],
+		'add an item to your inventory. items must be of SMALL size or smaller and TANGIBLE to do this. new items give a +2 to SCORE. enter "TAKE ALL" to try to take any takeable item in the current area'
+	]
+	[	'inventory',//04
+		['i', 'items', 'bag', 'backpack'],
+		'list all the items in your inventory. you have no limit to the number of the things in your inventory'
+	]
+	[	'drop',		//05
+		['put', 'place', 'put down', 'place'],
+		'take an item from your inventory and leave it behind, usually on the ground'
+	]
+	[	'use',		//06
+		['wield'],
+		'context sensitive: type "USE &ltITEM&gt" to use an item from your inventory or "USE &ltITEM&gt ON &ltOTHER ITEM&gt" to use on another item'
+	]
+	[	'go',		//07
+		['move', 'walk'],
+		'go through an exit from the current area to another area. you can also move just by typing the direction you wixh to go ("SOUTH") or sometimes just the first letter ("S")'
+	]
+	[	'save',		//08
+		['sav'],
+		'save the game using cookies'
+	]
+	[	'load',		//09
+		['lod'],
+		'load the game using cookies'
+	]
+	[	'sit',		//10
+		['sit down'],
+		'take a well-earned seat. be careful what you sit on'
+	]
+	[	'talk'		//11
+		['speak', 'converse'],
+		'talk to a character with "TALK &ltCHARACTER&gt" or talk to a character about a subject with "TALK &ltCHARACTER&gt &ltSUBJECT&gt"'
 	]
 ]
 
