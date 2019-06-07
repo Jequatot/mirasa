@@ -156,6 +156,7 @@ var name = "";
 window.onload = init;
 
 function init() {
+	print("WELCOME TO ACTION CASTLE V1.1");
 	print("enter your NAME to start a new save");
 	print("or type LOAD to bring up a previous save");
 	state = 17;
