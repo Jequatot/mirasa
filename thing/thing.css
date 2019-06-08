@@ -39,11 +39,12 @@ p {
 	background-color: #f1f1f1;
 	color: #0e0e0e;
 	border-width: 0px;
+	padding-top: .2em;
+	padding-bottom: .2em;
 	padding-left: .4em;
 	padding-right: .4em;
 	text-transform: uppercase;
 	z-index: 1;
-	height: 1.2em;
 }
 
 #loc {
