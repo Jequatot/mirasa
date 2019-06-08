@@ -237,7 +237,6 @@ function parse(inp) {
 }
 
 function parse2() {
-	console.log(parsed)
 	switch(parsed[0]) {
 		case 0:
 			state = 0;
