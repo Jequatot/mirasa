@@ -2,40 +2,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<!-- the name of the page -->
-		<title>Diaspora</title>
+		<title>THE DOORS OF ILLUNE</title>
 		<!-- link rhw css stylesheet -->
-		<link rel="stylesheet" href="css/index.css">
-		<script src="css/index.js"></script>
+		<link rel="shortcut icon" href="content/favicon.ico" />
+		<link rel="stylesheet" href="content/index.css">
+		<script src="content/index_menu.js"></script>
+		<script src="content/index.js"></script>
 
 	</head>
-	<body>
-		<button id="diebutton" onclick="diemenutoggle()">Dice</button>
-		<div id="diedropdown">
-			<button id="roller" onclick="roll();">Roll!</button>
-			<input type="text" id="dieout1"> +
-			<input type="text" id="dieout2"> +
-			<input type="text" id="dieout3"> +
-			<input type="text" id="dieout4"> +
-			Modifier:
-			<input type="text" id="diemod"> =
-			<input type="text" id="dieoutf">
+	<body onload="changemenu('home')">
+		<div class="div_header">
+			<h1 class="h1_pagetitle"><span class="span_pagetitle">&nbsp;THE DOORS OF ILLUNE</span> a Shadow of the Demon Lord game</h1>
 		</div>
-		<h1 id="pagetitle"> the spinward marches </h1>
-		<div id="inner">
-			<section id="sidebar">
-				<iframe id="frame" src="pcs.html"></iframe>
+		<div class="div_inner">
+			<section class="section_main">
+				<iframe id="frame" class="iframe_view" src="views/overview.html"></iframe>
 			</section>
 			<section id="leftbar">
-				<p>Home</p>
-				<button onclick="gothere('pcs.html')">Player Characters</button>
-				<button onclick="gothere('skills.html')">Skills</button>
-				<button onclick="changemenu('race')">Races</button>
-				<button onclick="changemenu('planet')">Subsector D: Aramis</button>
-				<p>Maps</p>
-				<button onclick="gothere('ship_map.html')">Harrier Class Cargo Vessel</button>
 
 			</section>
-		<!-- section for assignments -->
 		</div>
+		
+		<div id="music_dropdown" class="style_dropdown"></div>
+		
+		<div id="die_dropdown" class="style_dropdown"></div>
 	</body>
 </html>

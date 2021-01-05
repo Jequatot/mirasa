@@ -1,0 +1,22 @@
+body {
+	color: white;
+}
+
+a {
+	color: blue;
+}
+
+div#floater {
+	background: black;
+	width: 50%;
+	top: 0;
+	pointer-events: none;
+}
+
+td {
+	  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
