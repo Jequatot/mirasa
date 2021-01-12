@@ -31,6 +31,14 @@ var menu_content = [
 				"action" : "gothere('views/spells/index.html')"
 			},
 			{
+				"title" : "Equipment",
+				"action" : "gothere('views/equipment.html')"
+			},
+			{
+				"title" : "Gear",
+				"action" : "gothere('views/gear.html')"
+			},
+			{
 				"title" : "DATE",
 				"action" : "NODE"
 			}

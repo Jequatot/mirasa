@@ -17,6 +17,7 @@ h1 {
 	font-style: normal;
 	border: none;
 	text-indent: .5em;
+	font-size: 1.2em;
 	margin: 0;
 	white-space:nowrap;
 }
@@ -56,6 +57,7 @@ body {
 	color: white;
 	background-color: #040404;
 	overflow: hidden;
+	font-size: 20px;
 }
 
 .padded {
@@ -65,7 +67,7 @@ body {
 }
 
 .div_header {
-	height: 3em;
+	height: 2em;
 	background-image: URL("hosizora2.gif");
 	border-bottom: 1px solid var(--primary);
 	color: #202020;
@@ -86,13 +88,16 @@ body {
 	vertical-align: top;
 }
 
+.padded > p.p_indent {
+	text-indent: 1em;
+}
+
 p, ul {
 	margin: 0;
 	max-width: 40em;
 	margin-bottom: 1em;
 	line-height: 1.1em;
 	vertical-align: top;
-	font-size: 20px;
 }
 
 .p_menunode {
@@ -225,14 +230,29 @@ button:hover {
 	animation-name: rainbow;
 }
 
-table, tr, td {
+table, tr, thss, td {
+	font-size: 1em;
 	text-align: center;
 	border: 1px solid grey;
 	border-collapse: collapse;
+	padding: .5em;
+	padding-left: 1;
+	padding-right: 1;
 }
 
+th {
+	background: #000;
+}
+
+tr {
+	background: #222;
+}
+
+tr:nth-child(odd) {
+	background: #333;
+}
 tr:hover {
-	background: #111;
+	background: #444;
 }
 
 @keyframes button_hover {
