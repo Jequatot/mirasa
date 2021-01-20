@@ -92,12 +92,16 @@ body {
 	text-indent: 1em;
 }
 
-p, ul {
+p, ul, ol {
 	margin: 0;
 	max-width: 40em;
 	margin-bottom: 1em;
 	line-height: 1.1em;
 	vertical-align: top;
+}
+
+li {
+	margin-bottom: .5em;
 }
 
 .p_menunode {
@@ -153,7 +157,7 @@ b {
 
 .span_subtitle {
 	font-weight: normal;
-    color: grey;
+    color: #888;
     font-style: italic;
 }
 
@@ -230,7 +234,7 @@ button:hover {
 	animation-name: rainbow;
 }
 
-table, tr, thss, td {
+table, tr, thss, td, th {
 	font-size: 1em;
 	text-align: center;
 	border: 1px solid grey;

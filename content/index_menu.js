@@ -3,31 +3,35 @@ var menu_content = [
 		"name" : "home",
 		"content" : [
 			{
-				"title" : "<span>Home</span>",
-				"action" : "NODE"
-			},
-			{
 				"title" : "<span>Overview</span>",
 				"action" : "gothere('views/home/overview.html')"
+			},
+			{
+				"title" : "<span>Character Creation</span>",
+				"action" : "NODE"
 			},
 			{
 				"title" : "Ancestries",
 				"action" : "changemenu('ancestries')"
 			},
 			{
+				"title" : "Novice Paths",
+				"action" : "changemenu('npaths')"
+			},
+			{
 				"title" : "Professions & Languages",
 				"action" : "gothere('views/professions.html')"
+			},
+			{
+				"title" : "<span>Rules</span>",
+				"action" : "NODE"
 			},
 			{
 				"title" : "Combat",
 				"action" : "changemenu('combat')"
 			},
 			{
-				"title" : "Novice Paths",
-				"action" : "changemenu('npaths')"
-			},
-			{
-				"title" : "Spells",
+				"title" : "Spell List",
 				"action" : "gothere('views/spells/index.html')"
 			},
 			{
@@ -37,6 +41,18 @@ var menu_content = [
 			{
 				"title" : "Gear",
 				"action" : "gothere('views/gear.html')"
+			},
+			{
+				"title" : "<span>A Land in Shadow</span>",
+				"action" : "NODE"
+			},
+			{
+				"title" : "The Archipelago",
+				"action" : "gothere('views/archipelago.html')"
+			},
+			{
+				"title" : "Gods of Ikseira",
+				"action" : "gothere('views/gods.html')"
 			},
 			{
 				"title" : "DATE",
@@ -105,8 +121,20 @@ var menu_content = [
 				"action" : "gothere('views/combat/attacks.html')"
 			},
 			{
-				"title" : "Fortune & Fate",
+				"title" : "Spellcasting",
+				"action" : "gothere('views/combat/spellcasting.html')"
+			},
+			{
+				"title" : "Fortune Points",
 				"action" : "gothere('views/combat/fortune.html')"
+			},
+			{
+				"title" : "Fate Rolls",
+				"action" : "gothere('views/combat/fate.html')"
+			},
+			{
+				"title" : "Resting",
+				"action" : "gothere('views/combat/resting.html')"
 			},
 			{
 				"title" : "Afflictions",
