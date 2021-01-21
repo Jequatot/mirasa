@@ -159,7 +159,7 @@ var menu_content = [
 			},
 			{
 				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/paths/overview.html')"
+				"action" : "gothere('views/npaths/overview.html')"
 			},
 			{
 				"title" : "Magician",
