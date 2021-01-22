@@ -92,7 +92,7 @@ body {
 	text-indent: 1em;
 }
 
-p, ul, ol {
+p, ul, ol, table {
 	margin: 0;
 	max-width: 40em;
 	margin-bottom: 1em;

@@ -149,6 +149,10 @@ var menu_content = [
 				"action" : "gothere('views/combat/afflictions.html')"
 			},
 			{
+				"title" : "Insanity & Corruption",
+				"action" : "gothere('views/combat/insanity.html')"
+			},
+			{
 				"title" : "DATE",
 				"action" : "NODE"
 			}
