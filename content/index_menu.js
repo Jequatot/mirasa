@@ -19,6 +19,14 @@ var menu_content = [
 				"action" : "changemenu('npaths')"
 			},
 			{
+				"title" : "Expert Paths",
+				"action" : "gothere('views/epaths/overview.html')"
+			},
+			{
+				"title" : "Master Paths",
+				"action" : "gothere('views/mpaths/overview.html')"
+			},
+			{
 				"title" : "Professions & Languages",
 				"action" : "gothere('views/professions.html')"
 			},

@@ -56,7 +56,7 @@ function changemenu(new_menu) {
 			var np = document.createElement("p");
 			if(m.content[i].title == "DATE") {
 				var d = new Date(document.lastModified);
-				np.innerHTML = d.getMonth() + "." + d.getDate() + "." + (parseInt(d.getYear()) - 100);
+				np.innerHTML = d.getMonth()+1 + "." + d.getDate() + "." + (parseInt(d.getYear()) - 100);
 				//np.innerHTML = d.toDateString();
 			} else
 				np.innerHTML = m.content[i].title;
