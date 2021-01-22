@@ -133,24 +133,24 @@ var menu_content = [
 				"action" : "gothere('views/combat/spellcasting.html')"
 			},
 			{
-				"title" : "Fortune Points",
-				"action" : "gothere('views/combat/fortune.html')"
+				"title" : "Afflictions",
+				"action" : "gothere('views/combat/afflictions.html')"
 			},
 			{
 				"title" : "Fate Rolls",
 				"action" : "gothere('views/combat/fate.html')"
 			},
 			{
-				"title" : "Resting",
-				"action" : "gothere('views/combat/resting.html')"
-			},
-			{
-				"title" : "Afflictions",
-				"action" : "gothere('views/combat/afflictions.html')"
+				"title" : "Fortune Points",
+				"action" : "gothere('views/combat/fortune.html')"
 			},
 			{
 				"title" : "Insanity & Corruption",
 				"action" : "gothere('views/combat/insanity.html')"
+			},
+			{
+				"title" : "Resting",
+				"action" : "gothere('views/combat/resting.html')"
 			},
 			{
 				"title" : "DATE",
