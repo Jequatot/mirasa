@@ -76,7 +76,7 @@ var menu_content = [
 				"action" : "changemenu('home')"
 			},
 			{
-				"title" : "Ancestries",
+				"title" : "<span>Ancestries</span>",
 				"action" : "NODE"
 			},
 			{
@@ -117,7 +117,7 @@ var menu_content = [
 				"action" : "changemenu('home')"
 			},
 			{
-				"title" : "combat",
+				"title" : "<span>Combat</span>",
 				"action" : "NODE"
 			},
 			{
@@ -166,7 +166,7 @@ var menu_content = [
 				"action" : "changemenu('home')"
 			},
 			{
-				"title" : "Novice Paths",
+				"title" : "<span>Novice Paths</span>",
 				"action" : "NODE"
 			},
 			{
@@ -199,7 +199,7 @@ var menu_content = [
 				"action" : "changemenu('home')"
 			},
 			{
-				"title" : "Expert Paths",
+				"title" : "<span>Expert Paths</span>",
 				"action" : "NODE"
 			},
 			{
@@ -280,7 +280,7 @@ var menu_content = [
 				"action" : "changemenu('home')"
 			},
 			{
-				"title" : "Magic Master Paths",
+				"title" : "<span>Magic Master Paths</span>",
 				"action" : "NODE"
 			},
 			{
@@ -425,7 +425,7 @@ var menu_content = [
 				"action" : "changemenu('home')"
 			},
 			{
-				"title" : "Skill Master Paths",
+				"title" : "<span>Skill Master Paths</span>",
 				"action" : "NODE"
 			},
 			{
