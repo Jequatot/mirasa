@@ -137,6 +137,10 @@ var menu_content = [
 				"action" : "gothere('views/combat/afflictions.html')"
 			},
 			{
+				"title" : "Corruption",
+				"action" : "gothere('views/combat/corruption.html')"
+			},
+			{
 				"title" : "Fate Rolls",
 				"action" : "gothere('views/combat/fate.html')"
 			},
@@ -145,7 +149,7 @@ var menu_content = [
 				"action" : "gothere('views/combat/fortune.html')"
 			},
 			{
-				"title" : "Insanity & Corruption",
+				"title" : "Insanity",
 				"action" : "gothere('views/combat/insanity.html')"
 			},
 			{
