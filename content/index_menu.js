@@ -39,8 +39,8 @@ var menu_content = [
 				"action" : "changemenu('combat')"
 			},
 			{
-				"title" : "Spell List",
-				"action" : "gothere('views/spells/index.html')"
+				"title" : "Spells",
+				"action" : "changemenu('spells')"
 			},
 			{
 				"title" : "Equipment",
@@ -129,10 +129,6 @@ var menu_content = [
 				"action" : "gothere('views/combat/attacks.html')"
 			},
 			{
-				"title" : "Spellcasting",
-				"action" : "gothere('views/combat/spellcasting.html')"
-			},
-			{
 				"title" : "Afflictions",
 				"action" : "gothere('views/combat/afflictions.html')"
 			},
@@ -159,6 +155,31 @@ var menu_content = [
 			{
 				"title" : "DATE",
 				"action" : "NODE"
+			}
+		]
+	},
+	{
+		"name" : "spells",
+		"content" : [
+			{
+				"title" : "&lt==",
+				"action" : "changemenu('home')"
+			},
+			{
+				"title" : "<span>Spells</span>",
+				"action" : "NODE"
+			},
+			{
+				"title" : "<span>Overview</span>",
+				"action" : "gothere('views/combat/overview.html')"
+			},
+			{
+				"title" : "Traditions",
+				"action" : "gothere('views/spells/traditions.html')"
+			},
+			{
+				"title" : "Spell List",
+				"action" : "gothere('views/spells/index.html')"
 			}
 		]
 	},
