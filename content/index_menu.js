@@ -20,8 +20,8 @@ var menu_content = [
 			},
 			{
 				"title" : "Expert Paths",
-				//"action" : "changemenu('epaths')"
-				"action" : "gothere('views/epaths/overview.html')"
+				"action" : "changemenu('epaths')"
+				//"action" : "gothere('views/epaths/overview.html')"
 			},
 			{
 				"title" : "Master Paths",
@@ -172,7 +172,7 @@ var menu_content = [
 			},
 			{
 				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/combat/overview.html')"
+				"action" : "gothere('views/spells/overview.html')"
 			},
 			{
 				"title" : "Traditions",
