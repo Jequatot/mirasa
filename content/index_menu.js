@@ -20,6 +20,7 @@ var menu_content = [
 			},
 			{
 				"title" : "Expert Paths",
+				//"action" : "changemenu('epaths')"
 				"action" : "gothere('views/epaths/overview.html')"
 			},
 			{
@@ -232,68 +233,88 @@ var menu_content = [
 				"action" : "gothere('views/epaths/overview.html')"
 			},
 			{
-				"title" : "Artificer",
-				"action" : "gothere('views/paths/artificer.html')"
-			},
-			{
-				"title" : "Assassin",
-				"action" : "gothere('views/paths/assassin.html')"
-			},
-			{
-				"title" : "Berserker",
-				"action" : "gothere('views/paths/berserker.html')"
+				"title" : "<span>Paths of Faith</span>",
+				"action" : "NODE"
 			},
 			{
 				"title" : "Cleric",
-				"action" : "gothere('views/paths/cleric.html')"
+				"action" : "gothere('views/epaths/cleric.html')"
 			},
 			{
 				"title" : "Druid",
-				"action" : "gothere('views/paths/Druid.html')"
-			},
-			{
-				"title" : "Fighter",
-				"action" : "gothere('views/paths/Fighter.html')"
+				"action" : "gothere('views/epaths/Druid.html')"
 			},
 			{
 				"title" : "Oracle",
-				"action" : "gothere('views/paths/Oracle.html')"
+				"action" : "gothere('views/epaths/Oracle.html')"
 			},
 			{
 				"title" : "Paladin",
-				"action" : "gothere('views/paths/Paladin.html')"
+				"action" : "gothere('views/epaths/Paladin.html')"
 			},
 			{
-				"title" : "Ranger",
-				"action" : "gothere('views/paths/Ranger.html')"
+				"title" : "<span>Paths of Power</span>",
+				"action" : "NODE"
 			},
 			{
-				"title" : "Scout",
-				"action" : "gothere('views/paths/Scout.html')"
+				"title" : "Artificer",
+				"action" : "gothere('views/epaths/artificer.html')"
 			},
 			{
 				"title" : "Sorcerer",
-				"action" : "gothere('views/paths/Sorcerer.html')"
-			},
-			{
-				"title" : "Spellbinder",
-				"action" : "gothere('views/paths/Spellbinder.html')"
-			},
-			{
-				"title" : "Thief",
-				"action" : "gothere('views/paths/Thief.html')"
-			},
-			{
-				"title" : "Warlock",
-				"action" : "gothere('views/paths/Warlock.html')"
+				"action" : "gothere('views/epaths/Sorcerer.html')"
 			},
 			{
 				"title" : "Witch",
-				"action" : "gothere('views/paths/Witch.html')"
+				"action" : "gothere('views/epaths/Witch.html')"
 			},
 			{
 				"title" : "Wizard",
-				"action" : "gothere('views/paths/Wizard.html')"
+				"action" : "gothere('views/epaths/Wizard.html')"
+			},
+			{
+				"title" : "<span>Paths of Trickery</span>",
+				"action" : "NODE"
+			},
+			{
+				"title" : "Assassin",
+				"action" : "gothere('views/epaths/assassin.html')"
+			},
+			{
+				"title" : "Scout",
+				"action" : "gothere('views/epaths/Scout.html')"
+			},
+			{
+				"title" : "Thief",
+				"action" : "gothere('views/epaths/Thief.html')"
+			},
+			{
+				"title" : "Warlock",
+				"action" : "gothere('views/epaths/Warlock.html')"
+			},
+			{
+				"title" : "<span>Paths of War</span>",
+				"action" : "NODE"
+			},
+			{
+				"title" : "Berserker",
+				"action" : "gothere('views/epaths/berserker.html')"
+			},
+			{
+				"title" : "Fighter",
+				"action" : "gothere('views/epaths/Fighter.html')"
+			},
+			{
+				"title" : "Ranger",
+				"action" : "gothere('views/epaths/Ranger.html')"
+			},
+			{
+				"title" : "Spellbinder",
+				"action" : "gothere('views/epaths/Spellbinder.html')"
+			},
+			{
+				"title" : "DATE",
+				"action" : "NODE"
 			}
 		]
 	},
