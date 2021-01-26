@@ -288,6 +288,7 @@ $(document).ready(function() {
     presets.set(name, ids);
     $(`<option value="${name}">${desc}</option>`).appendTo($presetSelect);
   }
+  
 
   addPreset('cleric', 'Cleric Base', [4, 10, 13, 20, 21, 26, 28, 30, 33, 35, 37,
   40, 48, 56, 61, 62, 72, 83, 85, 87, 88, 93, 94, 95, 99, 103, 104, 108, 109,

@@ -297,6 +297,7 @@ $(document).ready(function() {
     $(`<option value="${name}">${desc}</option>`).appendTo($presetSelect);
   }
   
+  addPreset('delilah', 'Delilah Umbridge', [299, 450, 1059, 1061]);
   addPreset('new-god', 'Cult of the New God', [44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296]);
   
   addPreset('dwarven', 'Dwarfen Ancestors', [33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175]);
