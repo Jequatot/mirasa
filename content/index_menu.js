@@ -242,15 +242,15 @@ var menu_content = [
 			},
 			{
 				"title" : "Druid",
-				"action" : "gothere('views/epaths/Druid.html')"
+				"action" : "gothere('views/epaths/druid.html')"
 			},
 			{
 				"title" : "Oracle",
-				"action" : "gothere('views/epaths/Oracle.html')"
+				"action" : "gothere('views/epaths/oracle.html')"
 			},
 			{
 				"title" : "Paladin",
-				"action" : "gothere('views/epaths/Paladin.html')"
+				"action" : "gothere('views/epaths/paladin.html')"
 			},
 			{
 				"title" : "<span>Paths of Power</span>",
@@ -262,15 +262,15 @@ var menu_content = [
 			},
 			{
 				"title" : "Sorcerer",
-				"action" : "gothere('views/epaths/Sorcerer.html')"
+				"action" : "gothere('views/epaths/sorcerer.html')"
 			},
 			{
 				"title" : "Witch",
-				"action" : "gothere('views/epaths/Witch.html')"
+				"action" : "gothere('views/epaths/witch.html')"
 			},
 			{
 				"title" : "Wizard",
-				"action" : "gothere('views/epaths/Wizard.html')"
+				"action" : "gothere('views/epaths/wizard.html')"
 			},
 			{
 				"title" : "<span>Paths of Trickery</span>",
@@ -282,15 +282,15 @@ var menu_content = [
 			},
 			{
 				"title" : "Scout",
-				"action" : "gothere('views/epaths/Scout.html')"
+				"action" : "gothere('views/epaths/scout.html')"
 			},
 			{
 				"title" : "Thief",
-				"action" : "gothere('views/epaths/Thief.html')"
+				"action" : "gothere('views/epaths/thief.html')"
 			},
 			{
 				"title" : "Warlock",
-				"action" : "gothere('views/epaths/Warlock.html')"
+				"action" : "gothere('views/epaths/warlock.html')"
 			},
 			{
 				"title" : "<span>Paths of War</span>",
@@ -302,15 +302,15 @@ var menu_content = [
 			},
 			{
 				"title" : "Fighter",
-				"action" : "gothere('views/epaths/Fighter.html')"
+				"action" : "gothere('views/epaths/fighter.html')"
 			},
 			{
 				"title" : "Ranger",
-				"action" : "gothere('views/epaths/Ranger.html')"
+				"action" : "gothere('views/epaths/ranger.html')"
 			},
 			{
 				"title" : "Spellbinder",
-				"action" : "gothere('views/epaths/Spellbinder.html')"
+				"action" : "gothere('views/epaths/spellbinder.html')"
 			},
 			{
 				"title" : "DATE",
