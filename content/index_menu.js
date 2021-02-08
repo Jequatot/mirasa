@@ -266,8 +266,8 @@ var menu_content = [
 				"action" : "gothere('views/epaths/sorcerer.html')"
 			},
 			{
-				"title" : "Witch",
-				"action" : "gothere('views/epaths/witch.html')"
+				"title" : "Wardscribe",
+				"action" : "gothere('views/epaths/wardscribe.html')"
 			},
 			{
 				"title" : "Wizard",
@@ -339,11 +339,11 @@ var menu_content = [
 				"action" : "gothere('views/mpaths/mA.html')"
 			},
 			{
-				"title" : "C - G",
+				"title" : "C - E",
 				"action" : "gothere('views/mpaths/mC.html')"
 			},
 			{
-				"title" : "H - M",
+				"title" : "G - M",
 				"action" : "gothere('views/mpaths/mH.html')"
 			},
 			{
