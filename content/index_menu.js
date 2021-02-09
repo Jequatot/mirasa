@@ -25,8 +25,8 @@ var menu_content = [
 			},
 			{
 				"title" : "Master Paths",
-				"action" : "changemenu('mpaths')"
-				//"action" : "gothere('views/mpaths/overview.html')"
+				//"action" : "changemenu('mpaths')"
+				"action" : "gothere('views/mpaths/overview.html')"
 			},
 			{
 				"title" : "Professions & Languages",
