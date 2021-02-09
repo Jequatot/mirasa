@@ -298,7 +298,7 @@ $(document).ready(function() {
   }
   
   addPreset('delilah', 'Delilah Umbridge', [299, 387, 450, 1022, 1059, 1061]);
-  addPreset('jorg', 'Jorgmun', [750, 264, 340, 752, 266, 135]);
+  addPreset('jorg', 'Jorgmun', [134, 264, 340, 752, 266, 135]);
   addPreset('windstrom', 'Sarah Windstrom', [997, 265, 266, 267, 1000, 268]);
   addPreset('vovir', 'Vovir Kransheim', [842, 808]);
   addPreset('new-god', 'Cult of the New God', [44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296]);
