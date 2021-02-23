@@ -297,7 +297,7 @@ $(document).ready(function() {
     $(`<option value="${name}">${desc}</option>`).appendTo($presetSelect);
   }
   
-  addPreset('delilah', 'Delilah Umbridge', [299, 387, 450, 1022, 1059, 1061]);
+  addPreset('delilah', 'Delilah Umbridge', [505, 57, 389, 387, 450, 1022, 1059, 1061]);
   addPreset('jorg', 'Jorgmun', [134, 264, 340, 752, 266, 135]);
   addPreset('windstrom', 'Sarah Windstrom', [997, 265, 266, 267, 1000, 268]);
   addPreset('vovir', 'Vovir Kransheim', [842, 808]);
