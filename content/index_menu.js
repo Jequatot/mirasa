@@ -181,6 +181,10 @@ var menu_content = [
 			},
 			{
 				"title" : "Spell List",
+				"action" : "gothere('views/spells/spell_list.html')"
+			},
+			{
+				"title" : "Old Spell List",
 				"action" : "gothere('views/spells/index.html')"
 			}
 		]
