@@ -340,8 +340,6 @@
 			<input type="radio" name="ranks" autocomplete="off" value="5"> 5
 		</label>
 	</div>
-	<button class="btn btn-dark" type="button" name="ranks" autocomplete="off" onclick="filterIds()"> My Spellbook</button>
-	<button class="btn btn-dark" type="button" name="ranks" autocomplete="off" onclick="EmptySpellbook()"> Empty Spellbook</button>
       <table class="table-striped border-success table-dark"
   data-detail-view="true"
   data-detail-view-icon="false"
@@ -380,7 +378,8 @@
         </thead> 
       </table> 
   </div> 
-  
+  <br/>
+  <br/>
   <!-- Include jQuery and other required 
   files for Bootstrap -->
   <script src= 
@@ -409,7 +408,7 @@
       // Use the given data to create  
       // the table and display it 
       $('table').bootstrapTable({ 
-        data: spells 
+        data: spells.sort(function(a, b){return a.rank > b.rank})
       }); 
     });
 	
@@ -529,10 +528,7 @@
     html.push('<div class="card-header"><h2>' + row.name + ' <small class="text-muted">(#' + row.id + ')</small></h2></div>')
     html.push('<div class="card text-white bg-dark mb-3">')
     html.push('<div class="card-body">')
-    if(!ArrayData.includes(row.id))
-		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="AddSpell(' + row.id + ')")>Add to Spellbook</button></h5>')
-	else
-		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button id="btn_spellbook_' + row.id + '" onClick="RemoveSpell(' + row.id + ')")>Remove from Spellbook</button></h5>')
+	html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + '</h5>')
 	if(row.requirement != '')
 		html.push('<b>Requirement</b> ' + row.requirement + '<br/>')
 	if(row.area != '')
@@ -546,7 +542,7 @@
 	html.push('<br/>')
 	html.push('<p class="card-text">' + row.desc + '</p>')
 	if(row.sacrifice != '')
-		html.push('<b>Sacrifice</b>' + row.sacrifice + '<br/>')
+		html.push('<b>Sacrifice</b> ' + row.sacrifice + '<br/>')
 	if(row.crit != '')
 		html.push('<b>On a 20+:</b> ' + row.crit + '<br/>')
 		
@@ -557,7 +553,17 @@
 	if(row.tradition == "fey")
 		html.push('<div class="alert bg-secondary text-light font-italic">You cannot cast Fey spells while you are in contact with iron or an alloy of iron. In addition, when you attack with a Fey spell, you make the attack roll with 1 bane if the target is wearing iron or an iron alloy, and the target makes any challenge roll to resist the attack with 1 boon.</div>')
 	if(row.tradition == "forbidden")
-		html.push('<div class="alert bg-secondary text-light font-italic">Casting Forbidden spells requires speaking mystic phrases in Dark Speech. If you don’t know this language, you make attack rolls using Forbidden spells with 1 bane and creatures make challenge rolls to resist your Forbidden spells with 1 boon.</div>')
+		html.push('<div class="alert bg-secondary text-light font-italic">Casting Forbidden spells requires speaking mystic phrases in Dark Speech. If you don’t know this language, you make attack rolls using Forbidden spells with 1 bane and creatures make challenge rolls to resist your Forbidden spells with 1 boon. To regain expended castings of Forbidden spells you have learned, you must sacrifice a creature to the dark powers at some point after you complete a rest.</div>')
+	if(row.tradition == "demonology")
+		html.push('<div class="alert bg-secondary text-light font-italic">All Demonology spells require blood to be spilled by a sacrificial dagger for the magic to have any effect. Each spell description indicates the damage required to energize the spell and assumes you take the damage. You must take this damage, and you cannot reduce it. However, if you can reach a willing, defenseless, or unconscious creature when you cast a Demonology spell, you can deal the damage to that creature instead. That damage must be taken and cannot be reduced.</div>')
+	if(row.tradition == "madness")
+		html.push('<div class="alert bg-secondary text-light font-italic">Each time you learn an Invocation spell, you gain 1 Insanity. You cannot remove Insanity gained in this way. If your Insanity total from learning spells ever equals your Will score, you become permanently defenseless.</div>')
+	if(row.tradition == "necromancy")
+		html.push('<div class="alert bg-secondary text-light font-italic">The maximum number of undead you can have compelled with Necromancy spells is equal to your Power score. If you create a new undead that exceeds your limit, you remove the compelled affliction from the undead you have controlled for the longest time.</div>')
+	if(row.tradition == "soul")
+		html.push('<div class="alert bg-secondary text-light font-italic">Many Soul spells affect only creatures that have souls. Creatures that lack souls include demons, elementals, genies, some constructs, and some undead such as animated corpses, but not sentient undead such as barrow wights, boneguards, and the like.</div>')
+	if(row.tradition == "telekinesis" || row.tradition == "telepathy")
+		html.push('<div class="alert bg-secondary text-light font-italic">You can use an action to focus your mind. Make an Intellect or Will challenge roll. On a success, your mind becomes focused for 1 minute, or until you become dazed, stunned, or unconscious. While your mind is focused, you can cast any spell you have learned from a psychic tradition without needing to speak or wield an implement. In addition, when you cast psychic spells while your mind is focused, you can expend a second casting of the spell to cast it using a triggered action on your turn instead of using an action.</div>')
 	html.push(row.source + ' ' + row.page)
     html.push('</div>')
     return html.join('')
