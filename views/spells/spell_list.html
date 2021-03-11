@@ -31,7 +31,7 @@
 	div {
         text-transform: none;
 	}
-	.card-header {
+	.card-header, h5 {
         text-transform: capitalize;
 	}
 	.text-highlighted {
@@ -346,6 +346,7 @@
   data-detail-view="true"
   data-detail-view-icon="false"
   data-detail-view-by-click="true"
+  data-pagination="true"
    data-search="true"
   data-detail-formatter="detailFormatter"> 
         <thead> 
@@ -428,11 +429,11 @@
 		} else {
 			
 			filterSpells();
-			spellbookopen = false;
 		}
 	}
 	
 	function filterSpells() {
+		spellbookopen = false;
 		if(tradition == "all")
 			$('table').bootstrapTable( 
 				'filterBy', {rank: rank, source: source});
