@@ -222,3 +222,28 @@ h3 {
 .table {
 	width: auto;
 }
+
+#sidebarCollapse {
+	display: none;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+	#sidebarCollapse {
+		display: block;
+		background: #666;
+	}
+    #sidebarCollapse span {
+        display: none;
+    }
+}
