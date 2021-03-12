@@ -1,0 +1,285 @@
+:root {
+	--primary: #effea9;
+	--darker: #cccc66;
+	--tert: #99ffff;
+}
+
+h1 {
+	font-style: italic;
+	font-family: georgia;
+	color: var(--primary);
+	border-bottom: solid;
+	text-indent: -1em;
+}
+
+.h1_pagetitle {
+	text-shadow: 2px 3px #606060;
+	font-style: normal;
+	border: none;
+	text-indent: .5em;
+	font-size: 1.2em;
+	margin: 0;
+	white-space:nowrap;
+}
+
+.span_pagetitle {
+	color: white;
+	font-size: 1.5em;
+	text-shadow: 2px 3px #606060;
+	font-style: normal;
+	border: none;
+	text-indent: .5em;
+	margin: 0;
+}
+
+h2 {
+	font-family: georgia;
+	font-size: 1em;
+	color: var(--primary);
+	margin: 0;
+}
+
+h3 {
+	font-style: italic;
+	font-family: georgia;
+	color: var(--primary);
+	border-bottom: solid;
+	text-indent: -1em;
+}
+
+i {
+	color: var(--tert);
+}
+
+body {
+	margin: 0;
+	font-family: Palatino;
+	color: white;
+	background-color: #040404;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+.padded {
+	padding-left: 3.5em;
+	padding-bottom: 3.5em;
+	overflow-y: auto;
+}
+
+.div_header {
+	height: 2em;
+	background-image: URL("hosizora2.gif");
+	border-bottom: 1px solid var(--primary);
+	color: #202020;
+}
+
+.div_inner {
+	height: calc(100% - 3.1em);
+}
+
+.action-list {
+	text-align: center;
+}
+
+.div_spacing15 {
+	margin: 1.5em;
+	line-height: 1.5em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.padded > p.p_indent {
+	text-indent: 1em;
+}
+
+p, ul, ol, table {
+	margin: 0;
+	max-width: 40em;
+	margin-bottom: 1em;
+	line-height: 1.1em;
+	vertical-align: top;
+}
+
+li {
+	margin-bottom: .5em;
+}
+
+.p_menunode {
+	text-align: center;
+	/* border: 1px dashed var(--primary); */
+	border-left: none;
+	border-right: none;
+	font-family: Georgia, serif;
+	padding-top: 1em;
+	line-height: 1em;
+	padding-bottom: .5em;
+	margin: auto;
+	color: #bbbbbb;
+	/* margin: auto; */
+}
+
+.section_main {
+	background-color: #000;
+	float: right;
+	width: calc(100% - 12.1em);
+}
+
+#leftbar {
+	background-image: URL("hosizora2.gif");
+	overflow: auto;
+	border-right: 1px solid var(--primary);
+	float: left;
+	width: 12em;
+	height: 100%
+}
+
+.iframe_view {
+	width: 100%;
+	border: none;
+	height: 100%;
+}
+
+a {
+	color: #8080ff;
+}
+
+a:hover {
+	color: #a0a0ff;
+}
+
+span {
+	font-weight: bold;
+}
+
+b {
+	color: var(--darker);
+}
+
+.span_subtitle {
+	font-weight: normal;
+    color: #aaa;
+    font-style: italic;
+}
+
+.input_roller {
+	width: 2em;
+}
+
+#profile {
+	float: right;
+	margin-left: 2em;
+	max-width: 50%;
+	max-height: 80vh;
+}
+
+button {
+	background-color: rgba(40,40,40,.6);
+	width: 100%;
+	border: none;
+    border-bottom: 1px solid #404040;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+	padding: 1em 0em;
+}
+
+button:hover {
+    animation-name: button_hover;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.style_button {
+	width: 48px;
+	height: 100%;
+	padding: 0;
+	line-height: .5em;
+    display: inline-block;
+	color: #202020;
+	background-color: #e8e8e8;
+	font-size: 40px;
+	float: right;
+}
+
+.style_button:hover {
+	background-color: #ffffff;
+	color: #888888;
+    animation-iteration-count: 0;
+	border: none;
+}
+
+.style_dropdown {
+    display: none;
+    position: absolute;
+	right: 0;
+	top: 3em;
+	color: black;
+    background-color: #cccccc;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	text-align: right;
+	overflow: auto;
+	max-height: calc(100% - 3.1em);
+}
+
+.button_roller {
+	width: 6em;
+	background-color: #050005;
+	border: none;
+    margin: 12px 16px;
+}
+
+.button_roller:hover {
+	animation-name: rainbow;
+}
+
+table, tr, thss, td, th {
+	font-size: 1em;
+	text-align: center;
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: .5em;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+th {
+	background: #000;
+}
+
+tr {
+	background: #222;
+}
+
+tr:nth-child(odd) {
+	background: #333;
+}
+tr:hover {
+	background: #444;
+}
+
+@keyframes button_hover {
+    0%  {background-color: #303030;}
+    50%   {background-color: #606060;}
+    100%  {background-color: #303030;}
+}
+
+@keyframes rainbow {
+    0%  {background-color: #ff0000;}
+    15%  {background-color: #ffff00;}
+    35%  {background-color: #00ff00;}
+    50%  {background-color: #00ffff;}
+    65%  {background-color: #0000ff;}
+    85%  {background-color: #ff00ff;}
+    100%  {background-color: #ff0000;}
+}
+
+@keyframes rainbow-2 {
+    0%  {background-color: red;}
+    20%  {background-color: gold;}
+    40%   {background-color: green;}
+    60%  {background-color: blue;}
+    80%  {background-color: purple;}
+    100%  {background-color: red;}
+}

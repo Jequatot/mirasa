@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>The Doors of Illune</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper bg-dark text-light">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a class="pagetitle" href="index.html">THE DOORS OF ILLUNE</a>
+                <div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">Overview</a>
+                </li>
+                <p>Character Creation</p>
+                <li>
+                    <a href="ancestries/overview.html">Ancestries</a>
+                </li>
+                <li>
+                    <a href="npaths/overview.html">Novice Paths</a>
+                </li>
+                <li>
+                    <a href="epaths/overview.html">Expert Paths</a>
+                </li>
+                <li>
+                    <a href="mpaths/overview.html">Master Paths</a>
+                </li>
+                <li>
+                    <a href="professions.html">Professions & Languages</a>
+                </li>
+                <p>Rules</p>
+                <li>
+                    <a href="combat/overview.html">Combat</a>
+                </li>
+                <li>
+                    <a href="spells/spelllist.html">Spells</a>
+                </li>
+                <li>
+                    <a href="#" class="active">Equipment</a>
+                </li>
+                <li>
+                    <a href="gear.html">Gear</a>
+                </li>
+                <p>A Land in Shadow</p>
+                <li>
+                    <a href="archipelago.html">The Archipelago</a>
+                </li>
+                <li>
+                    <a href="gods.html">Gods of Ikseira</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+		<img id="profile" src="content/equipment.png" alt="Equipment">
+		<h1>Melee Weapons</h1>
+		<table class="table table-dark">
+			<tr>
+				<th>Weapon</th>
+				<th>Price (SP)</th>
+				<th>Damage</th>
+				<th>Hand</th>
+				<th>Attribute</th>
+				<th>Requirement</th>
+				<th>Properties</th>
+			</tr>
+			<tr>
+				<td>Dagger (x5)</td>
+				<td>1</td>
+				<td>1d3</td>
+				<td>Off</td>
+				<td>Vers.</td>
+				<td>-</td>
+				<td>Parry+0 Thrown (Short)</td>
+			</tr>
+			<tr>
+				<td>Flechette (x5)</td>
+				<td>1</td>
+				<td>2</td>
+				<td>Off</td>
+				<td>AGI</td>
+				<td>-</td>
+				<td>Thrown (Medium)</td>
+			</tr>
+			<tr>
+				<td>Handaxe (x5)</td>
+				<td>1</td>
+				<td>1d3+1</td>
+				<td>Off</td>
+				<td>STR</td>
+				<td>-</td>
+				<td>Thrown (Short)</td>
+			</tr>
+			<tr>
+				<td>Knuckles</td>
+				<td>1</td>
+				<td>1d3+1</td>
+				<td>Off</td>
+				<td>STR</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Broadsword</td>
+				<td>2</td>
+				<td>1d6</td>
+				<td>One</td>
+				<td>Vers.</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Pickaxe</td>
+				<td>2</td>
+				<td>1d6+2</td>
+				<td>Two</td>
+				<td>STR</td>
+				<td>-</td>
+				<td>Slow</td>
+			</tr>
+			<tr>
+				<td>Spear</td>
+				<td>2</td>
+				<td>2d3-1</td>
+				<td>Two</td>
+				<td>Vers.</td>
+				<td>-</td>
+				<td>Reach+1</td>
+			</tr>
+			<tr>
+				<td>Javelin</td>
+				<td>4</td>
+				<td>1d6+1</td>
+				<td>One</td>
+				<td>AGI</td>
+				<td>-</td>
+				<td>Thrown (Medium)</td>
+			</tr>
+			<tr>
+				<td>Whip</td>
+				<td>4</td>
+				<td>1d3</td>
+				<td>Off</td>
+				<td>AGI</td>
+				<td>AGI 11</td>
+				<td>Reach+1 Parry+3</td>
+			</tr>
+			<tr>
+				<td>Cutlass</td>
+				<td>6</td>
+				<td>1d6+1</td>
+				<td>One</td>
+				<td>AGI</td>
+				<td>-</td>
+				<td>Parry+5</td>
+			</tr>
+			<tr>
+				<td>Glaive</td>
+				<td>6</td>
+				<td>1d6+2</td>
+				<td>Two</td>
+				<td>Vers.</td>
+				<td>STR 11 OR AGI 11</td>
+				<td>Reach+1</td>
+			</tr>
+			<tr>
+				<td>Longsword</td>
+				<td>6</td>
+				<td>1d6+2</td>
+				<td>One</td>
+				<td>Vers.</td>
+				<td>STR 11 OR AGI 11</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Warhammer</td>
+				<td>6</td>
+				<td>2d6</td>
+				<td>Two</td>
+				<td>STR</td>
+				<td>STR 11</td>
+				<td>Slow</td>
+			</tr>
+			<tr>
+				<td>Chain</td>
+				<td>10</td>
+				<td>2d3</td>
+				<td>Off</td>
+				<td>AGI</td>
+				<td>AGI 11</td>
+				<td>Reach+2 Parry+5</td>
+			</tr>
+			<tr>
+				<td>Maul</td>
+				<td>10</td>
+				<td>3d6</td>
+				<td>Two</td>
+				<td>STR</td>
+				<td>STR 13</td>
+				<td>Size:1 Slow</td>
+			</tr>
+			<tr>
+				<td>Rapier</td>
+				<td>10</td>
+				<td>2d6</td>
+				<td>One</td>
+				<td>AGI</td>
+				<td>AGI 13</td>
+				<td>Parry+7</td>
+			</tr>
+		</table>
+		<h1>Ranged Weapons</h1>
+		<table class="table table-dark">
+			<tr>
+				<th>Weapon</th>
+				<th>Price (SP)</th>
+				<th>Damage</th>
+				<th>Hand</th>
+				<th>Attribute</th>
+				<th>Requirement</th>
+				<th>Properties</th>
+			</tr>
+			<tr>
+				<td>Blowgun</td>
+				<td>1</td>
+				<td>1d3</td>
+				<td>Off</td>
+				<td>AGI</td>
+				<td>-</td>
+				<td>Range (Medium)</td>
+			</tr>
+			<tr>
+				<td>Shortbow</td>
+				<td>5</td>
+				<td>1d6</td>
+				<td>Two</td>
+				<td>AGI</td>
+				<td>-</td>
+				<td>Range (Medium)</td>
+			</tr>
+			<tr>
+				<td>Crossbow</td>
+				<td>5</td>
+				<td>2d6</td>
+				<td>Two</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Range (Medium) Reload</td>
+			</tr>
+			<tr>
+				<td>Longbow</td>
+				<td>10</td>
+				<td>1d6+2</td>
+				<td>Two</td>
+				<td>AGI</td>
+				<td>AGI 9</td>
+				<td>Size:1 Range (Long)</td>
+			</tr>
+			<tr>
+				<td>Hand Crossbow</td>
+				<td>10</td>
+				<td>1d6</td>
+				<td>Off</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Range (Short) Reload</td>
+			</tr>
+			<tr>
+				<td>Flintlock</td>
+				<td>10</td>
+				<td>5d3</td>
+				<td>One</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Range (Medium) Reload Misfire</td>
+			</tr>
+			<tr>
+				<td>Rifle</td>
+				<td>20</td>
+				<td>7d3</td>
+				<td>Two</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Range (Long) Reload Misfire</td>
+			</tr>
+		</table>
+		<h1>Spellcasting Foci</h1>
+		<table class="table table-dark">
+			<tr>
+				<th>Focus</th>
+				<th>Price (SP)</th>
+				<th>Hand</th>
+				<th>Requirement</th>
+				<th>Properties</th>
+			</tr>
+			<tr>
+				<td>Wand</td>
+				<td>1</td>
+				<td>Off</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Arcblade</td>
+				<td>3</td>
+				<td>One</td>
+				<td>-</td>
+				<td>Doubles as a Broadsword.</td>
+			</tr>
+			<tr>
+				<td>Staff</td>
+				<td>3</td>
+				<td>Two</td>
+				<td>-</td>
+				<td>Reach+1</td>
+			</tr>
+			<tr>
+				<td>Glove</td>
+				<td>4</td>
+				<td>Off</td>
+				<td>INT 11</td>
+				<td>You make challenge rolls to cast stealthily with 1 boon.</td>
+			</tr>
+			<tr>
+				<td>Instrument</td>
+				<td>4</td>
+				<td>Two</td>
+				<td>WIL 11</td>
+				<td>For 1 round after you concentrate, attacks against you are made with 1 bane.</td>
+			</tr>
+		</table>
+		<h1>Shields</h1>
+		<table class="table table-dark">
+			<tr>
+				<th>Shield</th>
+				<th>Price (SP)</th>
+				<th>Damage</th>
+				<th>Hand</th>
+				<th>Attribute</th>
+				<th>Requirement</th>
+				<th>Properties</th>
+			</tr>
+			<tr>
+				<td>Leather Shield</td>
+				<td>1</td>
+				<td>1</td>
+				<td>Off</td>
+				<td>STR</td>
+				<td>STR 9</td>
+				<td>Guard+3</td>
+			</tr>
+			<tr>
+				<td>Iron Shield</td>
+				<td>2</td>
+				<td>1d3</td>
+				<td>Off</td>
+				<td>STR</td>
+				<td>STR 11</td>
+				<td>Size:1 Guard+5</td>
+			</tr>
+			<tr>
+				<td>Buckler</td>
+				<td>3</td>
+				<td>1</td>
+				<td>Off</td>
+				<td>STR</td>
+				<td>-</td>
+				<td>Guard+3 Parry+0</td>
+			</tr>
+		</table>
+		<h1>Armor</h1>
+		<table class="table table-dark">
+			<tr>
+				<th>Armor</th>
+				<th>Price (SP)</th>
+				<th>Requirement</th>
+				<th>Properties</th>
+			</tr>
+			<tr>
+				<td>Soft Leather</td>
+				<td>2</td>
+				<td>-</td>
+				<td>Defense +1</td>
+			</tr>
+			<tr>
+				<td>Hard Leather</td>
+				<td>6</td>
+				<td>STR 11</td>
+				<td>Defense +3</td>
+			</tr>
+			<tr>
+				<td>Brigandine</td>
+				<td>6</td>
+				<td>STR 11</td>
+				<td>Defense 10</td>
+			</tr>
+			<tr>
+				<td>Mail</td>
+				<td>12</td>
+				<td>STR 13</td>
+				<td>Defense 13</td>
+			</tr>
+			<tr>
+				<td>Scale</td>
+				<td>20</td>
+				<td>STR 13</td>
+				<td>Defense 15</td>
+			</tr>
+		</table>
+		<h3>Properties</h3>
+		<h2>Attribute</h2>
+		<p>
+			The modifier added to attacks made with the item. Some items are versatile (Vers.), in which case the user chooses to use Strength or Agility when they make the attack. 
+		</p>
+		<h2>Guard</h2>
+		<p>
+			This item can be used to guard, adding its bonus to your defense. 
+		</p>
+		<h2>Hand</h2>
+		<p>
+			The hand in which the item is wielded. One-hand items must be used in the main hand, while off-hand items can be used in either hand. A one-hand weapon wielded with two hands deals +1 damage.
+		</p>
+		<h2>Misfire</h2>
+		<p>
+			When an attack with this item results in a 0 or less, roll a d6. On an even number, the item is jammed and requires 1 minute of tinkering to be used again. On an odd number, the item explodes and its wielder takes 2d6 damage.
+		</p>
+		<h2>Parry</h2>
+		<p>
+			This item can be used to parry, adding its bonus to your defense. 
+		</p>
+		<h2>Reach</h2>
+		<p>
+			With this item, your reach is increased by its bonus.
+		</p>
+		<h2>Reload</h2>
+		<p>
+			After attacking with this item, you must take an action to reload it. Track the number of times you reload your weapon on your character sheet. After your fifth reload, any attack roll resulting in a 0 depletes your ammunition.
+		</p>
+		<h2>Requirement</h2>
+		<p>
+			In order to wield this item, you must meet or exceed the requirement in the specified attribute.
+		</p>
+		<h2>Size</h2>
+		<p>
+			You must be the specified size or larger to use the item.
+		</p>
+		<h2>Slow</h2>
+		<p>
+			This item is cumbersome. Attacks using it are made with 1 bane.
+		</p>
+		<h2>Thrown</h2>
+		<p>
+			You can make a ranged attack with this item by throwing it up to the specified range.
+		</p>
+		</div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

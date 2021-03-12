@@ -46,7 +46,7 @@ var menu_content = [
 			},
 			{
 				"title" : "Equipment",
-				"action" : "views/equipment.html"
+				"action" : "gothere('views/equipment.html')"
 			},
 			{
 				"title" : "Gear",
