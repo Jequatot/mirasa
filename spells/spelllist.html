@@ -577,9 +577,9 @@
     html.push('<div class="card text-white bg-dark mb-3">')
     html.push('<div class="card-body">')
 	if(!spellbook.includes(row.id))
-		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + '<button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="AddSpell(' + row.id + ')")>Add to Spellbook</button> </h5>')
+		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="AddSpell(' + row.id + ')")>Add to Spellbook</button> </h5>')
 	else
-		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + '<button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="RemoveSpell(' + row.id + ')")>Remove from Spellbook</button> </h5>')
+		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="RemoveSpell(' + row.id + ')")>Remove from Spellbook</button> </h5>')
 		
 	if(row.requirement != '')
 		html.push('<b>Requirement</b> ' + row.requirement + '<br/>')
