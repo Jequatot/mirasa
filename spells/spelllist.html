@@ -459,6 +459,7 @@
 			$('table').bootstrapTable( 
 				'filterBy', {id: spellbook});
 			spellbookopen = true;
+			EncodeArray();
 		} else {
 			
 			filterSpells();
@@ -480,6 +481,7 @@
 	function AddSpell(i) {
 		$('#btn_spellbook_' + i).disabled = true;
 		spellbook.push(i);
+		EncodeArray();
 	}
 	
 	function RemoveSpell(i) {
@@ -488,6 +490,7 @@
 			spellbookopen = false;
 			filterIds()
 		}
+		EncodeArray();
 	}
 	
 	function EmptySpellbook(i) {
@@ -498,7 +501,7 @@
 	function EncodeArray() {
 		var result = "";
 		for(var i = 0; i < spellbook.length; i++) {
-			result += spellbook[i].toString(16);
+			result += spellbook[i].toString(32);
 			if(i+1<spellbook.length)
 				result += "-"
 		}
@@ -510,7 +513,7 @@
 		spellbook = [];
 		for(var i = 0; i < result.length; i++) {
 			if(!isNaN(parseInt(result[i])))
-				spellbook.push(parseInt(result[i], 16));
+				spellbook.push(parseInt(result[i], 32));
 		}
 	}
 	
