@@ -353,29 +353,41 @@
 		</div>
 	</div>
 	<h4>Rank:</h4>
-	<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		<label class="btn btn-dark active">
-			<input type="radio" id="all_ranks" name="ranks" autocomplete="off" checked value="-1"> All
-		</label>
-		<label class="btn btn-dark">
-			<input type="radio" name="ranks" autocomplete="off" value="0"> 0
-		</label>
-		<label class="btn btn-dark">
-			<input type="radio" name="ranks" autocomplete="off" value="1"> 1
-		</label>
-		<label class="btn btn-dark">
-			<input type="radio" name="ranks" autocomplete="off" value="2"> 2
-		</label>
-		<label class="btn btn-dark">
-			<input type="radio" name="ranks" autocomplete="off" value="3"> 3
-		</label>
-		<label class="btn btn-dark">
-			<input type="radio" name="ranks" autocomplete="off" value="4"> 4
-		</label>
-		<label class="btn btn-dark">
-			<input type="radio" name="ranks" autocomplete="off" value="5"> 5
-		</label>
+	<div class="d-flex align-items-center">
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-dark active">
+				<input type="radio" id="all_ranks" name="ranks" autocomplete="off" checked value="-1"> All
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="0"> 0
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="1"> 1
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="2"> 2
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="3"> 3
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="4"> 4
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="5"> 5
+			</label>
+		</div> &nbsp &nbsp
+		<button class="btn btn-dark" type="button" name="ranks" autocomplete="off" onclick="filterIds()"> My Spellbook</button>
+		&nbsp &nbsp
+		<button class="btn btn-dark" type="button" name="ranks" autocomplete="off" onclick="EmptySpellbook()"> Empty Spellbook</button>
+		<div class="input-group col-sm-3">
+			<input type="text" class="form-control" placeholder="Spellbook Code" aria-label="Spellbook Code" id="spellbookCode">
+			<div class="input-group-append">
+				<button class="btn btn-outline-secondary" type="button" onclick="DecodeArray()">Read to Spellbook</button>
+			</div>
+		</div>
 	</div>
+	
       <table class="table-striped border-success table-dark"
 			data-detail-view="true"
 			data-detail-view-icon="false"
@@ -428,6 +440,7 @@
 	var source = ["SotDL", "DLC1", "DLC2", "OcPhi"];
 	var tradition = "all";
 	var spellbookopen = false;
+	var spellbook = [];
     $(document).ready(function () { 
   
       // Use the given data to create  
@@ -443,12 +456,8 @@
 			$("#all_sources").click();
 			$("#all_traditions").click();
 			$("#all_ranks").click();
-			var ArrayData = $.map(document.cookie.split('|'), function(value){
-				return parseInt(value, 10);
-				// or return +value; which handles float values as well
-			});
 			$('table').bootstrapTable( 
-				'filterBy', {id: ArrayData});
+				'filterBy', {id: spellbook});
 			spellbookopen = true;
 		} else {
 			
@@ -458,6 +467,8 @@
 	
 	function filterSpells() {
 		spellbookopen = false;
+		EncodeArray();
+		
 		if(tradition == "all")
 			$('table').bootstrapTable( 
 				'filterBy', {rank: rank, source: source});
@@ -468,26 +479,37 @@
 	
 	function AddSpell(i) {
 		$('#btn_spellbook_' + i).disabled = true;
-		document.cookie += i + '|';
+		spellbook.push(i);
 	}
 	
 	function RemoveSpell(i) {
-		var ArrayData = $.map(document.cookie.split('|'), function(value){
-			return parseInt(value, 10);
-			// or return +value; which handles float values as well
-		});
-		document.cookie = '';
-		ArrayData.forEach(function(item, index){
-			if(item != i)
-				document.cookie += item + '|'
-			}
-		);
-		filterIds()
+		spellbook.splice(spellbook.indexOf(i), 1)
+		if(spellbookopen) {
+			spellbookopen = false;
+			filterIds()
+		}
 	}
 	
 	function EmptySpellbook(i) {
-		document.cookie = '';
+		spellbook = [];
 		filterSpells();
+	}
+	
+	function EncodeArray() {
+		var result = "";
+		for(var i = 0; i < spellbook.length; i++) {
+			result += spellbook[i] + ",";
+		}
+		$('#spellbookCode').val(result);
+	}
+	
+	function DecodeArray() {
+		result = $('#spellbookCode').val().split(',');
+		spellbook = [];
+		for(var i = 0; i < result.length; i++) {
+			if(!isNaN(parseInt(result[i])))
+				spellbook.push(parseInt(result[i]));
+		}
 	}
 	
 	$("input[name=ranks]").change(function () {
@@ -545,15 +567,15 @@
   </script> 
   <script>
   function detailFormatter(index, row) {
-	var ArrayData = $.map(document.cookie.split('|'), function(value){
-			return parseInt(value, 10);
-			// or return +value; which handles float values as well
-		});
     var html = []
     html.push('<div class="card-header"><h2>' + row.name + ' <small class="text-muted">(#' + row.id + ')</small></h2></div>')
     html.push('<div class="card text-white bg-dark mb-3">')
     html.push('<div class="card-body">')
-	html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + '</h5>')
+	if(!spellbook.includes(row.id))
+		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + '<button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="AddSpell(' + row.id + ')")>Add to Spellbook</button> </h5>')
+	else
+		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + '<button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="RemoveSpell(' + row.id + ')")>Remove from Spellbook</button> </h5>')
+		
 	if(row.requirement != '')
 		html.push('<b>Requirement</b> ' + row.requirement + '<br/>')
 	if(row.area != '')
