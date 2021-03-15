@@ -498,17 +498,19 @@
 	function EncodeArray() {
 		var result = "";
 		for(var i = 0; i < spellbook.length; i++) {
-			result += spellbook[i] + ",";
+			result += spellbook[i].toString(16);
+			if(i+1<spellbook.length)
+				result += "-"
 		}
 		$('#spellbookCode').val(result);
 	}
 	
 	function DecodeArray() {
-		result = $('#spellbookCode').val().split(',');
+		result = $('#spellbookCode').val().split('-');
 		spellbook = [];
 		for(var i = 0; i < result.length; i++) {
 			if(!isNaN(parseInt(result[i])))
-				spellbook.push(parseInt(result[i]));
+				spellbook.push(parseInt(result[i], 16));
 		}
 	}
 	
