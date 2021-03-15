@@ -512,9 +512,12 @@
 		result = $('#spellbookCode').val().split('-');
 		spellbook = [];
 		for(var i = 0; i < result.length; i++) {
-			if(!isNaN(parseInt(result[i])))
+			if(!isNaN(parseInt(result[i], 32)))
 				spellbook.push(parseInt(result[i], 32));
 		}
+		
+		spellbookopen = false;
+		filterIds();
 	}
 	
 	$("input[name=ranks]").change(function () {
