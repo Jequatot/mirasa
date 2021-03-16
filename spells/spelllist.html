@@ -10,27 +10,31 @@
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <link rel="stylesheet" 
-        href= 
-"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css"> 
+  <link rel="stylesheet"
+        href=
+"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../style.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<!-- Include jQuery and other required files for Bootstrap -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-  
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 	<!-- Include the JavaScript file for Bootstrap table -->
 	<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
 	<script type="text/javascript" src="spelljson.js"></script>
 </head>
 <style>
 	td {
-        text-transform: capitalize;}
+        text-transform: capitalize;
+  }
+	td.noncapsd {
+        text-transform: none;
+  }
 	div {
         text-transform: none;
 	}
@@ -75,10 +79,10 @@
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
                     </button>
-  <div> 
-    <h1 class="text text-highlighted text-center "> 
+  <div>
+    <h1 class="text text-highlighted text-center ">
       Shadow of the Demon Lord Spells
-    </h1> 
+    </h1>
 	<h4>Source:</h4>
 	<div class="btn-group btn-group-toggle" data-toggle="buttons">
 		<label class="btn btn-dark active">
@@ -387,7 +391,7 @@
 			</div>
 		</div>
 	</div>
-	
+
       <table class="table-striped border-success table-dark"
 			data-detail-view="true"
 			data-detail-view-icon="false"
@@ -395,37 +399,42 @@
 			data-pagination="true"
 			data-search="true"
 			data-search-align="left"
-			data-detail-formatter="detailFormatter"> 
-        <thead> 
-          <tr> 
-            <th data-field="rank" data-sortable="true"> 
-              <span class="text-highlighted"> 
+			data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th data-field="rank" data-sortable="true">
+              <span class="text-highlighted">
                 Rank
-              </span> 
-            </th> 
-            <th data-field="name" data-sortable="true"> 
-              <span class="text-highlighted"> 
-                Name
-              </span> 
-            </th> 
-            <th data-field="tradition" data-sortable="true"> 
-              <span class="text-highlighted"> 
-                Tradition
-              </span> 
+              </span>
             </th>
-            <th data-field="type" data-sortable="true"> 
-              <span class="text-highlighted"> 
+            <th data-field="name" data-sortable="true">
+              <span class="text-highlighted">
+                Name
+              </span>
+            </th>
+            <th data-field="tradition" data-sortable="true">
+              <span class="text-highlighted">
+                Tradition
+              </span>
+            </th>
+            <th data-field="type" data-sortable="true">
+              <span class="text-highlighted">
                 Type
-              </span> 
-            </th>  
-            <th data-field="source" data-sortable="true"> 
-              <span class="text-highlighted"> 
+              </span>
+            </th>
+            <th data-field="shortdesc" data-sortable="true" class="noncapsd">
+              <span class="text-highlighted">
+                Desc
+              </span>
+            </th>
+            <th data-field="source" data-sortable="true">
+              <span class="text-highlighted">
                 Source
-              </span> 
-            </th> 
-          </tr> 
-        </thead> 
-      </table> 
+              </span>
+            </th>
+          </tr>
+        </thead>
+      </table>
 		</div>
     </div>
     <script type="text/javascript">
@@ -435,55 +444,55 @@
             });
         });
     </script>
-  <script type="text/javascript"> 
+  <script type="text/javascript">
 	var rank = [0, 1, 2, 3, 4, 5];
 	var source = ["SotDL", "DLC1", "DLC2", "OcPhi"];
 	var tradition = "all";
 	var spellbookopen = false;
 	var spellbook = [];
-    $(document).ready(function () { 
-  
-      // Use the given data to create  
-      // the table and display it 
-      $('table').bootstrapTable({ 
+    $(document).ready(function () {
+
+      // Use the given data to create
+      // the table and display it
+      $('table').bootstrapTable({
         data: spells.sort(function(a, b){return a.rank > b.rank})
-      }); 
+      });
     });
-	
+
 	function filterIds() {
 		if(!spellbookopen) {
 			traditions = "all";
 			$("#all_sources").click();
 			$("#all_traditions").click();
 			$("#all_ranks").click();
-			$('table').bootstrapTable( 
+			$('table').bootstrapTable(
 				'filterBy', {id: spellbook});
 			spellbookopen = true;
 			EncodeArray();
 		} else {
-			
+
 			filterSpells();
 		}
 	}
-	
+
 	function filterSpells() {
 		spellbookopen = false;
 		EncodeArray();
-		
+
 		if(tradition == "all")
-			$('table').bootstrapTable( 
+			$('table').bootstrapTable(
 				'filterBy', {rank: rank, source: source});
 		else
-			$('table').bootstrapTable( 
+			$('table').bootstrapTable(
 				'filterBy', {rank: rank, source: source, tradition: tradition});
 	}
-	
+
 	function AddSpell(i) {
 		$('#btn_spellbook_' + i).disabled = true;
 		spellbook.push(i);
 		EncodeArray();
 	}
-	
+
 	function RemoveSpell(i) {
 		spellbook.splice(spellbook.indexOf(i), 1)
 		if(spellbookopen) {
@@ -492,12 +501,12 @@
 		}
 		EncodeArray();
 	}
-	
+
 	function EmptySpellbook(i) {
 		spellbook = [];
 		filterSpells();
 	}
-	
+
 	function EncodeArray() {
 		var result = "";
 		for(var i = 0; i < spellbook.length; i++) {
@@ -507,7 +516,7 @@
 		}
 		$('#spellbookCode').val(result);
 	}
-	
+
 	function DecodeArray() {
 		result = $('#spellbookCode').val().split('-');
 		spellbook = [];
@@ -515,11 +524,11 @@
 			if(!isNaN(parseInt(result[i], 32)))
 				spellbook.push(parseInt(result[i], 32));
 		}
-		
+
 		spellbookopen = false;
 		filterIds();
 	}
-	
+
 	$("input[name=ranks]").change(function () {
 		switch(this.value) {
 			case "0":
@@ -546,7 +555,7 @@
 		}
 		filterSpells();
 	});
-	
+
 	$("input[name=sources]").change(function () {
 		switch(this.value) {
 			case "SotDL":
@@ -567,12 +576,12 @@
 		}
 		filterSpells();
 	});
-	
+
 	$("input[name=traditions]").change(function () {
 		tradition = this.value;
 		filterSpells();
 	});
-  </script> 
+  </script>
   <script>
   function detailFormatter(index, row) {
     var html = []
@@ -583,7 +592,7 @@
 		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="AddSpell(' + row.id + ')")>Add to Spellbook</button> </h5>')
 	else
 		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="RemoveSpell(' + row.id + ')")>Remove from Spellbook</button> </h5>')
-		
+
 	if(row.requirement != '')
 		html.push('<b>Requirement</b> ' + row.requirement + '<br/>')
 	if(row.area != '')
@@ -600,9 +609,9 @@
 		html.push('<b>Sacrifice</b> ' + row.sacrifice + '<br/>')
 	if(row.crit != '')
 		html.push('<b>On a 20+:</b> ' + row.crit + '<br/>')
-		
+
 	html.push('<div class="dropdown-divider"></div>')
-	
+
 	if(row.dark)
 		html.push('<div class="alert bg-secondary text-light font-italic">You gain 1 Corruption when you discover a Dark Magic tradition. Whenever you learn a Dark Magic spell, you must roll a 0 or higher on a d6 minus the number of Dark Magic spells you know or gain 1 Corruption. Each Dark Magic spell you know grants 1 boon to avoid Insanity.</div>')
 	if(row.tradition == "fey")
