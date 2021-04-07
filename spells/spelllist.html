@@ -45,6 +45,10 @@
 	label {
 		width: 100%;
 	}
+	div.spell-desc p {
+		text-indent: -1.5em;
+		padding-left: 1.5em;
+	}
 </style>
 
 <body>
@@ -590,7 +594,7 @@
 	else if(row.duration != '')
 		html.push('<b>Duration</b> ' + row.duration + '<br/>')
 	html.push('<br/>')
-	html.push('<p class="card-text">' + row.desc + '</p>')
+	html.push('<div class="card-text spell-desc">' + row.desc + '</div>')
 	if(row.sacrifice != '')
 		html.push('<b>Sacrifice</b> ' + row.sacrifice + '<br/>')
 	if(row.crit != '')

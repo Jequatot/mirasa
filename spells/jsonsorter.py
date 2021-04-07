@@ -20,7 +20,7 @@ for p in data:
         print('\t\"id\": ' + str(p["id"]) + ',')
         print('\t\"name\": \"' + p["name"] + '\",')
         print('\t\"shortdesc\": \"' + p["desc"].split('<')[0][0:50].strip() + '...\",')
-        print('\t\"desc\": \"' + p["desc"].replace('"', '\\"') + '\",')
+        print('\t\"desc\": \"<p>' + p["desc"].replace('"', '\\"').replace('<br/>', '</p><p>') + '</p>\",')
         print('\t\"crit\": \"' + p["crit"] + '\",')
         print('\t\"type\": \"' + p["type"] + '\",')
         print('\t\"tradition\": \"' + p["tradition"] + '\",')
