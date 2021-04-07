@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../content/favicon.ico" />
 
     <title>The Doors of Illune</title>
 
@@ -22,51 +23,6 @@
     <div class="wrapper bg-dark text-light">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <a class="pagetitle" href="../index.html">THE DOORS OF ILLUNE</a>
-                <div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div>
-            </div>
-
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="../index.html">&lt==</a>
-                </li>
-                <li>
-                    <a href="overview.html">Overview</a>
-                </li>
-                <p>Magic Master Paths</p>
-                <li>
-                    <a href="#" class="active">A - B</a>
-                </li>
-                <li>
-                    <a href="mC.html">C - E</a>
-                </li>
-                <li>
-                    <a href="mG.html">G - M</a>
-                </li>
-                <li>
-                    <a href="mN.html">N - S</a>
-                </li>
-                <li>
-                    <a href="mT.html">T - W</a>
-                </li>
-                <p>Skill Master Paths</p>
-                <li>
-                    <a href="sA.html">A - C</a>
-                </li>
-                <li>
-                    <a href="sD.html">D</a>
-                </li>
-                <li>
-                    <a href="sE.html">E - I</a>
-                </li>
-                <li>
-                    <a href="sJ.html">J - R</a>
-                </li>
-                <li>
-                    <a href="sS.html">S - Z</a>
-                </li>
-            </ul>
         </nav>
 
         <!-- Page Content  -->
@@ -282,9 +238,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	
+    <script src="../content/index.js"></script>
+    <script src="../content/index_menu.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
+			loadmenu("mpaths", "mA");
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../content/favicon.ico" />
 
     <title>The Doors of Illune</title>
 
@@ -22,38 +23,6 @@
     <div class="wrapper bg-dark text-light">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <a class="pagetitle" href="../index.html">THE DOORS OF ILLUNE</a>
-                <div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div>
-            </div>
-
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="../index.html">&lt==</a>
-                </li>
-                <p>Ancestries</p>
-                <li>
-                    <a href="#" class="active">Overview</a>
-                </li>
-                <li>
-                    <a href="human.html">Human</a>
-                </li>
-                <li>
-                    <a href="beastmen.html">Beastmen</a>
-                </li>
-                <li>
-                    <a href="cambion.html">Cambion</a>
-                </li>
-                <li>
-                    <a href="clockwork.html">Clockwork</a>
-                </li>
-                <li>
-                    <a href="drakken.html">Drakken</a>
-                </li>
-                <li>
-                    <a href="goblin.html">Goblin</a>
-                </li>
-            </ul>
         </nav>
 
         <!-- Page Content  -->
@@ -80,14 +49,18 @@
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	
+    <script src="../content/index.js"></script>
+    <script src="../content/index_menu.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
+			loadmenu("ancestries", "overview");
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

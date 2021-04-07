@@ -3,66 +3,64 @@ var menu_content = [
 		"name" : "home",
 		"content" : [
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/home/overview.html')"
+				"title" : "<a href='index.html'>Overview</a>",
+				"action" : "index"
 			},
 			{
-				"title" : "<span>Character Creation</span>",
+				"title" : "Character Creation",
 				"action" : "NODE"
 			},
 			{
-				"title" : "Ancestries",
-				"action" : "changemenu('ancestries')"
+				"title" : "<a href='ancestries/overview.html'>Ancestries</a>",
+				"action" : "ancestries"
 			},
 			{
-				"title" : "Novice Paths",
-				"action" : "changemenu('npaths')"
+				"title" : '<a href="npaths/overview.html">Novice Paths</a>',
+				"action" : "npaths"
 			},
 			{
-				"title" : "Expert Paths",
-				"action" : "changemenu('epaths')"
-				//"action" : "gothere('views/epaths/overview.html')"
+				"title" : '<a href="epaths/overview.html">Expert Paths</a>',
+				"action" : "epaths"
 			},
 			{
-				"title" : "Master Paths",
-				"action" : "changemenu('mpaths')"
-				//"action" : "gothere('views/mpaths/overview.html')"
+				"title" : '<a href="mpaths/overview.html">Master Paths</a>',
+				"action" : "mpaths"
 			},
 			{
-				"title" : "Professions & Languages",
-				"action" : "gothere('views/professions.html')"
+				"title" : '<a href="professions.html">Professions & Languages</a>',
+				"action" : "profs"
 			},
 			{
-				"title" : "<span>Rules</span>",
+				"title" : "Rules",
 				"action" : "NODE"
 			},
 			{
-				"title" : "Combat",
-				"action" : "changemenu('combat')"
+				"title" : '<a href="combat/overview.html">Combat</a>',
+				"action" : "combat"
 			},
 			{
-				"title" : "Spells",
-				"action" : "changemenu('spells')"
+				"title" : '<a href="spells/spelllist.html">Spells</a>',
+				"action" : "spells"
 			},
 			{
-				"title" : "Equipment",
-				"action" : "views/equipment.html"
+				"title" : '<a href="equipment.html">Equipment</a>',
+				"action" : "equipment"
 			},
 			{
-				"title" : "Gear",
-				"action" : "gothere('views/gear.html')"
+				"title" : '<a href="gear.html">Gear</a>',
+				"action" : "gear"
 			},
 			{
 				"title" : "<span>A Land in Shadow</span>",
 				"action" : "NODE"
 			},
 			{
-				"title" : "The Archipelago",
-				"action" : "gothere('views/archipelago.html')"
+				"title" : '<a href="archipelago.html">The Archipelago</a>',
+				"action" : "archipelago"
 			},
 			{
-				"title" : "Gods of Ikseira",
-				"action" : "gothere('views/gods.html')"
+				"title" : '<a href="gods.html">Gods of Ikseira</a>',
+				"action" : "gods"
 			},
 			{
 				"title" : "DATE",
@@ -74,40 +72,40 @@ var menu_content = [
 		"name" : "ancestries",
 		"content" : [
 			{
-				"title" : "&lt==",
-				"action" : "changemenu('home')"
+				"title" : "<a href='../index.html'>&lt==</a>",
+				"action" : "home"
 			},
 			{
-				"title" : "<span>Ancestries</span>",
+				"title" : "Ancestries",
 				"action" : "NODE"
 			},
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/ancestries/overview.html')"
+				"title" : '<a href="overview.html">Overview</a>',
+				"action" : "overview"
 			},
 			{
-				"title" : "Human",
-				"action" : "gothere('views/ancestries/human.html')"
+				"title" : '<a href="human.html">Human</a>',
+				"action" : "human"
 			},
 			{
-				"title" : "Beastmen",
-				"action" : "gothere('views/ancestries/beastmen.html')"
+				"title" : '<a href="beastmen.html">Beastmen</a>',
+				"action" : "beastmen"
 			},
 			{
-				"title" : "Cambion",
-				"action" : "gothere('views/ancestries/cambion.html')"
+				"title" : '<a href="cambion.html">Cambion</a>',
+				"action" : "cambion"
 			},
 			{
-				"title" : "Clockwork",
-				"action" : "gothere('views/ancestries/clockwork.html')"
+				"title" : '<a href="clockwork.html">Clockwork</a>',
+				"action" : "clockwork"
 			},
 			{
-				"title" : "Drakken",
-				"action" : "gothere('views/ancestries/drakken.html')"
+				"title" : '<a href="drakken.html">Drakken</a>',
+				"action" : "drakken"
 			},
 			{
-				"title" : "Goblin",
-				"action" : "gothere('views/ancestries/goblin.html')"
+				"title" : '<a href="goblin.html">Goblin</a>',
+				"action" : 'goblin'
 			}
 		]
 	},
@@ -115,48 +113,44 @@ var menu_content = [
 		"name" : "combat",
 		"content" : [
 			{
-				"title" : "&lt==",
-				"action" : "changemenu('home')"
+				"title" : "<a href='../index.html'>&lt==</a>",
+				"action" : "home"
 			},
 			{
-				"title" : "<span>Combat</span>",
+				"title" : "Combat",
 				"action" : "NODE"
 			},
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/combat/overview.html')"
+				"title" : '<a href="overview.html">Overview</a>',
+				"action" : "overview"
 			},
 			{
-				"title" : "Making Attacks",
-				"action" : "gothere('views/combat/attacks.html')"
+				"title" : '<a href="attacks.html">Making Attacks</a>',
+				"action" : "attacks"
 			},
 			{
-				"title" : "Afflictions",
-				"action" : "gothere('views/combat/afflictions.html')"
+				"title" : '<a href="afflictions.html">Afflictions</a>',
+				"action" : "afflictions"
 			},
 			{
-				"title" : "Corruption",
-				"action" : "gothere('views/combat/corruption.html')"
+				"title" : '<a href="corruption.html">Corruption</a>',
+				"action" : "corruption"
 			},
 			{
-				"title" : "Fate Rolls",
-				"action" : "gothere('views/combat/fate.html')"
+				"title" : '<a href="fate.html">Fate Rolls</a>',
+				"action" : "fate"
 			},
 			{
-				"title" : "Fortune Points",
-				"action" : "gothere('views/combat/fortune.html')"
+				"title" : '<a href="fortune.html">Fortune Points</a>',
+				"action" : "fortune"
 			},
 			{
-				"title" : "Insanity",
-				"action" : "gothere('views/combat/insanity.html')"
+				"title" : '<a href="insanity.html">Insanity</a>',
+				"action" : "insanity"
 			},
 			{
-				"title" : "Resting",
-				"action" : "gothere('views/combat/resting.html')"
-			},
-			{
-				"title" : "DATE",
-				"action" : "NODE"
+				"title" : '<a href="resting.html">Resting</a>',
+				"action" : "resting"
 			}
 		]
 	},
@@ -164,28 +158,24 @@ var menu_content = [
 		"name" : "spells",
 		"content" : [
 			{
-				"title" : "&lt==",
-				"action" : "changemenu('home')"
+				"title" : "<a href='../index.html'>&lt==</a>",
+				"action" : "home"
 			},
 			{
-				"title" : "<span>Spells</span>",
+				"title" : "Spells",
 				"action" : "NODE"
 			},
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/spells/overview.html')"
+				"title" : '<a href="spelllist.html">List of Spells</a>',
+				"action" : "spelllist"
 			},
 			{
-				"title" : "Traditions",
-				"action" : "gothere('views/spells/traditions.html')"
+				"title" : '<a href="spellcasting.html">Spellcasting Rules</a>',
+				"action" : "rules"
 			},
 			{
-				"title" : "Spell List",
-				"action" : "gothere('views/spells/spell_list.html')"
-			},
-			{
-				"title" : "Old Spell List",
-				"action" : "gothere('views/spells/index.html')"
+				"title" : '<a href="traditions.html">Traditions</a>',
+				"action" : "traditions"
 			}
 		]
 	},
@@ -193,32 +183,32 @@ var menu_content = [
 		"name" : "npaths",
 		"content" : [
 			{
-				"title" : "&lt==",
-				"action" : "changemenu('home')"
+				"title" : "<a href='../index.html'>&lt==</a>",
+				"action" : "home"
 			},
 			{
-				"title" : "<span>Novice Paths</span>",
+				"title" : 'Novice Paths',
 				"action" : "NODE"
 			},
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/npaths/overview.html')"
+				"title" : '<a href="overview.html">Overview</a>',
+				"action" : "overview"
 			},
 			{
-				"title" : "Magician",
-				"action" : "gothere('views/paths/caster.html')"
+				"title" : '<a href="magician.html">Magician</a>',
+				"action" : "magician"
 			},
 			{
-				"title" : "Priest",
-				"action" : "gothere('views/paths/spellsword.html')"
+				"title" : '<a href="priest.html">Priest</a>',
+				"action" : "priest"
 			},
 			{
-				"title" : "Rogue",
-				"action" : "gothere('views/paths/rogue.html')"
+				"title" : '<a href="rogue.html">Rogue</a>',
+				"action" : 'rogue'
 			},
 			{
-				"title" : "Warrior",
-				"action" : "gothere('views/paths/warrior.html')"
+				"title" : '<a href="warrior.html">Warrior</a>',
+				"action" : 'warrior'
 			}
 		]
 	},
@@ -226,100 +216,96 @@ var menu_content = [
 		"name" : "epaths",
 		"content" : [
 			{
-				"title" : "&lt==",
-				"action" : "changemenu('home')"
+				"title" : "<a href='../index.html'>&lt==</a>",
+				"action" : "home"
 			},
 			{
-				"title" : "<span>Expert Paths</span>",
+				"title" : "Expert Paths",
 				"action" : "NODE"
 			},
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/epaths/overview.html')"
+				"title" : '<a href="overview.html">Overview</a>',
+				"action" : "overview"
 			},
 			{
-				"title" : "<span>Paths of Faith</span>",
+				"title" : "Paths of Faith",
 				"action" : "NODE"
 			},
 			{
-				"title" : "Cleric",
+				"title" : '<a href="cleric.html">Cleric</a>',
 				"action" : "gothere('views/epaths/cleric.html')"
 			},
 			{
-				"title" : "Druid",
-				"action" : "gothere('views/epaths/druid.html')"
+				"title" : '<a href="druid.html">Druid</a>',
+				"action" : "druid"
 			},
 			{
-				"title" : "Oracle",
-				"action" : "gothere('views/epaths/oracle.html')"
+				"title" : '<a href="oracle.html">Oracle</a>',
+				"action" : "oracle"
 			},
 			{
-				"title" : "Paladin",
-				"action" : "gothere('views/epaths/paladin.html')"
+				"title" : '<a href="paladin.html">Paladin</a>',
+				"action" : 'paladin'
 			},
 			{
-				"title" : "<span>Paths of Power</span>",
+				"title" : "Paths of Power",
 				"action" : "NODE"
 			},
 			{
-				"title" : "Artificer",
-				"action" : "gothere('views/epaths/artificer.html')"
+				"title" : '<a href="artificer.html">Artificer</a>',
+				"action" : "artificer"
 			},
 			{
-				"title" : "Sorcerer",
-				"action" : "gothere('views/epaths/sorcerer.html')"
+				"title" : '<a href="sorcerer.html">Sorcerer</a>',
+				"action" : "sorcerer"
 			},
 			{
-				"title" : "Wardscribe",
-				"action" : "gothere('views/epaths/wardscribe.html')"
+				"title" : '<a href="wardscribe.html">Wardscribe</a>',
+				"action" : "wardscribe"
 			},
 			{
-				"title" : "Wizard",
-				"action" : "gothere('views/epaths/wizard.html')"
+				"title" : '<a href="wizard.html">Wizard</a>',
+				"action" : "wizard"
 			},
 			{
-				"title" : "<span>Paths of Trickery</span>",
+				"title" : "Paths of Trickery",
 				"action" : "NODE"
 			},
 			{
-				"title" : "Assassin",
-				"action" : "gothere('views/epaths/assassin.html')"
+				"title" : '<a href="assassin.html">Assassin</a>',
+				"action" : "assassin"
 			},
 			{
-				"title" : "Scout",
-				"action" : "gothere('views/epaths/scout.html')"
+				"title" : '<a href="scout.html">Scout</a>',
+				"action" : "scout"
 			},
 			{
-				"title" : "Thief",
-				"action" : "gothere('views/epaths/thief.html')"
+				"title" : '<a href="thief.html">Thief</a>',
+				"action" : "thief"
 			},
 			{
-				"title" : "Warlock",
-				"action" : "gothere('views/epaths/warlock.html')"
+				"title" : '<a href="warlock.html">Warlock</a>',
+				"action" : "warlock"
 			},
 			{
-				"title" : "<span>Paths of War</span>",
+				"title" : "Paths of War",
 				"action" : "NODE"
 			},
 			{
-				"title" : "Berserker",
-				"action" : "gothere('views/epaths/berserker.html')"
+				"title" : '<a href="berserker.html">Berserker</a>',
+				"action" : "berserker"
 			},
 			{
-				"title" : "Fighter",
-				"action" : "gothere('views/epaths/fighter.html')"
+				"title" : '<a href="fighter.html">Fighter</a>',
+				"action" : "fighter"
 			},
 			{
-				"title" : "Ranger",
-				"action" : "gothere('views/epaths/ranger.html')"
+				"title" : '<a href="ranger.html">Ranger</a>',
+				"action" : "ranger"
 			},
 			{
-				"title" : "Spellbinder",
-				"action" : "gothere('views/epaths/spellbinder.html')"
-			},
-			{
-				"title" : "DATE",
-				"action" : "NODE"
+				"title" : '<a href="spellbinder.html">Spellbinder</a>',
+				"action" : "spellbinder"
 			}
 		]
 	},
@@ -327,60 +313,60 @@ var menu_content = [
 		"name" : "mpaths",
 		"content" : [
 			{
-				"title" : "&lt==",
-				"action" : "changemenu('home')"
+				"title" : "<a href='../index.html'>&lt==</a>",
+				"action" : "home"
 			},
 			{
-				"title" : "<span>Overview</span>",
-				"action" : "gothere('views/mpaths/overview.html')"
+				"title" : '<a href="overview.html">Overview</a>',
+				"action" : "overview"
 			},
 			{
-				"title" : "<span>Magic Master Paths</span>",
+				"title" : "Magic Master Paths",
 				"action" : "NODE"
 			},
 			{
-				"title" : "A - B",
-				"action" : "gothere('views/mpaths/mA.html')"
+				"title" : '<a href="mA.html">A - B</a>',
+				"action" : "mA"
 			},
 			{
-				"title" : "C - E",
-				"action" : "gothere('views/mpaths/mC.html')"
+				"title" : '<a href="mC.html">C - E</a>',
+				"action" : "mC"
 			},
 			{
-				"title" : "G - M",
-				"action" : "gothere('views/mpaths/mH.html')"
+				"title" : '<a href="mG.html">G - M</a>',
+				"action" : "mG"
 			},
 			{
-				"title" : "N - S",
-				"action" : "gothere('views/mpaths/mN.html')"
+				"title" : '<a href="mN.html">N - S</a>',
+				"action" : "mN"
 			},
 			{
-				"title" : "T - W",
-				"action" : "gothere('views/mpaths/mT.html')"
+				"title" : '<a href="mT.html">T - W</a>',
+				"action" : "mT"
 			},
 			{
-				"title" : "<span>Skill Master Paths</span>",
+				"title" : "Skill Master Paths",
 				"action" : "NODE"
 			},
 			{
-				"title" : "A - C",
-				"action" : "gothere('views/mpaths/sA.html')"
+				"title" : '<a href="sA.html">A - C</a>',
+				"action" : "sA"
 			},
 			{
-				"title" : "D",
-				"action" : "gothere('views/mpaths/sD.html')"
+				"title" : '<a href="sD.html">D</a>',
+				"action" : "sD"
 			},
 			{
-				"title" : "E - I",
-				"action" : "gothere('views/mpaths/sE.html')"
+				"title" : '<a href="sE.html">E - I</a>',
+				"action" : "sE"
 			},
 			{
-				"title" : "J - R",
-				"action" : "gothere('views/mpaths/sJ.html')"
+				"title" : '<a href="sJ.html">J - R</a>',
+				"action" : "sJ"
 			},
 			{
-				"title" : "S - Z",
-				"action" : "gothere('views/mpaths/sS.html')"
+				"title" : '<a href="sS.html">S - Z</a>',
+				"action" : "sS"
 			},
 		]
 	}
