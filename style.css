@@ -92,6 +92,7 @@ p, ul, ol {
 	background-image: URL("hosizora2.gif");
 	text-align: center;
 	overflow-y: scroll;
+	height: 100vh;
 }
 
 #sidebar.active {
