@@ -20,6 +20,10 @@ p {
     line-height: 1.7em;
 }
 
+.blockquote {
+    font-size: 1em;
+}
+
 a,
 a:hover,
 a:focus {
@@ -32,7 +36,7 @@ a {
 	color: #aaf;
 }
 
-li a {
+.sidebar-link a {
 	color: white;
 }
 
@@ -51,7 +55,7 @@ p, ul, ol {
 .pagetitle {
 	color: white;
 	font-weight: bold;
-	font-family: georgia;
+	font-family: papyrus;
 	font-size: 1.75rem;
 }
 
@@ -104,6 +108,13 @@ p, ul, ol {
 	border-radius: 4px;
 }
 
+.sidebar-header .pagetitle {
+	color: white;
+	font-weight: 900;
+	font-family: papyrus;
+	font-size: 1.5rem;
+}
+
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid white;
@@ -127,11 +138,23 @@ p, ul, ol {
 	background: #effea9;
 }
 
-#profile {
+.profile {
 	float: right;
 	margin-left: 2em;
-	max-width: 50%;
+	text-align: right;
+	color: grey;
+}
+
+.profile-img {
 	max-height: 80vh;
+}
+
+.icon {
+    background-image: url('content/artist.png');
+    height: 14px;
+    width: 20px;
+    display: inline-block;
+    /* Other styles here */
 }
 
 a.active {
@@ -180,7 +203,7 @@ b {
 
 h1 {
 	font-style: italic;
-	font-family: georgia;
+	font-family: papyrus;
 	font-weight: bold;
 	color: var(--primary);
 	border-bottom: solid 5px;

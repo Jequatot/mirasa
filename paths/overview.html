@@ -28,24 +28,21 @@
         <!-- Page Content  -->
         <div id="content">
 
-		<button type="button" id="sidebarCollapse" class="btn btn-info">
-			<i class="fas fa-align-left"></i>
-			<span>Toggle Sidebar</span>
-		</button>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
 
-		<h1>Ancestries</h1>
+		<h1>Starting Paths</h1>
 		<p>
-			The first thing you do to create your character is to pick your ancestry. Ancestries tell you something about your homeland, culture, religious inclination, and appearance. As well, they indicate areas in which your character excels and where your character might be wanting.
+			Starting paths describe the skills and abilities characters start with. They can be good blueprints for how a character will progress, but don't feel constrained by them. Each is malleable and suits a wide variety of characters.
+			<ul>
+				<li><b>Magicians</b> strive to reach the heights of magical power. With their abilities to sense magic and disrupt spells, they control the battlefield. Play a Magician if you want to get the most out of your spellcasting.</li>
+				<li><b>Priests</b> are bound by oath their tradition. Priests are tougher than Magicians, but their spellcasting is restricted by their oath. Instead, they can aid others to turn the tides of battle. Play a Priest if you want to support your team with both spellcasting and martial skill.</li>
+				<li><b>Rogues</b> always have a trick up their sleeves. Using a combination of luck and skill, Rogues can usually find solutions to their problems. They may not be as tough as the Warrior, but they have a slew of useful talents and can potentially take two turns per round. Play a Rogue if you want to run circles around the enemy.</li>
+				<li><b>Warriors</b> undergo extensive training with weapons and study numerous fighting styles. Their skills depend on being physically fit, quick and nimble, or a combination of both. Upon completing their training, Warriors can pick up and fight with almost any weapon, striking with greater precision and greater force than anyone else. Play a Warrior if you want to destroy the enemy regardless of battleground or weapon.</li>
+			</ul>
 		</p>
-		<ul>
-			<li><b>Humans</b> are a diverse people encompassing numerous civilizations, cultures, and ethnicities. They are the most common people in the world. Humans excel in any path they choose.</li>
-			<li><b>Beastfolk</b> are fuse animalistic characteristics with humanoid forms. Beastfolk are usually fur-covered and have the heads of beasts, such as goats, wolves, bears, rats, bulls, and others. Beastfolk are skilled in a close fight, and often have good senses.</li>
-			<li><b>Clockwork</b> are people created by binding souls to mechanical bodies. Clockwork have many different forms, and their origins determine the paths they will walk.</li>
-			<li><b>Elves</b> are graceful scouts and sorcerers who long ago where touched by the Fae. They live in closed societies in the forest, with strict, complex social codes. Elves are well equipped to wield wand or bow.</li>
-			<li><b>Goblins</b> are exiles from among the Faerie, forced to live among humanity or on the edges of human lands. They are a filthy, grubby people of low character and malicious disposition. Goblins do well as rogues and magicians.</li>
-			<li><b>Cambion</b> are demontouched humans. Their intentions may be good, but they are forever burdened by the corruption of the Demon Lord. Cambion make powerful spellcasters.</li>
-			<li><b>Drakken</b> are the descendants of the ancient tribe of dragon-worshippers. When purebred, their beautiful scales make them hardy, but most drakken are born as kobolds or salamanders with muddy, patchy scales. Drakken are know for their durability and spellcasting.</li>
-		</ul>
 		</div>
     </div>
 
@@ -61,7 +58,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-			loadmenu("ancestries", "overview");
+			loadmenu("paths", "overview");
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });

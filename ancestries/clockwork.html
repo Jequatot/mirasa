@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" href="../content/favicon.ico" />
 
-    <title>The Doors of Illune</title>
+    <title>The Jungles of Mirasa</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -28,13 +28,16 @@
         <!-- Page Content  -->
         <div id="content">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
+		<button type="button" id="sidebarCollapse" class="btn btn-info">
+			<i class="fas fa-align-left"></i>
+			<span>Toggle Sidebar</span>
+		</button>
 
-		<h1>CLOCKWORK</h1>
-		<img id="profile" src="../content/clockwork.png" alt="Clockwork">
+		<h1>Clockwork</h1>
+		<div class="profile">
+			<img class="profile-img" src="../content/Tamás_Patkós-clockwork.png" alt="Artist: Tamás Patkós">
+			<div><span class='icon'></span>Tamás Patkós</div>
+		</div>
 		<p>
 			While golems made out of cogs and wires are an old tradition, attempts to grant such things a soul have proved futile.
 		</p>
@@ -52,15 +55,14 @@
 		</p>
 		<h3>CREATING A CLOCKWORK</h3>
 		<div>
-			<b>Starting Attribute Scores</b> Strength 8, Agility 7, Intellect 8, Will 8. Raise one attribute by 2 and two other attributes by 1.<br/>
-			<b>Attribute Modifiers</b> equal to the score minus 10<br/>
-			<b>Perception</b> equals your Intellect score<br/>
-			<b>Defense</b> equals 5 + your Agility modifier<br/>
-			<b>Health</b> equals your Strength score<br/>
+			<b>Starting Attributes</b> Strength +0, Agility -1, Intellect +0, Will +0. Raise one attribute by 2 and two other attributes by 1.<br/>
+			<b>Perception</b> equals your Intellect<br/>
+			<b>Defense</b> equals 5 + your Agility<br/>
+			<b>Health</b> equals your 8 + Strength<br/>
 			<b>Healing Rate</b> equals one-quarter your Health, round down<br/>
 			<b>Size</b> 1/2 or 1 or 2, <b>Speed</b> 8, <b>Power</b> 0<br/>
-			<b>Damage</b> 0, <b>Insanity</b> 0, <b>Corruption</b> 0<br/>
-			<b>Language and Professions</b> You speak the Common Tongue. Pick two professions.
+			<b>Damage</b> 0, <b>Beasthood</b> 0<br/>
+			<b>Language and Professions</b> You speak the Common Tongue. Pick two professions or languages.
 		</p>
 		<p>
 			<b>Mechanical Body</b> You sink when submerged in liquid. Your advanced filter allows you to breathe in any environment where there is air or water.
@@ -79,7 +81,7 @@
 			<b>Characteristics</b> Health +6
 		</p>
 		<p>
-			You either learn one spell or gain two additional Clockwork Features.
+			You either learn one spell or gain one additional Clockwork Feature.
 		</p>
 		</div>
 		<h3>CLOCKWORK FEATURES</h3>
@@ -90,7 +92,7 @@
 			<li><b>Life-Like Appearance</b> You are masterfully crafted to pass for a living being (unless closely scrutinized). Incompatible with Armored Plating. Your identity is revealed upon using any Clockwork feature.</li>
 			<li><b>Levitation</b> You float gently a few inches above the ground. You move at full Speed across difficult terrain.</li>
 			<li><b>Phonograph</b> A wax-cylinder recording and playback device. At any time, you can begin recording up to 1 minute of audio, during which you overwrite any audio previously recorded and and capture all sounds occurring around you. You can use an action to play the recording any number of times until a new recording is made. Any creature that sees you while you play the recording knows that it originates from you. A creature that cannot see you can make an Intellect challenge roll with 1 boon to tell the sound is an imitation.</li>
-			<li><b>Sensors</b> You can overload your sensors for up to 1 minute to see via heat instead of light. For the duration, you are considered sightless, and cannot be blinded. You can detect any living creatures within 15 yards of you. Such creatures cannot become hidden from you for the duration.</li>
+			<li><b>Sensors</b> You can overload your sensors for up to 1 minute to see via heat instead of light. For the duration, you are considered sightless, and cannot be blinded. You can detect any living creatures within 15 yards of you. Such creatures cannot become hidden from you for the duration. Once you use this talent you cannot use it again until you complete a rest.</li>
 			<li><b>Spider Climb</b> Miniature barbs built into your frame. You ignore the effects of difficult terrain when climbing, and you make challenge rolls to climb with 1 boon. You must be size 1 or smaller.</li>
 			<li><b>Spring-Leap Pistons</b> As an action, you can jump horizontally up to 15 yards. You can also jump straight up 10 yards. You never take damage from landing after a fall.</li>
 			<li><b>Turn-Key</b> You can increase the number of actions you can use on your turn by one. When you finish a turn, roll a d6. If you roll an odd number, you become an object at the end of the round. While you are an object, you cannot use actions, move, talk, or perceive your surroundings. Any creature that can reach you can use an action to wind up your key.<br/></li></ul>

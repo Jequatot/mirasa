@@ -12,7 +12,7 @@ function loadmenu(menu, page) {
 		bar.removeChild(bar.lastChild);
 	}
 	
-	bar.innerHTML = '<div class="sidebar-header"><a class="pagetitle" href="#">THE DOORS OF ILLUNE</a><div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div></div>'
+	bar.innerHTML = '<div class="sidebar-header"><a class="pagetitle" href="#">THE JUNGLES OF MIRASA</a><div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div></div>'
 	
 	var ul = document.createElement("ul");
 	ul.classList.add("list-unstyled")
@@ -36,6 +36,7 @@ function loadmenu(menu, page) {
 			ul.appendChild(np);
 		} else {
 			var np = document.createElement("li");
+			np.classList.add("sidebar-link")
 			np.innerHTML = m.content[i].title;
 			if(m.content[i].action == page) {
 				np.childNodes[0].classList.add("active");

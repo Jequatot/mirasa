@@ -7,40 +7,36 @@ var menu_content = [
 				"action" : "index"
 			},
 			{
+				"title" : '<a href="rules/basic_rules.html">Rules</a>',
+				"action" : "rules"
+			},
+			{
 				"title" : "Character Creation",
 				"action" : "NODE"
+			},
+			{
+				"title" : "<a href='yourranger.html'>Creating Your Ranger</a>",
+				"action" : "yourranger"
 			},
 			{
 				"title" : "<a href='ancestries/overview.html'>Ancestries</a>",
 				"action" : "ancestries"
 			},
 			{
-				"title" : '<a href="npaths/overview.html">Novice Paths</a>',
-				"action" : "npaths"
+				"title" : '<a href="paths/overview.html">Starting Paths</a>',
+				"action" : "paths"
 			},
 			{
-				"title" : '<a href="epaths/overview.html">Expert Paths</a>',
-				"action" : "epaths"
+				"title" : '<a href="maaspects/overview.html">Major Aspects</a>',
+				"action" : "maaspect"
 			},
 			{
-				"title" : '<a href="mpaths/overview.html">Master Paths</a>',
-				"action" : "mpaths"
+				"title" : '<a href="miaspects/overview.html">Minor Aspects</a>',
+				"action" : "miaspect"
 			},
 			{
 				"title" : '<a href="professions.html">Professions & Languages</a>',
 				"action" : "profs"
-			},
-			{
-				"title" : "Rules",
-				"action" : "NODE"
-			},
-			{
-				"title" : '<a href="combat/overview.html">Combat</a>',
-				"action" : "combat"
-			},
-			{
-				"title" : '<a href="spells/spelllist.html">Spells</a>',
-				"action" : "spells"
 			},
 			{
 				"title" : '<a href="equipment.html">Equipment</a>',
@@ -51,15 +47,7 @@ var menu_content = [
 				"action" : "gear"
 			},
 			{
-				"title" : "<span>A Land in Shadow</span>",
-				"action" : "NODE"
-			},
-			{
-				"title" : '<a href="archipelago.html">The Archipelago</a>',
-				"action" : "archipelago"
-			},
-			{
-				"title" : '<a href="gods.html">Gods of Ikseira</a>',
+				"title" : '<a href="gods.html">Gods of the Realm</a>',
 				"action" : "gods"
 			},
 			{
@@ -88,78 +76,57 @@ var menu_content = [
 				"action" : "human"
 			},
 			{
-				"title" : '<a href="beastmen.html">Beastmen</a>',
-				"action" : "beastmen"
-			},
-			{
-				"title" : '<a href="cambion.html">Cambion</a>',
-				"action" : "cambion"
+				"title" : '<a href="beastfolk.html">Beastfolk</a>',
+				"action" : "beastfolk"
 			},
 			{
 				"title" : '<a href="clockwork.html">Clockwork</a>',
 				"action" : "clockwork"
 			},
 			{
-				"title" : '<a href="drakken.html">Drakken</a>',
-				"action" : "drakken"
+				"title" : '<a href="elf.html">Elf</a>',
+				"action" : "elf"
 			},
 			{
 				"title" : '<a href="goblin.html">Goblin</a>',
 				"action" : 'goblin'
+			},
+			{
+				"title" : '<a href="stormsoul.html">Stormsoul</a>',
+				"action" : "stormsoul"
+			},
+			{
+				"title" : '<a href="woodwose.html">Woodwose</a>',
+				"action" : "woodwose"
 			}
 		]
 	},
 	{
-		"name" : "combat",
+		"name" : "rules",
 		"content" : [
 			{
 				"title" : "<a href='../index.html'>&lt==</a>",
 				"action" : "home"
+			},
+			{
+				"title" : "Rules",
+				"action" : "NODE"
+			},
+			{
+				"title" : '<a href="basic_rules.html">Basic Rules</a>',
+				"action" : "basic rules"
 			},
 			{
 				"title" : "Combat",
 				"action" : "NODE"
 			},
 			{
-				"title" : '<a href="overview.html">Overview</a>',
-				"action" : "overview"
+				"title" : '<a href="combat.html">Combat Overview</a>',
+				"action" : "combat"
 			},
 			{
 				"title" : '<a href="attacks.html">Making Attacks</a>',
 				"action" : "attacks"
-			},
-			{
-				"title" : '<a href="afflictions.html">Afflictions</a>',
-				"action" : "afflictions"
-			},
-			{
-				"title" : '<a href="corruption.html">Corruption</a>',
-				"action" : "corruption"
-			},
-			{
-				"title" : '<a href="fate.html">Fate Rolls</a>',
-				"action" : "fate"
-			},
-			{
-				"title" : '<a href="fortune.html">Fortune Points</a>',
-				"action" : "fortune"
-			},
-			{
-				"title" : '<a href="insanity.html">Insanity</a>',
-				"action" : "insanity"
-			},
-			{
-				"title" : '<a href="resting.html">Resting</a>',
-				"action" : "resting"
-			}
-		]
-	},
-	{
-		"name" : "spells",
-		"content" : [
-			{
-				"title" : "<a href='../index.html'>&lt==</a>",
-				"action" : "home"
 			},
 			{
 				"title" : "Spells",
@@ -171,23 +138,47 @@ var menu_content = [
 			},
 			{
 				"title" : '<a href="spellcasting.html">Spellcasting Rules</a>',
-				"action" : "rules"
+				"action" : "spellcasting"
 			},
 			{
 				"title" : '<a href="traditions.html">Traditions</a>',
 				"action" : "traditions"
+			},
+			{
+				"title" : "Statuses",
+				"action" : "NODE"
+			},
+			{
+				"title" : '<a href="afflictions.html">Afflictions</a>',
+				"action" : "afflictions"
+			},
+			{
+				"title" : '<a href="beasthood.html">Beasthood</a>',
+				"action" : "beasthood"
+			},
+			{
+				"title" : '<a href="fate.html">Fate Rolls</a>',
+				"action" : "fate"
+			},
+			{
+				"title" : '<a href="fortune.html">Fortune Points</a>',
+				"action" : "fortune"
+			},
+			{
+				"title" : '<a href="resting.html">Resting</a>',
+				"action" : "resting"
 			}
 		]
 	},
 	{
-		"name" : "npaths",
+		"name" : "paths",
 		"content" : [
 			{
 				"title" : "<a href='../index.html'>&lt==</a>",
 				"action" : "home"
 			},
 			{
-				"title" : 'Novice Paths',
+				"title" : 'Starting Paths',
 				"action" : "NODE"
 			},
 			{
@@ -213,14 +204,14 @@ var menu_content = [
 		]
 	},
 	{
-		"name" : "epaths",
+		"name" : "maaspect",
 		"content" : [
 			{
 				"title" : "<a href='../index.html'>&lt==</a>",
 				"action" : "home"
 			},
 			{
-				"title" : "Expert Paths",
+				"title" : "Major Aspects",
 				"action" : "NODE"
 			},
 			{
@@ -310,7 +301,7 @@ var menu_content = [
 		]
 	},
 	{
-		"name" : "mpaths",
+		"name" : "miaspect",
 		"content" : [
 			{
 				"title" : "<a href='../index.html'>&lt==</a>",

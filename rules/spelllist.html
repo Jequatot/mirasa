@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../content/favicon.ico" />
+
+    <title>The Jungles of Mirasa</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet"
+        href=
+"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!-- Include jQuery and other required files for Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<!-- Include the JavaScript file for Bootstrap table -->
+	<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="spelljson.js"></script>
+</head>
+<style>
+	td {
+        text-transform: capitalize;
+  }
+	td.noncapsd {
+        text-transform: none;
+  }
+	div {
+        text-transform: none;
+	}
+	.card-header, h5 {
+        text-transform: capitalize;
+	}
+	label {
+		width: 100%;
+	}
+	div.spell-desc p {
+		text-indent: -1.5em;
+		padding-left: 1.5em;
+	}
+</style>
+
+<body>
+    <div class="wrapper bg-dark text-light">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+  <div>
+    <h1 class="text text-highlighted text-center ">
+      Shadow of the Demon Lord Spells
+    </h1>
+	<h4>Source:</h4>
+	<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		<label class="btn btn-dark active">
+			<input type="radio" id="all_sources" name="sources" autocomplete="off" checked value="-1"> All
+		</label>
+		<label class="btn btn-dark">
+			<input type="radio" name="sources" autocomplete="off" value="SotDL"> Shadow of the Demon Lord
+		</label>
+		<label class="btn btn-dark">
+			<input type="radio" name="sources" autocomplete="off" value="DLC1"> Demon Lord's Companion 1
+		</label>
+		<label class="btn btn-dark">
+			<input type="radio" name="sources" autocomplete="off" value="OcPhi"> Occult Philosophy
+		</label>
+	</div>
+	<h4>Tradition:</h4>
+	<div class="container" data-toggle="buttons">
+		<div class="row">
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark active">
+				<input type="radio" id="all_traditions" name="traditions" autocomplete="off" checked value="all"> Show all Traditions
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm badge badge-secondary">
+					Intellect
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="alchemy"> Alchemy
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="arcana"> Arcana
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="battle"> Battle
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="conjuration"> Conjuration
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="divination"> Divination
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="enchantment"> Enchantment
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="illusion"> Illusion
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="protection"> Protection
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="rune"> Rune
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="shadow"> Shadow
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="technomancy"> Technomancy
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="telepathy"> Telepathy
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="teleportation"> Teleportation
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="time"> Time
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm badge badge-secondary">
+					Will
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="air"> Air
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="alteration"> Alteration
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="celestial"> Celestial
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="chaos"> Chaos
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="destruction"> Destruction
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="earth"> Earth
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="fire"> Fire
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="life"> Life
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="nature"> Nature
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="primal"> Primal
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="song"> Song
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="storm"> Storm
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="telekinesis"> Telekinesis
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="theurgy"> Theurgy
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+					<input type="radio" name="traditions" autocomplete="off" value="transformation"> Transformation
+				</label>
+			</div>
+			<div class="col-sm btn-group btn-group-toggle">
+				<label class="btn btn-dark">
+				<input type="radio" name="traditions" autocomplete="off" value="water"> Water
+				</label>
+			</div>
+		</div>
+	</div>
+	<h4>Rank:</h4>
+	<div class="d-flex align-items-center">
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-dark active">
+				<input type="radio" id="all_ranks" name="ranks" autocomplete="off" checked value="-1"> All
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="0"> 0
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="1"> 1
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="2"> 2
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="3"> 3
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="4"> 4
+			</label>
+			<label class="btn btn-dark">
+				<input type="radio" name="ranks" autocomplete="off" value="5"> 5
+			</label>
+		</div> &nbsp &nbsp
+		<button class="btn btn-dark" type="button" name="ranks" autocomplete="off" onclick="filterIds()"> My Spellbook</button>
+		&nbsp &nbsp
+		<button class="btn btn-dark" type="button" name="ranks" autocomplete="off" onclick="EmptySpellbook()"> Empty Spellbook</button>
+		<div class="input-group col-sm-3">
+			<input type="text" class="form-control" placeholder="Spellbook Code" aria-label="Spellbook Code" id="spellbookCode">
+			<div class="input-group-append">
+				<button class="btn btn-outline-secondary" type="button" onclick="DecodeArray()">Read to Spellbook</button>
+			</div>
+		</div>
+	</div>
+
+      <table class="table-striped border-success table-dark"
+			data-detail-view="true"
+			data-detail-view-icon="false"
+			data-detail-view-by-click="true"
+			data-pagination="true"
+			data-search="true"
+			data-search-align="left"
+			data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th data-field="rank" data-sortable="true">
+              <span class="text-highlighted">
+                Rank
+              </span>
+            </th>
+            <th data-field="name" data-sortable="true">
+              <span class="text-highlighted">
+                Name
+              </span>
+            </th>
+            <th data-field="tradition" data-sortable="true">
+              <span class="text-highlighted">
+                Tradition
+              </span>
+            </th>
+            <th data-field="type" data-sortable="true">
+              <span class="text-highlighted">
+                Type
+              </span>
+            </th>
+            <th data-field="shortdesc" data-sortable="true" class="noncapsd">
+              <span class="text-highlighted">
+                Desc
+              </span>
+            </th>
+            <th data-field="source" data-sortable="true">
+              <span class="text-highlighted">
+                Source
+              </span>
+            </th>
+          </tr>
+        </thead>
+      </table>
+		</div>
+    </div>
+	
+    <script src="../content/index.js"></script>
+    <script src="../content/index_menu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+			loadmenu("rules", "spelllist");
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+  <script type="text/javascript">
+	var rank = [0, 1, 2, 3, 4, 5];
+	var source = ["SotDL", "DLC1", "DLC2", "OcPhi"];
+	var tradition = "all";
+	var spellbookopen = false;
+	var spellbook = [];
+    $(document).ready(function () {
+
+      // Use the given data to create
+      // the table and display it
+      $('table').bootstrapTable({
+        data: spells.sort(function(a, b){return a.rank > b.rank})
+      });
+    });
+
+	function filterIds() {
+		if(!spellbookopen) {
+			traditions = "all";
+			$("#all_sources").click();
+			$("#all_traditions").click();
+			$("#all_ranks").click();
+			$('table').bootstrapTable(
+				'filterBy', {id: spellbook});
+			spellbookopen = true;
+			EncodeArray();
+		} else {
+
+			filterSpells();
+		}
+	}
+
+	function filterSpells() {
+		spellbookopen = false;
+		EncodeArray();
+
+		if(tradition == "all")
+			$('table').bootstrapTable(
+				'filterBy', {rank: rank, source: source});
+		else
+			$('table').bootstrapTable(
+				'filterBy', {rank: rank, source: source, tradition: tradition});
+	}
+
+	function AddSpell(i) {
+		$('#btn_spellbook_' + i).disabled = true;
+		spellbook.push(i);
+		EncodeArray();
+	}
+
+	function RemoveSpell(i) {
+		spellbook.splice(spellbook.indexOf(i), 1)
+		if(spellbookopen) {
+			spellbookopen = false;
+			filterIds()
+		}
+		EncodeArray();
+	}
+
+	function EmptySpellbook(i) {
+		spellbook = [];
+		filterSpells();
+	}
+
+	function EncodeArray() {
+		var result = "";
+		for(var i = 0; i < spellbook.length; i++) {
+			result += spellbook[i].toString(32);
+			if(i+1<spellbook.length)
+				result += "-"
+		}
+		$('#spellbookCode').val(result);
+	}
+
+	function DecodeArray() {
+		result = $('#spellbookCode').val().split('-');
+		spellbook = [];
+		for(var i = 0; i < result.length; i++) {
+			if(!isNaN(parseInt(result[i], 32)))
+				spellbook.push(parseInt(result[i], 32));
+		}
+
+		spellbookopen = false;
+		filterIds();
+	}
+
+	$("input[name=ranks]").change(function () {
+		switch(this.value) {
+			case "0":
+				rank = [0];
+				break;
+			case "1":
+				rank = [1]
+				break;
+			case "2":
+				rank = [2]
+				break;
+			case "3":
+				rank = [3]
+				break;
+			case "4":
+				rank = [4]
+				break;
+			case "5":
+				rank = [5]
+				break;
+			case "-1":
+				rank = [0, 1, 2, 3, 4, 5];
+				break;
+		}
+		filterSpells();
+	});
+
+	$("input[name=sources]").change(function () {
+		switch(this.value) {
+			case "SotDL":
+				source = ["SotDL"];
+				break;
+			case "DLC1":
+				source = ["DLC1"];
+				break;
+			case "DLC2":
+				source = ["DLC2"];
+				break;
+			case "OcPhi":
+				source = ["OcPhi"];
+				break;
+			case "-1":
+				source = ["SotDL", "DLC1", "DLC2", "OcPhi"];
+				break;
+		}
+		filterSpells();
+	});
+
+	$("input[name=traditions]").change(function () {
+		tradition = this.value;
+		filterSpells();
+	});
+  </script>
+  <script>
+  function detailFormatter(index, row) {
+    var html = []
+    html.push('<div class="card-header"><h2>' + row.name + ' <small class="text-muted">(#' + row.id + ')</small></h2></div>')
+    html.push('<div class="card text-white bg-dark mb-3">')
+    html.push('<div class="card-body">')
+	if(!spellbook.includes(row.id))
+		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="AddSpell(' + row.id + ')")>Add to Spellbook</button> </h5>')
+	else
+		html.push('<h5>' + row.tradition + " " + row.type + " " + row.rank + ' <button class="btn btn-light" id="btn_spellbook_' + row.id + '" onClick="RemoveSpell(' + row.id + ')")>Remove from Spellbook</button> </h5>')
+
+	if(row.requirement != '')
+		html.push('<b>Requirement</b> ' + row.requirement + '<br/>')
+	if(row.area != '')
+		html.push('<b>Area</b> ' + row.area + '<br/>')
+	if(row.target != '')
+		html.push('<b>Target</b> ' + row.target + '<br/>')
+	if(row.concentration)
+		html.push('<b>Duration</b> Concentration, up to ' + row.duration + '<br/>')
+	else if(row.duration != '')
+		html.push('<b>Duration</b> ' + row.duration + '<br/>')
+	html.push('<br/>')
+	html.push('<div class="card-text spell-desc">' + row.desc + '</div>')
+	if(row.sacrifice != '')
+		html.push('<b>Sacrifice</b> ' + row.sacrifice + '<br/>')
+	if(row.crit != '')
+		html.push('<b>On a 20+:</b> ' + row.crit + '<br/>')
+
+	html.push('<div class="dropdown-divider"></div>')
+
+	if(row.dark)
+		html.push('<div class="alert bg-secondary text-light font-italic">You gain 1 Corruption when you discover a Dark Magic tradition. Whenever you learn a Dark Magic spell, you must roll a 0 or higher on a d6 minus the number of Dark Magic spells you know or gain 1 Corruption. Each Dark Magic spell you know grants 1 boon to avoid Insanity.</div>')
+	if(row.tradition == "fey")
+		html.push('<div class="alert bg-secondary text-light font-italic">You cannot cast Fey spells while you are in contact with iron or an alloy of iron. In addition, when you attack with a Fey spell, you make the attack roll with 1 bane if the target is wearing iron or an iron alloy, and the target makes any challenge roll to resist the attack with 1 boon.</div>')
+	if(row.tradition == "battle")
+		html.push('<div class="alert bg-secondary text-light font-italic">If you know any spells from the Battle tradition, you are at risk of battle madness. Whenever you go mad, you suffer battle madness instead of rolling on the Madness table. While gripped by battle madness, you must take a fast turn each round and use an action to attack the creature nearest to you, making a charge if necessary. You regard all creatures as foes, determining your target randomly if more than one is available. At the end of each round, roll a d6. On a roll of 5 or higher, the battle madness ends.</div>')
+	if(row.tradition == "forbidden")
+		html.push('<div class="alert bg-secondary text-light font-italic">Casting Forbidden spells requires speaking mystic phrases in Dark Speech. If you don’t know this language, you make attack rolls using Forbidden spells with 1 bane and creatures make challenge rolls to resist your Forbidden spells with 1 boon. To regain expended castings of Forbidden spells you have learned, you must sacrifice a creature to the dark powers at some point after you complete a rest.</div>')
+	if(row.tradition == "demonology")
+		html.push('<div class="alert bg-secondary text-light font-italic">All Demonology spells require blood to be spilled by a sacrificial dagger for the magic to have any effect. Each spell description indicates the damage required to energize the spell and assumes you take the damage. You must take this damage, and you cannot reduce it. However, if you can reach a willing, defenseless, or unconscious creature when you cast a Demonology spell, you can deal the damage to that creature instead. That damage must be taken and cannot be reduced.</div>')
+	if(row.tradition == "invocation")
+		html.push('<div class="alert bg-secondary text-light font-italic">Each time you learn an Invocation spell, you gain 1 Insanity. You cannot remove Insanity gained in this way. If your Insanity total from learning spells ever equals your Will score, you become permanently defenseless.</div>')
+	if(row.tradition == "madness")
+		html.push('<div class="alert bg-secondary text-light font-italic">Each time you learn a spell from the Madness tradition, you must make a Will challenge roll with a number of banes equal to the number of Madness spells you have learned so far. On a failure, you gain 1 Insanity.</div>')
+	if(row.tradition == "necromancy")
+		html.push('<div class="alert bg-secondary text-light font-italic">The maximum number of undead you can have compelled with Necromancy spells is equal to your Power score. If you create a new undead that exceeds your limit, you remove the compelled affliction from the undead you have controlled for the longest time.</div>')
+	if(row.tradition == "soul")
+		html.push('<div class="alert bg-secondary text-light font-italic">Many Soul spells affect only creatures that have souls. Creatures that lack souls include demons, elementals, genies, some constructs, and some undead such as animated corpses, but not sentient undead such as barrow wights, boneguards, and the like.</div>')
+	if(row.tradition == "telekinesis" || row.tradition == "telepathy")
+		html.push('<div class="alert bg-secondary text-light font-italic">You can use an action to focus your mind. Make an Intellect or Will challenge roll. On a success, your mind becomes focused for 1 minute, or until you become dazed, stunned, or unconscious. While your mind is focused, you can cast any spell you have learned from a psychic tradition without needing to speak or wield an implement. In addition, when you cast psychic spells while your mind is focused, you can expend a second casting of the spell to cast it using a triggered action on your turn instead of using an action.</div>')
+	html.push(row.source + ' ' + row.page)
+    html.push('</div>')
+    return html.join('')
+  };
+</script>
+</body>
+
+</html>
