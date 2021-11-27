@@ -217,7 +217,10 @@ var menu_content = [
 			{
 				"title" : '<a href="overview.html">Overview</a>',
 				"action" : "overview"
-			},
+			}
+		]
+	},
+	{ "g":[
 			{
 				"title" : "Paths of Faith",
 				"action" : "NODE"
@@ -308,9 +311,16 @@ var menu_content = [
 				"action" : "home"
 			},
 			{
+				"title" : "Minor Aspects",
+				"action" : "NODE"
+			},
+			{
 				"title" : '<a href="overview.html">Overview</a>',
 				"action" : "overview"
-			},
+			}
+		]
+	},
+	{"d":[
 			{
 				"title" : "Magic Master Paths",
 				"action" : "NODE"
