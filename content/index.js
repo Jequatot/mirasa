@@ -12,7 +12,7 @@ function loadmenu(menu, page) {
 		bar.removeChild(bar.lastChild);
 	}
 	
-	bar.innerHTML = '<div class="sidebar-header"><a class="pagetitle" href="#">THE JUNGLES OF MIRASA</a><div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div></div>'
+	bar.innerHTML = '<div class="sidebar-header"><a class="pagetitle" href="#">RANGERS OF MIRASA</a><div class="pagesubtitle">A SHADOW OF THE DEMON LORD Game</div></div>'
 	
 	var ul = document.createElement("ul");
 	ul.classList.add("list-unstyled")
