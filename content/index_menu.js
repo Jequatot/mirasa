@@ -217,72 +217,9 @@ var menu_content = [
 			{
 				"title" : '<a href="overview.html">Overview</a>',
 				"action" : "overview"
-			}
-		]
-	},
-	{ "g":[
-			{
-				"title" : "Paths of Faith",
-				"action" : "NODE"
 			},
 			{
-				"title" : '<a href="cleric.html">Cleric</a>',
-				"action" : "gothere('views/epaths/cleric.html')"
-			},
-			{
-				"title" : '<a href="druid.html">Druid</a>',
-				"action" : "druid"
-			},
-			{
-				"title" : '<a href="oracle.html">Oracle</a>',
-				"action" : "oracle"
-			},
-			{
-				"title" : '<a href="paladin.html">Paladin</a>',
-				"action" : 'paladin'
-			},
-			{
-				"title" : "Paths of Power",
-				"action" : "NODE"
-			},
-			{
-				"title" : '<a href="artificer.html">Artificer</a>',
-				"action" : "artificer"
-			},
-			{
-				"title" : '<a href="sorcerer.html">Sorcerer</a>',
-				"action" : "sorcerer"
-			},
-			{
-				"title" : '<a href="wardscribe.html">Wardscribe</a>',
-				"action" : "wardscribe"
-			},
-			{
-				"title" : '<a href="wizard.html">Wizard</a>',
-				"action" : "wizard"
-			},
-			{
-				"title" : "Paths of Trickery",
-				"action" : "NODE"
-			},
-			{
-				"title" : '<a href="assassin.html">Assassin</a>',
-				"action" : "assassin"
-			},
-			{
-				"title" : '<a href="scout.html">Scout</a>',
-				"action" : "scout"
-			},
-			{
-				"title" : '<a href="thief.html">Thief</a>',
-				"action" : "thief"
-			},
-			{
-				"title" : '<a href="warlock.html">Warlock</a>',
-				"action" : "warlock"
-			},
-			{
-				"title" : "Paths of War",
+				"title" : "Aspects of War",
 				"action" : "NODE"
 			},
 			{
@@ -294,12 +231,28 @@ var menu_content = [
 				"action" : "fighter"
 			},
 			{
-				"title" : '<a href="ranger.html">Ranger</a>',
-				"action" : "ranger"
+				"title" : '<a href="hunter.html">Hunter</a>',
+				"action" : "hunter"
 			},
 			{
 				"title" : '<a href="spellbinder.html">Spellbinder</a>',
 				"action" : "spellbinder"
+			},
+			{
+				"title" : "Aspects of Trickery",
+				"action" : "NODE"
+			},
+			{
+				"title" : '<a href="assassin.html">Assassin</a>',
+				"action" : "assassin"
+			},
+			{
+				"title" : '<a href="bard.html">Bard</a>',
+				"action" : "bard"
+			},
+			{
+				"title" : '<a href="thief.html">Thief</a>',
+				"action" : "thief"
 			}
 		]
 	},
