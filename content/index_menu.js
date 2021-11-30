@@ -253,6 +253,14 @@ var menu_content = [
 			{
 				"title" : '<a href="thief.html">Thief</a>',
 				"action" : "thief"
+			},
+			{
+				"title" : "Aspects of Power",
+				"action" : "NODE"
+			},
+			{
+				"title" : '<a href="artificer.html">Artificer</a>',
+				"action" : "artificer"
 			}
 		]
 	},
