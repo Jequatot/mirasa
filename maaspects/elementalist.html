@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../content/favicon.ico" />
+
+    <title>Rangers of Mirasa</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper bg-dark text-light">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+			<button type="button" id="sidebarCollapse" class="btn btn-info">
+				<i class="fas fa-align-left"></i>
+				<span>Toggle Sidebar</span>
+			</button>
+
+			<h1>Elementalist</h1>
+			<div class="profile">
+				<img class="profile-img" src="../content/paths/Carson_Lowmiller-elementalist.png" alt="Artist: Carson Lowmiller">
+				<div><span class='icon'></span>Carson Lowmiller</div>
+			</div>
+			<p>
+				Rather than study magic like a wizard, or dedicate to a cause like a paladin, elementalist's magic comes from invoking raw mana. Elementalists often come from very rural backgrounds where they experienced the raw power of nature. The key to elementalist magic is to forget oneself, to lose oneself in the eternal flow of mana.
+			</p>
+			<h3>CORE ELEMENTALIST</h3>
+			<p>
+				<b>Attributes</b> Increase two by 1<br/>
+				<b>Characteristics</b> Health +2, Power +1<br/>
+				<b>Magic</b> Make two choices. For each choice, you discover a tradition or learn one spell.
+			</p>
+			<p>
+				<b>Aeromancer</b> Whenever you cast an Air spell, after resolving its effect, you can fly a number of yards equal to the rank of the spell.
+			</p>
+			<p>
+				<b>Geomancer</b> Whenever you cast an Earth spell, after resolving its effect, your defense increases equal to the rank of the spell. This effect lasts for 1 minute.
+			</p>
+			<p>
+				<b>Hydromancer</b> Whenever you cast a Water spell, after resolving its effect, you or a creature you can reach heals damage equal to the rank of the spell.
+			</p>
+			<p>
+				<b>Pyromancer</b> Whenever a creature takes damage from a Fire or Storm spell you cast, it takes additional damage equal to the rank of the spell.
+			</p>
+			<h3>EXPERT ELEMENTALIST</h3>
+			<p>
+				<b>Characteristics</b> Health +2<br/>
+				<b>Magic</b> You discover a tradition or learn one spell.
+			</p>
+			<p>
+				<b>Elemental Attunement</b> You can use an action to become attuned to air, earth, fire, or water. You remain attuned to the element until you use this talent again, you become unconscious, or you complete a rest. The benefits of this talent depend on which element you choose, as follows:
+			</p>
+			<ul>
+				<li><b>Air:</b> You have a +2 bonus to speed. If you have discovered the Air tradition, the bonus increases to +8.</li>
+				<li><b>Earth:</b> You have a +1 bonus to Defense. If you have discovered the Earth tradition, the bonus increases to +3.</li>
+				<li><b>Fire:</b> Flames swirl around you, lighting the area within 5 yards of you. Whenever you take damage from a melee attack, the creature that attacked you must get a success on an Agility challenge roll or take 1d6 damage. If you discovered the Fire tradition, the damage increases to 2d6.</li>
+				<li><b>Water:</b> You have a +5 bonus to Health. If you have discovered the Water tradition, the bonus increases to 15.</li>
+			</ul>
+		</div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	
+    <script src="../content/index.js"></script>
+    <script src="../content/index_menu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+			loadmenu("maaspect", "elementalist");
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

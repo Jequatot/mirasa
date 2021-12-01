@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../content/favicon.ico" />
+
+    <title>Rangers of Mirasa</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper bg-dark text-light">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+			<button type="button" id="sidebarCollapse" class="btn btn-info">
+				<i class="fas fa-align-left"></i>
+				<span>Toggle Sidebar</span>
+			</button>
+
+			<h1>Strategist</h1>
+			<div class="profile">
+				<img class="profile-img" src="../content/paths/Bruno_Machado-strategist.png" alt="Artist: Bruno Machado">
+				<div><span class='icon'></span>Bruno Machado</div>
+			</div>
+			<p>
+			</p>
+			<h3>CORE SPELLBINDER</h3>
+			<p>
+				<b>Attributes</b> Increase two by 1<br/>
+				<b>Characteristics</b> Health +3, Power +1<br/>
+				<b>Languages and Professions</b> Add one profession or language.<br/>
+				<b>Magic</b> You discover a tradition or learn one spell.
+			</p>
+			<p>
+				<b>Spellbound Weapon</b> You can use an action and expend a casting of a Rank 0 spell to imbue a weapon you touch with magical power. Until you create a new spellbound weapon or die, you gain the following benefits with the target weapon:
+			</p>
+			<ul>
+				<li>The weapon counts as a spellcasting focus.</li>
+				<li>You can use the weapon to perform any number of actions in a given turn.</li>
+				<li>You make attack rolls with the weapon with 1 boon.</li>
+				<li>If the weapon is within 1 mile of you, you can use an action to teleport it to your hand or to your feet.</li>
+				<li>You can use an action to touch the target weapon and remove all damage from it, even if the weapon is destroyed, provided you have at least a fragment of it.</li>
+				<li>You can use a reaction to exped a casting of a Rank 0 spell. Until the end of the round, your attacks with the weapon deal extra damage equal to your Power.</li>
+			</ul>
+			<p>
+				<b>Bloody Somatic</b> When you attack with your spellbound weapon, and the attack roll succeeds at 20 or higher, you can use a reaction to cast a spell with a duration of 1 round or less.
+			</p>
+			<h3>EXPERT SPELLBINDER</h3>
+			<p>
+				<b>Characteristics</b> Health +3<br/>
+				<b>Magic</b> You discover a tradition or learn one spell.
+			</p>
+			<p>
+				<b>The Bond Grows Stronger</b> Whenever you create a spellbound weapon, you may expend castings of spells rank 1 or higher. For each expended casting, choose a different effect below. Your weapon has the chosen effects for as long as it is spellbound:
+			</p>
+			<ul>
+				<li>The weapon is immovable by any creature other than you. It is still subject to gravity.</li>
+				<li>The weapon sheds light in a 10 yard radius.</li>
+				<li>The weapon creates shadow in a 10 yard radius.</li>
+				<li>The weapon deals 1d6 extra damage.</li>
+				<li>Weapon attacks made with the weapon are made with 1 boon, and creatures resist them with 1 bane.</li>
+				<li>Spell attacks made with the weapon are made with 1 boon, and creatures resist them with 1 bane.</li>
+				<li>The first time each round you deal damage with the weapon, heal 1d6 damage.</li>
+				<li>The weapon can float gently within medium range of you. It becomes a compelled small construct that can make attacks. It shares your Strength and Agility.</li>
+			</ul>
+		</div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	
+    <script src="../content/index.js"></script>
+    <script src="../content/index_menu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+			loadmenu("maaspect", "spellbinder");
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
