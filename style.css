@@ -5,6 +5,12 @@
 }
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@font-face {
+	font-family: 'immortal';
+	src: url('content/IMMORTAL.ttf') format('truetype');
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -55,7 +61,7 @@ p, ul, ol {
 .pagetitle {
 	color: white;
 	font-weight: bold;
-	font-family: papyrus;
+	font-family: immortal;
 	font-size: 1.75rem;
 }
 
