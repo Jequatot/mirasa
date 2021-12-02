@@ -261,6 +261,30 @@ var menu_content = [
 			{
 				"title" : '<a href="artificer.html">Artificer</a>',
 				"action" : "artificer"
+			},
+			{
+				"title" : '<a href="sorcerer.html">Sorcerer</a>',
+				"action" : "sorcerer"
+			},
+			{
+				"title" : '<a href="wardscribe.html">Wardscribe</a>',
+				"action" : "wardscribe"
+			},
+			{
+				"title" : '<a href="wizard.html">Wizard</a>',
+				"action" : "wizard"
+			},
+			{
+				"title" : "Paths of Resolve",
+				"action" : "NODE"
+			},
+			{
+				"title" : '<a href="elementalist.html">Elementalist</a>',
+				"action" : "elementalist"
+			},
+			{
+				"title" : '<a href="paladin.html">Paladin</a>',
+				"action" : 'paladin'
 			}
 		]
 	},
